@@ -27,14 +27,15 @@ const customSwaggerUIResponse = () => {
   }), { headers: { "Content-Type": "text/html" } });
 };
 
-router.original.get("/", (req: Request) => {
+router.original.get("/", () => {
+  return customSwaggerUIResponse();
+});
+
+router.original.get("/api", (req: Request) => {
   const host = req.headers.get("host") || "";
   const protocol = req.url.split("://")[0];
-  const redirectTo = `${protocol}://${host}${BASE}`;
+  const redirectTo = `${protocol}://${host}`;
   return Response.redirect(redirectTo, 301);
-});
-router.original.get("/api", () => {
-  return customSwaggerUIResponse();
 });
 
 router.get(BASE + "/info/:slug", info);
