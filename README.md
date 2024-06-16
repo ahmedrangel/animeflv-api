@@ -12,7 +12,7 @@ https://animeflv.ahmedrangel.com/api
 
 `POST` [/search/by-filter](https://animeflv.ahmedrangel.com/api#/Search/post_searchByFilter)
 
-`POST` [/search/by-url](https://animeflv.ahmedrangel.com/api#/Search/get_searchByUrl)
+`GET` [/search/by-url](https://animeflv.ahmedrangel.com/api#/Search/get_searchByUrl)
 
 ### Latest
 `GET` [/latest](https://animeflv.ahmedrangel.com/api#/Latest/get_latest)
