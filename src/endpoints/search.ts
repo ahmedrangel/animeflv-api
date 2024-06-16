@@ -1,5 +1,5 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Query, Arr } from "@cloudflare/itty-router-openapi";
-import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from "../constants";
+import { AnimeGenreEnum, AnimeStatusEnum, AnimeStatuses, AnimeTypeEnum, FilterOrderEnum } from "../constants";
 import { searchAnime } from "functions/searchAnime";
 import { searchAnimesByFilter } from "functions/searchAnimesByFilter";
 import { ExampleSearch, ExampleSearchByFilter } from "constants/responseExamples";
@@ -68,7 +68,7 @@ export class searchByFilter extends OpenAPIRoute {
         example: genres.slice(0, 4)
       }),
       statuses: new Arr(Number, {
-        description: `Estado actual del Anime. [${types.join(", ")}]`,
+        description: `Id del estado actual del Anime. [${statuses.join(", ")}] que respectivamente indican [${AnimeStatuses.join(", ")}]`,
         required: false,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-expect-error
