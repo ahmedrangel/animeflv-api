@@ -5,17 +5,17 @@ https://animeflv.ahmedrangel.com/api
 
 ## Endpoints
 ### Info
-`GET` [/info/{slug}](https://animeflv.ahmedrangel.com/api#/Info/get_info)
+`GET` [/info/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
 
 ### Search
-`GET` [/search](https://animeflv.ahmedrangel.com/api#/Search/get_search)
+`GET` [/search](https://animeflv.ahmedrangel.com/#/Search/get_search)
 
-`POST` [/search/by-filter](https://animeflv.ahmedrangel.com/api#/Search/post_searchByFilter)
+`POST` [/search/by-filter](https://animeflv.ahmedrangel.com/#/Search/post_searchByFilter)
 
-`GET` [/search/by-url](https://animeflv.ahmedrangel.com/api#/Search/get_searchByUrl)
+`GET` [/search/by-url](https://animeflv.ahmedrangel.com/#/Search/get_searchByUrl)
 
 ### Latest
-`GET` [/latest](https://animeflv.ahmedrangel.com/api#/Latest/get_latest)
+`GET` [/latest](https://animeflv.ahmedrangel.com/#/Latest/get_latest)
 
 ### On Air
-`GET` [/on-air](https://animeflv.ahmedrangel.com/api#/On%20Air/get_onAir)
+`GET` [/on-air](https://animeflv.ahmedrangel.com/#/On%20Air/get_onAir)
