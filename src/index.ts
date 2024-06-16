@@ -17,11 +17,11 @@ export const router = OpenAPIRouter({
 });
 
 const customSwaggerUIResponse = () => {
-  const bg = "#1f2433";
+  const bg = "#1b2026";
   return new Response(customSwaggerUI("/openapi.json", {
     dark: true,
     bg_color: bg,
-    section_header_bg_color: "#161c20",
+    section_header_bg_color: "#121212",
     get_color: "#22defa",
     code_bg_color: "#262626"
   }), { headers: { "Content-Type": "text/html" } });
