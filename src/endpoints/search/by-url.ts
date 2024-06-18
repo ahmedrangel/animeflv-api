@@ -7,7 +7,7 @@ import ErrorResponse from "responses/errorResponse";
 export class searchByUrl extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
     tags: ["Search"],
-    summary: "Busca usando una URL determinada y devuelve un objeto con lo encontrado. El URL puede ser obtenido de las propiedades \"previousPage\" y \"nextPage\" de otros métodos",
+    summary: "Busca usando una URL de consulta y devuelve un objeto con lo encontrado. El URL puede ser obtenido de las propiedades \"previousPage\" y \"nextPage\" de otros métodos",
     parameters: {
       url: Query(String, {
         description: "URL de consultar.",
