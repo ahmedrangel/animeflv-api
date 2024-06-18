@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v0.1.1...v1.0.0)
+
+### 🚀 Enhancements
+
+- Endpoint restructuring + fixes ([9f8367f](https://github.com/ahmedrangel/animeflv-api/commit/9f8367f))
+
+### 🏡 Chore
+
+- Eslint config inside .config dir ([57302a6](https://github.com/ahmedrangel/animeflv-api/commit/57302a6))
+- Remove unnecessary ([bf84130](https://github.com/ahmedrangel/animeflv-api/commit/bf84130))
+- Adjust examples ([92045f5](https://github.com/ahmedrangel/animeflv-api/commit/92045f5))
+- Stringify examples ([f5bc689](https://github.com/ahmedrangel/animeflv-api/commit/f5bc689))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v0.1.1
 
 
