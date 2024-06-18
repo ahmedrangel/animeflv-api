@@ -1,5 +1,5 @@
 import { OpenAPIRouter } from "@cloudflare/itty-router-openapi";
-import { info, search, latest, onAir, searchByFilter, searchByUrl, episode } from "./endpoints";
+import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodNumber } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
 
@@ -40,6 +40,7 @@ router.original.get("/api", (req: Request) => {
 
 router.get(BASE + "/anime/:slug", info);
 router.get(BASE + "/anime/episode/:slug", episode);
+router.get(BASE + "/anime/:slug/episode/:number", episodeByAnimeSlugAndEpisodNumber);
 router.get(BASE + "/search", search);
 router.post(BASE + "/search/by-filter", searchByFilter);
 router.get(BASE + "/search/by-url", searchByUrl);

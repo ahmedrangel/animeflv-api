@@ -3,12 +3,19 @@ import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../constants";
 import type { EpisodeInfoData, EpisodeServersData } from "types";
 
-export const getEpisodeLinks = async (episodeId: string): Promise<any | null> => {
+export const getEpisodeLinks = async (slug: string, number?: number): Promise<any | null> => {
   try {
-    const episodeData = await $fetch(AnimeflvUrls.host + "/ver/" + episodeId).catch(() => null);
-    if (!episodeData) return null;
+    const episodeData = async () => {
+      if (slug && !number)
+        return await $fetch(AnimeflvUrls.host + "/ver/" + slug).catch(() => null);
+      else if (slug && number)
+        return await $fetch(AnimeflvUrls.host + "/ver/" + slug + "-" + number).catch(() => null);
+      else return null;
+    };
 
-    const $ = load(episodeData);
+    if (!(await episodeData())) return null;
+
+    const $ = load(await episodeData());
 
     const episodeLinks: EpisodeInfoData = {
       title: $("body > div.Wrapper > div.Body > div > div > div > nav.Brdcrmb > a").next("i").next("a").text(),
@@ -30,7 +37,8 @@ export const getEpisodeLinks = async (episodeId: string): Promise<any | null> =>
     }
 
     const otherDownloads = $("body > div.Wrapper > div.Body > div > div > div > div > div > table > tbody > tr");
-    otherDownloads.each((i, el) => {
+
+    for (const el of otherDownloads) {
       const name = $(el).find("td").eq(0).text();
       const lookFor = ["Zippyshare", "1Fichier"];
       if (lookFor.includes(name)) {
@@ -39,8 +47,7 @@ export const getEpisodeLinks = async (episodeId: string): Promise<any | null> =>
           download: $(el).find("td:last-child a").attr("href") as string,
         });
       }
-    });
-
+    }
     return episodeLinks;
   }
   catch {
