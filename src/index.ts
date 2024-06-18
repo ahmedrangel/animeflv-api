@@ -1,11 +1,12 @@
-import { OpenAPIRouter } from "@cloudflare/itty-router-openapi";
+import { fromIttyRouter } from "chanfana";
+import { IttyRouter } from "itty-router";
 import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodNumber } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
 
 const BASE = "/api";
 
-export const router = OpenAPIRouter({
+export const router = fromIttyRouter(IttyRouter(), {
   redoc_url: "/redoc",
   schema: {
     info: {
@@ -54,6 +55,6 @@ router.all("*", () =>
 
 export default {
   fetch: async (req, env, ctx) => {
-    return router.handle(req, env, ctx);
+    return router.fetch(req, env, ctx);
   }
 } as ExportedHandler;
