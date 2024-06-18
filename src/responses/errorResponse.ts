@@ -1,7 +1,8 @@
 class ErrorResponse extends Response {
-  constructor(statusCode: number, body: Record<string, any>, opt?: Record<string, any>) {
+  constructor(status: number, body: Record<string, any>, opt?: Record<string, any>) {
     const options = {
-      statusCode,
+      status,
+      statusText: body?.error,
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
         "Access-Control-Allow-Origin": "*",
