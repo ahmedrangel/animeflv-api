@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.0.0...v1.1.0)
+
+### 🚀 Enhancements
+
+- Add anime/episode/:slug endpoint ([6275f39](https://github.com/ahmedrangel/animeflv-api/commit/6275f39))
+
+### 🩹 Fixes
+
+- Error response constructor ([283e5c6](https://github.com/ahmedrangel/animeflv-api/commit/283e5c6))
+
+### 🏡 Chore
+
+- Adjust types and update response examples ([582cebe](https://github.com/ahmedrangel/animeflv-api/commit/582cebe))
+- Update readme ([0dc7006](https://github.com/ahmedrangel/animeflv-api/commit/0dc7006))
+- Improve endpoint directory structure to match endpoint paths ([24c7fea](https://github.com/ahmedrangel/animeflv-api/commit/24c7fea))
+- Add missing error responses ([9ba3769](https://github.com/ahmedrangel/animeflv-api/commit/9ba3769))
+- Update endpoint descriptions ([2becc53](https://github.com/ahmedrangel/animeflv-api/commit/2becc53))
+- Adjust description ([b6c3df5](https://github.com/ahmedrangel/animeflv-api/commit/b6c3df5))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v1.0.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v0.1.1...v1.0.0)
