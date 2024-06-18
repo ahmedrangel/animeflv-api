@@ -5,7 +5,7 @@ import JsonResponse from "responses/jsonResponse";
 
 export class latest extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
-    tags: ["Latest"],
+    tags: ["List"],
     summary: "Devuelve un arreglo con los últimos episodios subidos.",
     responses: {
       "200": {

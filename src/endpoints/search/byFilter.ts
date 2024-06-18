@@ -1,8 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Query, Arr } from "@cloudflare/itty-router-openapi";
-import { AnimeGenreEnum, AnimeStatusEnum, AnimeStatuses, AnimeTypeEnum, FilterOrderEnum } from "../constants";
-import { searchAnime } from "functions/searchAnime";
+import { AnimeGenreEnum, AnimeStatusEnum, AnimeStatuses, AnimeTypeEnum, FilterOrderEnum } from "../../constants";
 import { searchAnimesByFilter } from "functions/searchAnimesByFilter";
-import { ExampleSearch, ExampleSearchByFilter } from "constants/responseExamples";
+import { ExampleSearchByFilter } from "constants/responseExamples";
 import JsonResponse from "responses/jsonResponse";
 import ErrorResponse from "responses/errorResponse";
 
@@ -10,43 +9,6 @@ const genres = Object.values(AnimeGenreEnum);
 const statuses = Object.values(AnimeStatusEnum);
 const types = Object.values(AnimeTypeEnum);
 const orders = Object.values(FilterOrderEnum);
-
-export class search extends OpenAPIRoute {
-  static schema: OpenAPIRouteSchema = {
-    tags: ["Search"],
-    summary: "Busca y devuelve un objeto usando una consulta.",
-    parameters: {
-      query: Query(String, {
-        description: "Parámetro de consulta.",
-      }),
-    },
-    responses: {
-      "200": {
-        description: "El objeto tiene varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el id, el tipo y la url del anime.",
-        schema: {
-          success: Boolean,
-          search: ExampleSearch
-        },
-      },
-      "404": {
-        description: "No se han encontrado resultados en la búsqueda",
-        schema: {
-          success: Boolean,
-          error: String,
-        },
-      },
-    },
-  };
-
-  async handle(req: Request, env: any, ctx: any, data: Record<string, any>) {
-    const { query } = data.query as Record<string, string>;
-    const search = await searchAnime(query);
-    return new JsonResponse({
-      success: true,
-      search
-    });
-  }
-}
 
 export class searchByFilter extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
@@ -133,43 +95,6 @@ export class searchByFilter extends OpenAPIRoute {
       return new ErrorResponse(400, { success: false, error: "Solo se permite máximo 4 géneros." });
 
     const search = await searchAnimesByFilter({ ...body, order: order });
-    return new JsonResponse({
-      success: true,
-      search
-    });
-  }
-}
-
-export class searchByUrl extends OpenAPIRoute {
-  static schema: OpenAPIRouteSchema = {
-    tags: ["Search"],
-    summary: "Busca usando una URL determinada y devuelve un objeto con lo encontrado. El URL puede ser obtenido de las propiedades \"previousPage\" y \"nextPage\" de otros métodos",
-    parameters: {
-      url: Query(String, {
-        description: "URL a consultar.",
-      }),
-    },
-    responses: {
-      "200": {
-        description: "El objeto tiene varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el id, el tipo y la url del anime.",
-        schema: {
-          success: Boolean,
-          search: ExampleSearch
-        },
-      },
-      "404": {
-        description: "No se han encontrado resultados en la búsqueda",
-        schema: {
-          success: Boolean,
-          error: String,
-        },
-      },
-    },
-  };
-
-  async handle(req: Request, env: any, ctx: any, data: Record<string, any>) {
-    const { query } = data.query as Record<string, string>;
-    const search = await searchAnime(query);
     return new JsonResponse({
       success: true,
       search

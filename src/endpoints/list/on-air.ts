@@ -5,7 +5,7 @@ import JsonResponse from "responses/jsonResponse";
 
 export class onAir extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
-    tags: ["On Air"],
+    tags: ["List"],
     summary: "Devuelve un arreglo con los animes que actualmente están siendo transmitidos.",
     responses: {
       "200": {

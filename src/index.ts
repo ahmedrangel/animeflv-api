@@ -38,12 +38,12 @@ router.original.get("/api", (req: Request) => {
   return Response.redirect(redirectTo, 301);
 });
 
-router.get(BASE + "/info/:slug", info);
+router.get(BASE + "/anime/:slug", info);
 router.get(BASE + "/search", search);
 router.post(BASE + "/search/by-filter", searchByFilter);
 router.get(BASE + "/search/by-url", searchByUrl);
-router.get(BASE + "/latest", latest);
-router.get(BASE + "/on-air", onAir);
+router.get(BASE + "/list/latest-episodes", latest);
+router.get(BASE + "/list/animes-on-air", onAir);
 
 // 404 for everything else
 router.all("*", () =>
