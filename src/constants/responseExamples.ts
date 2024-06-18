@@ -164,72 +164,72 @@ export const ExampleLatest: ChapterData[] = [
 ];
 
 export const ExampleSearchByFilter: SearchAnimeResults = {
-  "previousPage": null,
-  "nextPage": "https://www3.animeflv.net/browse?genre%5B%5D=shounen&status%5B%5D=2&type%5B%5D=tv&order=default&page=2",
-  "foundPages": 24,
-  "data": [
+  previousPage: null,
+  nextPage: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&status%5B%5D=2&type%5B%5D=tv&order=default&page=2",
+  foundPages: 24,
+  data: [
     {
-      "title": "One Room, Hiatari Futsuu, Tenshi-tsuki.",
-      "cover": "https://animeflv.net/uploads/animes/covers/3952.jpg",
-      "synopsis": "Luego de un largo día, los planes del estudiante de preparatoria Shintaro Tokumitsu para relajarse en su estudio se complican cuando descubre un ángel en su balcón. La chica divina, Towa, le revela que su propósito es estudiar a la humanidad y, a pesar de su escepticismo, él accede a hospedarla. Prepárate para la historia de convivencia más ...",
-      "rating": "4.2",
-      "slug": "one-room-hiatari-futsuu-tenshitsuki",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/one-room-hiatari-futsuu-tenshitsuki"
+      title: "One Room, Hiatari Futsuu, Tenshi-tsuki.",
+      cover: "https://animeflv.net/uploads/animes/covers/3952.jpg",
+      synopsis: "Luego de un largo día, los planes del estudiante de preparatoria Shintaro Tokumitsu para relajarse en su estudio se complican cuando descubre un ángel en su balcón. La chica divina, Towa, le revela que su propósito es estudiar a la humanidad y, a pesar de su escepticismo, él accede a hospedarla. Prepárate para la historia de convivencia más ...",
+      rating: "4.2",
+      slug: "one-room-hiatari-futsuu-tenshitsuki",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/one-room-hiatari-futsuu-tenshitsuki"
     },
     {
-      "title": "Sengoku Youko",
-      "cover": "https://animeflv.net/uploads/animes/covers/3941.jpg",
-      "synopsis": "Los humanos y lo katawara están en guerra, pero en ambos bandos hay quienes deciden unir fuerzas. Tama es un espíritu zorro que adora a los humanos, mientras que su hermano jurado Jinka, un sabio, los odia. Juntos usarán el poder de la transformación espiritual para derrotar a los monstruos katawara y poner fin a las maldades de esta era de bar...",
-      "rating": "4.0",
-      "slug": "sengoku-youko",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/sengoku-youko"
+      title: "Sengoku Youko",
+      cover: "https://animeflv.net/uploads/animes/covers/3941.jpg",
+      synopsis: "Los humanos y lo katawara están en guerra, pero en ambos bandos hay quienes deciden unir fuerzas. Tama es un espíritu zorro que adora a los humanos, mientras que su hermano jurado Jinka, un sabio, los odia. Juntos usarán el poder de la transformación espiritual para derrotar a los monstruos katawara y poner fin a las maldades de esta era de bar...",
+      rating: "4.0",
+      slug: "sengoku-youko",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/sengoku-youko"
     },
     {
-      "title": "Himesama \"Goumon\" no Jikan desu",
-      "cover": "https://animeflv.net/uploads/animes/covers/3936.jpg",
-      "synopsis": "Cuando la guerra entre el Ejército Imperial y los Infernales hace estragos, la princesa, a pesar de ir armada con su mítica espada Excalibur, es capturada y aprisionada. ¿A qué clase de tortura tendrá que hacer frente a manos de la interrogadora principal de los demonios? ¡Tostadas recién hechas! ¡Ramen calentito y humeante! ¡Ay, la humani...",
-      "rating": "3.9",
-      "slug": "himesama-goumon-no-jikan-desu",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/himesama-goumon-no-jikan-desu"
+      title: "Himesama \"Goumon\" no Jikan desu",
+      cover: "https://animeflv.net/uploads/animes/covers/3936.jpg",
+      synopsis: "Cuando la guerra entre el Ejército Imperial y los Infernales hace estragos, la princesa, a pesar de ir armada con su mítica espada Excalibur, es capturada y aprisionada. ¿A qué clase de tortura tendrá que hacer frente a manos de la interrogadora principal de los demonios? ¡Tostadas recién hechas! ¡Ramen calentito y humeante! ¡Ay, la humani...",
+      rating: "3.9",
+      slug: "himesama-goumon-no-jikan-desu",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/himesama-goumon-no-jikan-desu"
     },
     {
-      "title": "Ao no Exorcist: Shimane Illuminati-hen",
-      "cover": "https://animeflv.net/uploads/animes/covers/3929.jpg",
-      "synopsis": "Tercera temporada de Ao no Exorcist",
-      "rating": "4.5",
-      "slug": "ao-no-exorcist-shimane-illuminatihen",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/ao-no-exorcist-shimane-illuminatihen"
+      title: "Ao no Exorcist: Shimane Illuminati-hen",
+      cover: "https://animeflv.net/uploads/animes/covers/3929.jpg",
+      synopsis: "Tercera temporada de Ao no Exorcist",
+      rating: "4.5",
+      slug: "ao-no-exorcist-shimane-illuminatihen",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/ao-no-exorcist-shimane-illuminatihen"
     },
     {
-      "title": "Mato Seihei no Slave",
-      "cover": "https://animeflv.net/uploads/animes/covers/3920.jpg",
-      "synopsis": "Cuando las entradas a una dimensión diferente conocida como el “Mato” surgen por todo Japón, se descubre un nuevo recurso conocido como “Duraznos\" que otorga habilidades únicas solo a las mujeres. Sin embargo, unos peligrosos monstruos llamados “Yomotsu Shuuki” también rondan por Mato y son responsables de varios desastres desde enton...",
-      "rating": "4.3",
-      "slug": "mato-seihei-no-slave",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/mato-seihei-no-slave"
+      title: "Mato Seihei no Slave",
+      cover: "https://animeflv.net/uploads/animes/covers/3920.jpg",
+      synopsis: "Cuando las entradas a una dimensión diferente conocida como el “Mato” surgen por todo Japón, se descubre un nuevo recurso conocido como “Duraznos\" que otorga habilidades únicas solo a las mujeres. Sin embargo, unos peligrosos monstruos llamados “Yomotsu Shuuki” también rondan por Mato y son responsables de varios desastres desde enton...",
+      rating: "4.3",
+      slug: "mato-seihei-no-slave",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/mato-seihei-no-slave"
     },
     {
-      "title": "Undead Unluck",
-      "cover": "https://animeflv.net/uploads/animes/covers/3891.jpg",
-      "synopsis": "Tras leer la conclusión de su serie de manga favorita, Fuuko Izumo se siente finalmente preparada para poner fin a su existencia. Durante los últimos 10 años, Fuuko se ha visto afectada por una condición que trae consigo una desgracia extrema para cualquiera que la toque. Esto ha tenido un efecto drástico en su entorno, e incluso ha provocado ...",
-      "rating": "4.6",
-      "slug": "undead-unluck",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/undead-unluck"
+      title: "Undead Unluck",
+      cover: "https://animeflv.net/uploads/animes/covers/3891.jpg",
+      synopsis: "Tras leer la conclusión de su serie de manga favorita, Fuuko Izumo se siente finalmente preparada para poner fin a su existencia. Durante los últimos 10 años, Fuuko se ha visto afectada por una condición que trae consigo una desgracia extrema para cualquiera que la toque. Esto ha tenido un efecto drástico en su entorno, e incluso ha provocado ...",
+      rating: "4.6",
+      slug: "undead-unluck",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/undead-unluck"
     },
     {
-      "title": "Shy",
-      "cover": "https://animeflv.net/uploads/animes/covers/3870.jpg",
-      "synopsis": "Estando el mundo al borde de una tercera Guerra Mundial, surgieron superhéroes. Dotados de poderes extraordinarios, su aparición marcó el inicio de una era de paz global. Cada héroe escogió un país para habitar, proteger y servir a sus ciudadanos. Shy es la heroína de Japón, dotada de una fuerza sobrehumana. ¿Su mayor adversario? Su propia...",
-      "rating": "3.9",
-      "slug": "shy",
-      "type": "Anime",
-      "url": "https://www3.animeflv.net/anime/shy"
+      title: "Shy",
+      cover: "https://animeflv.net/uploads/animes/covers/3870.jpg",
+      synopsis: "Estando el mundo al borde de una tercera Guerra Mundial, surgieron superhéroes. Dotados de poderes extraordinarios, su aparición marcó el inicio de una era de paz global. Cada héroe escogió un país para habitar, proteger y servir a sus ciudadanos. Shy es la heroína de Japón, dotada de una fuerza sobrehumana. ¿Su mayor adversario? Su propia...",
+      rating: "3.9",
+      slug: "shy",
+      type: "Anime",
+      url: "https://www3.animeflv.net/anime/shy"
     }
   ]
 };
