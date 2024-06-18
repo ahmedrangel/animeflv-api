@@ -14,7 +14,7 @@ export class episode extends OpenAPIRoute {
     },
     responses: {
       "200": {
-        description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, episodios, y url.",
+        description: "El objeto contiene información como el título, número y un arreglo de servers con nombres, url descarga y url embed.",
         schema: {
           success: Boolean,
           episode: ExampleEpisodeInfo

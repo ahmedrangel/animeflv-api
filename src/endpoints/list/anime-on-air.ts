@@ -10,7 +10,7 @@ export class onAir extends OpenAPIRoute {
     summary: "Devuelve un arreglo con los animes que actualmente están siendo transmitidos.",
     responses: {
       "200": {
-        description: "Cada objeto en el arreglo contiene información como el título, el tipo, el id, y la url del anime. Estos objetos están ordenados de acuerdo a su fecha de transmisión, los animes más recientes estarán en la parte inferior del arreglo.",
+        description: "Cada objeto en el arreglo contiene información como el título, el tipo, el slug, y la url del anime. Estos objetos están ordenados de acuerdo a su fecha de transmisión, los animes más recientes estarán en la parte inferior del arreglo.",
         schema: {
           success: Boolean,
           onair: ExampleOnAir
