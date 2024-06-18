@@ -2,6 +2,7 @@ import { type OpenAPIRouteSchema, OpenAPIRoute } from "@cloudflare/itty-router-o
 import { getLatest } from "functions/getLatest";
 import { ExampleLatest } from "constants/responseExamples";
 import JsonResponse from "responses/jsonResponse";
+import ErrorResponse from "responses/errorResponse";
 
 export class latest extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
@@ -27,6 +28,7 @@ export class latest extends OpenAPIRoute {
 
   async handle() {
     const latest = await getLatest();
+    if (!latest) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
     return new JsonResponse({
       success: true,
       latest

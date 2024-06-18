@@ -2,6 +2,7 @@ import { type OpenAPIRouteSchema, OpenAPIRoute } from "@cloudflare/itty-router-o
 import { getOnAir } from "functions/getOnAir";
 import { ExampleOnAir } from "constants/responseExamples";
 import JsonResponse from "responses/jsonResponse";
+import ErrorResponse from "responses/errorResponse";
 
 export class onAir extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
@@ -27,6 +28,7 @@ export class onAir extends OpenAPIRoute {
 
   async handle() {
     const onair = await getOnAir();
+    if (!onair) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
     return new JsonResponse({
       success: true,
       onair

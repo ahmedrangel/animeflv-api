@@ -2,6 +2,7 @@ import { type OpenAPIRouteSchema, OpenAPIRoute, Query } from "@cloudflare/itty-r
 import { searchAnime } from "functions/searchAnime";
 import { ExampleSearch } from "constants/responseExamples";
 import JsonResponse from "responses/jsonResponse";
+import ErrorResponse from "responses/errorResponse";
 
 export class search extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
@@ -33,6 +34,7 @@ export class search extends OpenAPIRoute {
   async handle(req: Request, env: any, ctx: any, data: Record<string, any>) {
     const { query } = data.query as Record<string, string>;
     const search = await searchAnime(query);
+    if (!search || !search?.data?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({
       success: true,
       search

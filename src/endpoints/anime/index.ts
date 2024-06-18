@@ -1,6 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Path } from "@cloudflare/itty-router-openapi";
 import { getAnimeInfo } from "functions/getAnimeInfo";
 import { ExampleInfo } from "constants/responseExamples";
+import ErrorResponse from "responses/errorResponse";
 
 export class info extends OpenAPIRoute {
   static schema: OpenAPIRouteSchema = {
@@ -33,6 +34,7 @@ export class info extends OpenAPIRoute {
     console.log(data.params);
     const { slug } = data.params as Record<string, string>;
     const info = await getAnimeInfo(slug);
+    if (!info) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el anime" });
     return {
       success: true,
       info
