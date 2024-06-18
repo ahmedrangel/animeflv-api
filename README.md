@@ -6,7 +6,9 @@ https://animeflv.ahmedrangel.com/api
 ## Endpoints
 ### Info
 `GET` [/anime/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
+
 `GET` [/anime/episode/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_episode)
+
 `GET` [/anime/{slug}/episode/:number](https://animeflv.ahmedrangel.com/#/Info/get_episodeByAnimeSlugAndEpisodNumber)
 
 
@@ -19,4 +21,5 @@ https://animeflv.ahmedrangel.com/api
 
 ### List
 `GET` [/list/latest-episodes](https://animeflv.ahmedrangel.com/#/List/get_latest)
+
 `GET` [/list/animes-on-air](https://animeflv.ahmedrangel.com/#/List/get_onAir)
