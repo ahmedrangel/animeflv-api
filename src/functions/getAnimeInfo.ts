@@ -4,10 +4,6 @@ import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../constants";
 
 export const getAnimeInfo = async (animeId: string): Promise<AnimeData | null> => {
-  if (!animeId || (typeof animeId !== "string")) {
-    throw new TypeError(`El parámetro animeId debe ser una string no vacía, pasaste: ${animeId}`, { cause: `animeId: ${animeId}` });
-  }
-
   try {
     const url = AnimeflvUrls.host + "/anime/" + animeId;
     console.log(url);
@@ -34,7 +30,6 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeData | null> =
           url: AnimeflvUrls.host + "/ver/" + animeId + "-" + i
         });
       }
-
     };
 
     $("body > div.Wrapper > div > div > div.Ficha.fchlt > div.Container > div:nth-child(3) > span").each((i, el) => {
