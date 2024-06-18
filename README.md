@@ -5,7 +5,9 @@ https://animeflv.ahmedrangel.com/api
 
 ## Endpoints
 ### Info
-`GET` [/info/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
+`GET` [/anime/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
+`GET` [/anime/episode/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
+
 
 ### Search
 `GET` [/search](https://animeflv.ahmedrangel.com/#/Search/get_search)
