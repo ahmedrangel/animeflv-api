@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- Add ednpoint /anime/:slug/episode/:number ([4b56b42](https://github.com/ahmedrangel/animeflv-api/commit/4b56b42))
+
+### 🏡 Chore
+
+- Update readme ([c32c33e](https://github.com/ahmedrangel/animeflv-api/commit/c32c33e))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v1.1.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.0.0...v1.1.0)
