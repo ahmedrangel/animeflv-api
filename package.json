@@ -23,7 +23,7 @@
 		"worker:deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"worker:dev": "wrangler dev",
-		"lint": "eslint --fix .",
+		"lint": "eslint --fix --config .config/eslint.mjs",
 		"tail": "wrangler tail"
 	},
 	"devDependencies": {
