@@ -1,4 +1,4 @@
-import type { AnimeData, AnimeGenre, AnimeOnAirData, AnimeStatus, AnimeType, ChapterData, PartialAnimeData, SearchAnimeResults } from "types";
+import type { AnimeInfoData, AnimeGenre, AnimeOnAirData, AnimeStatus, AnimeType, ChapterData, PartialAnimeData, SearchAnimeResults, EpisodeInfoData, EpisodeServersData } from "types";
 
 export const ExampleSearch: SearchAnimeResults = {
   "previousPage": null,
@@ -53,24 +53,87 @@ export const ExampleSearch: SearchAnimeResults = {
   ] as PartialAnimeData[]
 };
 
-export const ExampleInfo: AnimeData = {
-  "title": "Overlord",
-  "alternative_titles": ["Overlord"],
-  "status": "Finalizado" as AnimeStatus,
-  "rating": "4.8",
+export const ExampleInfo: AnimeInfoData = {
+  "title": "Ookami to Koushinryou: Merchant Meets the Wise Wolf",
+  "alternative_titles": [
+    "Spice and Wolf",
+    "狼と香辛料 MERCHANT MEETS THE WISE WOLF",
+    "Spice and Wolf: Merchant Meets the Wise Wolf"
+  ],
+  "status": "En emision" as AnimeStatus,
+  "rating": "4.6",
   "type": "Anime" as AnimeType,
-  "cover": "https://animeflv.net/uploads/animes/covers/2105.jpg",
-  "synopsis": "La historia da comienzo cuando Yggdrasil, un popular juego online, es cerrado un día sin previo aviso. Sin embargo, el protagonista, Momonga, decide no salir del juego. Momonga así se transforma y se convierte en “el mago más poderoso”. El mundo sigue cambiando con él dentro, y los NPCs comienzan a sentir emociones. Sin familia, amigos ni lugar en la sociedad, Momonga tendrá que luchar por adaptarse al nuevo mundo en el que se ha convertido el juego.",
+  "cover": "https://animeflv.net/uploads/animes/covers/3957.jpg",
+  "synopsis": "Lawrence, un comerciante ambulante, encuentra a una chica desnuda con orejas y cola de lobo dormida en su carro. Ella es Holo, una diosa de la cosecha con una bestia indómita acechando en su interior. Armado con su astucia callejera y sus instintos animales, un simple vendedor ambulante y una deidad olvidada viajan por el campo mientras cosechan las riquezas de la felicidad y exponen la bancarrota que habita en el corazón humano.",
   "genres": [
-    "Acción",
     "Aventuras",
+    "Drama",
     "Fantasía",
-    "Juegos",
-    "Magia",
-    "Sobrenatural"
+    "Romance"
   ] as AnimeGenre[],
-  "episodes": 13,
-  "url": "https://www3.animeflv.net/anime/overlord"
+  "episodes": [
+    {
+      "number": 1,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-1",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-1"
+    },
+    {
+      "number": 2,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-2",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-2"
+    },
+    {
+      "number": 3,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-3",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-3"
+    },
+    {
+      "number": 4,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-4",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-4"
+    },
+    {
+      "number": 5,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-5",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-5"
+    },
+    {
+      "number": 6,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-6",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-6"
+    },
+    {
+      "number": 7,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-7",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-7"
+    },
+    {
+      "number": 8,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-8",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-8"
+    },
+    {
+      "number": 9,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-9",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-9"
+    },
+    {
+      "number": 10,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-10",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-10"
+    },
+    {
+      "number": 11,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-11",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-11"
+    },
+    {
+      "number": 12,
+      "slug": "ookami-to-koushinryou-merchant-meets-the-wise-wolf-12",
+      "url": "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-12"
+    }
+  ],
+  "url": "https://www3.animeflv.net/anime/ookami-to-koushinryou-merchant-meets-the-wise-wolf"
 };
 
 export const ExampleOnAir: AnimeOnAirData[] = [
@@ -121,43 +184,43 @@ export const ExampleOnAir: AnimeOnAirData[] = [
 export const ExampleLatest: ChapterData[] = [
   {
     "title": "Shadowverse Flame",
-    "chapter": 85,
+    "number": 85,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3590.jpg",
     "url": "https://www3.animeflv.net/ver/shadowverse-flame-85"
   },
   {
     "title": "Highspeed Etoile",
-    "chapter": 11,
+    "number": 11,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3968.jpg",
     "url": "https://www3.animeflv.net/ver/highspeed-etoile-11"
   },
   {
     "title": "The iDOLM@STER Shiny Colors",
-    "chapter": 11,
+    "number": 11,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3990.jpg",
     "url": "https://www3.animeflv.net/ver/the-idolmster-shiny-colors-11"
   },
   {
     "title": "Maou Gakuin no Futekigousha II",
-    "chapter": 21,
+    "number": 21,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3739.jpg",
     "url": "https://www3.animeflv.net/ver/maou-gakuin-no-futekigousha-ii-21"
   },
   {
     "title": "Mahouka Koukou no Rettousei 3rd Season",
-    "chapter": 11,
+    "number": 11,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3967.jpg",
     "url": "https://www3.animeflv.net/ver/mahouka-koukou-no-rettousei-3rd-season-11"
   },
   {
     "title": "Tensei shitara Slime Datta Ken 3rd Season",
-    "chapter": 11,
+    "number": 11,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3966.jpg",
     "url": "https://www3.animeflv.net/ver/tensei-shitara-slime-datta-ken-3rd-season-11"
   },
   {
     "title": "Astro Note",
-    "chapter": 11,
+    "number": 11,
     "cover": "https://animeflv.net/uploads/animes/thumbs/3965.jpg",
     "url": "https://www3.animeflv.net/ver/astro-note-11"
   },
@@ -232,4 +295,45 @@ export const ExampleSearchByFilter: SearchAnimeResults = {
       "url": "https://www3.animeflv.net/anime/shy"
     }
   ]
+};
+
+export const ExampleEpisodeInfo: EpisodeInfoData = {
+  "title": "Ookami to Koushinryou: Merchant Meets the Wise Wolf",
+  "number": 12,
+  "servers": [
+    {
+      "name": "MEGA",
+      "download": "https://mega.nz/file/MC1RgaAT!zKffrGN8xztzpsT3QkhajaLl_QIyYbIAFSskStSCwj0",
+      "embed": "https://mega.nz/embed/MC1RgaAT!zKffrGN8xztzpsT3QkhajaLl_QIyYbIAFSskStSCwj0"
+    },
+    {
+      "name": "SW",
+      "embed": "https://streamwish.to/e/c99w1xfpyx2j"
+    },
+    {
+      "name": "YourUpload",
+      "embed": "https://www.yourupload.com/embed/0c0L3K3ghh3b"
+    },
+    {
+      "name": "Maru",
+      "embed": "https://my.mail.ru/video/embed/7512958666216053778#aylaz9ymde#7186"
+    },
+    {
+      "name": "Okru",
+      "embed": "https://ok.ru/videoembed/7882501720753"
+    },
+    {
+      "name": "Netu",
+      "embed": "https://hqq.tv/player/embed_player.php?vid=cldtaXA0dWZ2em1qeW1lQWpkT1l0UT09"
+    },
+    {
+      "name": "Stape",
+      "download": "https://streamtape.com/v/gde42gZDXQfqQWA/",
+      "embed": "https://streamtape.com/e/gde42gZDXQfqQWA/"
+    },
+    {
+      "name": "1Fichier",
+      "download": "https://1fichier.com/?kpjbiych72d8hbuq4f6r"
+    }
+  ] as EpisodeServersData[]
 };

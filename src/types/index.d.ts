@@ -24,7 +24,6 @@ export interface PartialAnimeData {
 }
 
 export interface SearchAnimeResults {
-
     /** URL a la página anterior, o null en caso de no haber*/
     previousPage: string | null
     /** URL a la página siguiente, o null en caso de no haber*/
@@ -35,7 +34,7 @@ export interface SearchAnimeResults {
     data: PartialAnimeData[]
 }
 
-export interface AnimeData {
+export interface AnimeInfoData {
     /** Titulo del animé */
     title: string
     /** Array con titulos alternativos de este animé */
@@ -61,6 +60,8 @@ export interface AnimeData {
 export interface EpisodeData {
     /** Número del episodio */
     number: number
+    /** Slug del episodio */
+    slug: string
     /** Link del episodio */
     url: string
 }
@@ -69,7 +70,7 @@ export interface ChapterData {
     /** Título del episodio */
     title: string
     /** Número del episodio */
-    chapter: number
+    number: number
     /** URL del thumbnail de este episodio */
     cover: string
     /** URL directa del episodio */
@@ -106,4 +107,19 @@ export interface customSwaggerUIOptions {
     post_color?: string;
     delete_color?: string;
     code_bg_color?: string;
+}
+
+export interface EpisodeServersData {
+    /** Nombre del servidor */
+    name: string,
+    /** URL del servidor para descarga de episodio */
+    download?: string,
+    /** URL del servidor para embed del episodio */
+    embed?: string,
+};
+
+export interface EpisodeInfoData {
+    title: string,
+    number: number,
+    servers: EpisodeServersData[]
 }

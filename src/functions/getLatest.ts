@@ -16,7 +16,7 @@ export const getLatest = async (): Promise<ChapterData[]> => {
       chapterSelector.each((i, el) => {
         chapters.push({
           title: $(el).find("strong").text(),
-          chapter: Number($(el).find("span.Capi").text().replace("Episodio ", "")),
+          number: Number($(el).find("span.Capi").text().replace("Episodio ", "")),
           cover: AnimeflvUrls.images + ($(el).find("img").attr("src") as string),
           url: AnimeflvUrls.host + $(el).find("a").attr("href") as string
         });

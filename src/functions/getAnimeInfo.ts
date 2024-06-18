@@ -1,16 +1,16 @@
 import { load } from "cheerio";
-import type { AnimeData, AnimeGenre, AnimeStatus, AnimeType } from "../types";
+import type { AnimeInfoData, AnimeGenre, AnimeStatus, AnimeType } from "../types";
 import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../constants";
 
-export const getAnimeInfo = async (animeId: string): Promise<AnimeData | null> => {
+export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | null> => {
   try {
     const url = AnimeflvUrls.host + "/anime/" + animeId;
     console.log(url);
     const animeData = await $fetch(url).catch(() => null);
     const $ = load(animeData);
 
-    const animeInfo: AnimeData = {
+    const animeInfo: AnimeInfoData = {
       title: $("body > div.Wrapper > div > div > div.Ficha.fchlt > div.Container > h1").text(),
       alternative_titles: [],
       status: $("body > div.Wrapper > div > div > div.Container > div > aside > p > span").text() as AnimeStatus,
@@ -27,6 +27,7 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeData | null> =
       if (animeInfo.episodes instanceof Array) {
         animeInfo.episodes.push({
           number: i,
+          slug: animeId + "-" + i,
           url: AnimeflvUrls.host + "/ver/" + animeId + "-" + i
         });
       }
