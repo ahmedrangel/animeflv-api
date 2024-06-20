@@ -6,7 +6,6 @@ import { AnimeflvUrls } from "../constants";
 export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | null> => {
   try {
     const url = AnimeflvUrls.host + "/anime/" + animeId;
-    console.log(url);
     const animeData = await $fetch(url).catch(() => null);
     const $ = load(animeData);
 
