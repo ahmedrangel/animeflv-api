@@ -1,6 +1,6 @@
-import type { customSwaggerUIOptions } from "types";
+import type { customSwaggerUIOptionsTypes } from "types";
 
-export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOptions): string => {
+export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOptionsTypes): string => {
   schemaUrl = schemaUrl.replace(/\/+(\/|$)/g, "$1"); // strip double & trailing splash
   return `<!DOCTYPE html>
     <html lang="en">

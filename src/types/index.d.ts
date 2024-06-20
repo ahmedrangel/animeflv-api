@@ -111,7 +111,7 @@ export interface SeoOptions {
     twitterDescription?: string;
 }
 
-export interface customSwaggerUIOptions {
+export interface customSwaggerUIOptionsTypes {
     title?: string,
     description?: string,
     dark?: boolean,

@@ -1,10 +1,11 @@
 import { fromIttyRouter } from "chanfana";
 import { IttyRouter } from "itty-router";
-import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodNumber } from "./endpoints";
+import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodeNumber } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
 import HtmlResponse from "responses/htmlResponse";
 import { SITE } from "utils/site";
+import { customSwaggerUIOptions } from "utils";
 
 const BASE = "/api";
 
@@ -19,33 +20,9 @@ export const router = fromIttyRouter(IttyRouter(), {
   },
 });
 
-const customSwaggerUIResponse = () => {
-  const bg = "#1b2026";
-  const html = customSwaggerUI("/openapi.json", {
-    title: SITE.title,
-    description: SITE.description,
-    dark: true,
-    bg_color: bg,
-    section_header_bg_color: "#121212",
-    get_color: "#22defa",
-    code_bg_color: "#262626",
-    show_servers: false,
-    seo: {
-      ogType: "website",
-      ogTitle: SITE.title,
-      ogDescription: SITE.description,
-      ogSiteName: SITE.title,
-      ogUrl: SITE.host,
-      twitterTitle: SITE.title,
-      twitterDescription: SITE.description,
-    }
-  });
-  console.log(html);
-  return new HtmlResponse(html);
-};
-
 router.original.get("/", () => {
-  return customSwaggerUIResponse();
+  const html = customSwaggerUI("/openapi.json", customSwaggerUIOptions);
+  return new HtmlResponse(html);
 });
 
 router.original.get("/api", (req: Request) => {
@@ -57,7 +34,7 @@ router.original.get("/api", (req: Request) => {
 
 router.get(BASE + "/anime/:slug", info);
 router.get(BASE + "/anime/episode/:slug", episode);
-router.get(BASE + "/anime/:slug/episode/:number", episodeByAnimeSlugAndEpisodNumber);
+router.get(BASE + "/anime/:slug/episode/:number", episodeByAnimeSlugAndEpisodeNumber);
 router.get(BASE + "/search", search);
 router.post(BASE + "/search/by-filter", searchByFilter);
 router.get(BASE + "/search/by-url", searchByUrl);

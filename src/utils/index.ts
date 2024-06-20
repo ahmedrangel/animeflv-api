@@ -1,3 +1,26 @@
+import type { customSwaggerUIOptionsTypes } from "types";
+import { SITE } from "./site";
+
 export * from "./scrapAnimeData";
 export * from "./getPrevAndNextPages";
 export * from "./executeSearch";
+
+export const customSwaggerUIOptions = {
+  title: SITE.title,
+  description: SITE.description,
+  dark: true,
+  bg_color: "#1b2026",
+  section_header_bg_color: "#121212",
+  get_color: "#22defa",
+  code_bg_color: "#262626",
+  show_servers: false,
+  seo: {
+    ogType: "website",
+    ogTitle: SITE.title,
+    ogDescription: SITE.description,
+    ogSiteName: SITE.title,
+    ogUrl: SITE.host,
+    twitterTitle: SITE.title,
+    twitterDescription: SITE.description,
+  }
+} as customSwaggerUIOptionsTypes;
