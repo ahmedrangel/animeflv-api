@@ -12,10 +12,18 @@ jobs:
       - name: 🛎️ Checkout
         uses: actions/checkout@v4
 
+      - run: corepack enable
+    
+      - name: 🐢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'
+          cache: 'pnpm'
+
       - name: ☁️ Setup Cloudflare & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           packageManager: pnpm
-        
