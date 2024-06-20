@@ -117,6 +117,7 @@ export class searchByFilter extends OpenAPIRoute {
       return new ErrorResponse(400, { success: false, error: "Solo se permite máximo 4 géneros." });
 
     const search = await searchAnimesByFilter({ ...body, order: order });
+    if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({
       success: true,
       data: search

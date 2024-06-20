@@ -6,10 +6,10 @@ export function scrapSearchAnimeData($: CheerioAPI): PartialAnimeData[] {
   const selectedElement = $("body > div.Wrapper > div > div > main > ul > li");
 
   if (selectedElement.length > 0) {
-    const data: PartialAnimeData[] = [];
+    const media: PartialAnimeData[] = [];
 
     selectedElement.each((i, el) => {
-      data.push({
+      media.push({
         title: $(el).find("h3").text(),
         cover: $(el).find("figure > img").attr("src")!,
         synopsis: $(el).find("div.Description > p").eq(1).text(),
@@ -20,7 +20,7 @@ export function scrapSearchAnimeData($: CheerioAPI): PartialAnimeData[] {
       });
     });
 
-    return data;
+    return media;
 
   }
   else {

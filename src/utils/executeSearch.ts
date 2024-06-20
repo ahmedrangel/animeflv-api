@@ -11,13 +11,13 @@ export function executeSearch(searchData: string): SearchAnimeResults | null {
     previousPage: null,
     nextPage: null,
     foundPages: 0,
-    data: []
+    media: []
   };
 
   const pageSelector = $("body > div.Wrapper > div > div > main > div > ul > li");
   const { foundPages, nextPage, previousPage } = getNextAndPrevPages(pageSelector);
 
-  search.data = scrapSearchAnimeData($);
+  search.media = scrapSearchAnimeData($);
   search.foundPages = foundPages;
   search.nextPage = nextPage;
   search.previousPage = previousPage;

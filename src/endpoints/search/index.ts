@@ -47,7 +47,7 @@ export class search extends OpenAPIRoute {
   async handle(req: IRequest) {
     const { query } = req.query as Record<string, string>;
     const search = await searchAnime(query);
-    if (!search || !search?.data?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
+    if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({
       success: true,
       data: search

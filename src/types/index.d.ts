@@ -31,7 +31,7 @@ export interface SearchAnimeResults {
     /** Número de páginas con resultados de la búsqueda realizada */
     foundPages: number
     /** Los animés encontrados en la búsqueda */
-    data: PartialAnimeData[]
+    media: PartialAnimeData[]
 }
 
 export interface AnimeInfoData {

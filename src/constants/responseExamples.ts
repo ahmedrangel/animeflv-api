@@ -4,7 +4,7 @@ export const ExampleSearch: SearchAnimeResults = {
   "previousPage": null,
   "nextPage": null,
   "foundPages": 1,
-  "data": [
+  "media": [
     {
       "title": "Overlord II",
       "cover": "https://animeflv.net/uploads/animes/covers/2856.jpg",
@@ -230,7 +230,7 @@ export const ExampleSearchByFilter: SearchAnimeResults = {
   "previousPage": null,
   "nextPage": "https://www3.animeflv.net/browse?genre%5B%5D=shounen&status%5B%5D=2&type%5B%5D=tv&order=default&page=2",
   "foundPages": 24,
-  "data": [
+  "media": [
     {
       "title": "One Room, Hiatari Futsuu, Tenshi-tsuki.",
       "cover": "https://animeflv.net/uploads/animes/covers/3952.jpg",
