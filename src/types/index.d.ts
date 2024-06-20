@@ -98,7 +98,22 @@ export interface FilterOptions {
     order?: FilterOrderType
 }
 
+export interface SeoOptions {
+    ogTitle?: string;
+    ogDescription?: string;
+    ogImage?: string;
+    ogType?: string;
+    ogUrl?: string;
+    ogSiteName?: string;
+    twitterCard?: string;
+    twitterImage?: string;
+    twitterTitle?: string;
+    twitterDescription?: string;
+}
+
 export interface customSwaggerUIOptions {
+    title?: string,
+    description?: string,
     dark?: boolean,
     bg_color?: string;
     txt_color?: string;
@@ -107,6 +122,8 @@ export interface customSwaggerUIOptions {
     post_color?: string;
     delete_color?: string;
     code_bg_color?: string;
+    show_servers?: boolean;
+    seo?: SeoOptions;
 }
 
 export interface EpisodeServersData {
