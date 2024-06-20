@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.2.0...v1.2.1)
+
+### 🏡 Chore
+
+- Update readme ([3fd8d43](https://github.com/ahmedrangel/animeflv-api/commit/3fd8d43))
+- Migrate to chanfana with itty-router ([6b392c8](https://github.com/ahmedrangel/animeflv-api/commit/6b392c8))
+- Refactor using chanfana + zod types ([75b68ad](https://github.com/ahmedrangel/animeflv-api/commit/75b68ad))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v1.2.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.1.0...v1.2.0)
