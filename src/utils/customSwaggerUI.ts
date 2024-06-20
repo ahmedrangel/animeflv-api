@@ -37,7 +37,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
             background-color: ${options?.section_header_bg_color || "hsla(0, 0%, 100%, .8)"};
           }
           input[type="text"], select, option {
-            color: black!important;
+            color: #252525!important;
           }
           .swagger-ui .opblock.opblock-get {
             background-color: ${options?.get_color ? `${options?.get_color}26` : "#61affe26"};
@@ -52,7 +52,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
             border-color: ${options?.delete_color || "#f93e3e"};
           }
           .swagger-ui .opblock-summary-method {
-            color: ${options?.dark ? "#000" : "#f0f0f0"}!important;
+            color: ${options?.dark ? "#252525" : "#f0f0f0"}!important;
           }
           .swagger-ui .opblock.opblock-get .opblock-summary-method, .swagger-ui .opblock.opblock-get .tab-header .tab-item.active h4 span:after {
             background-color: ${options?.get_color || "#61affe"};
@@ -71,6 +71,10 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
           }
           .swagger-ui .opblock-body pre.microlight, .swagger-ui textarea {
             background-color: ${options?.code_bg_color || "#333333"}!important;
+          }
+          .swagger-ui .body-param textarea {
+            color: #252525!important;
+            background-color: ${options?.dark ? "#f0f0f0" : "#3b4151"}!important;
           }
           svg.arrow {
             fill: ${options?.dark ? "#f0f0f0" : "#3b4151"};
