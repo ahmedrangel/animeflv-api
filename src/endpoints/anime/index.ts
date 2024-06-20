@@ -1,43 +1,56 @@
-import { type OpenAPIRouteSchema, OpenAPIRoute, Path } from "@cloudflare/itty-router-openapi";
+import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool, Str } from "chanfana";
 import { getAnimeInfo } from "functions/getAnimeInfo";
 import { ExampleInfo } from "constants/responseExamples";
 import ErrorResponse from "responses/errorResponse";
+import type { IRequest } from "itty-router";
+import JsonResponse from "responses/jsonResponse";
 
 export class info extends OpenAPIRoute {
-  static schema: OpenAPIRouteSchema = {
+  schema: OpenAPIRouteSchema = {
     tags: ["Info"],
-    summary: "Devuelve un objeto con información detallada del anime especificado por el parámetro `slug`.",
-    parameters: {
-      slug: Path(String, {
-        description: "Slug del anime.",
-      }),
+    request: {
+      params: Obj({
+        slug: Str({
+          description: "El slug del anime.",
+          example: "boruto-naruto-next-generations-tv",
+          required: true
+        })
+      })
     },
+    summary: "Devuelve un objeto con información detallada del anime especificado por el parámetro \"slug\".",
     responses: {
       "200": {
         description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, episodios, y url.",
-        schema: {
-          success: Boolean,
-          info: ExampleInfo
-        },
+        content: {
+          "application/json": {
+            schema: Obj({
+              success: Bool().openapi({ example: true }),
+              info: ExampleInfo
+            })
+          }
+        }
       },
       "404": {
-        description: "No se ha encontrado el anime",
-        schema: {
-          success: Boolean,
-          error: String,
-        },
-      },
-    },
+        description: "No se ha encontrado el anime.",
+        content: {
+          "application/json": {
+            schema: Obj({
+              success: Bool().openapi({ example: false }),
+              error: "No se ha encontrado el anime"
+            })
+          }
+        }
+      }
+    }
   };
 
-  async handle(req: Request, env: any, ctx: any, data: Record<string, any>) {
-    console.log(data.params);
-    const { slug } = data.params as Record<string, string>;
+  async handle(req: IRequest) {
+    const { slug } = req.params as Record<string, string>;
     const info = await getAnimeInfo(slug);
     if (!info) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el anime" });
-    return {
+    return new JsonResponse({
       success: true,
       info
-    };
+    });
   }
 }

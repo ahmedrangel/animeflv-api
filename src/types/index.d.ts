@@ -1,9 +1,9 @@
-import type { AnimeGenres, AnimeStatuses, AnimeTypes, FilterOrderEnum } from "../constants";
+import type { AnimeGenres, AnimeStatuses, AnimeTypes, FilterOrderTypes } from "../constants";
 
 export type AnimeStatus = typeof AnimeStatuses[number];
 export type AnimeType = typeof AnimeTypes[number];
 export type AnimeGenre = typeof AnimeGenres[number];
-export type FilterOrderType = keyof typeof FilterOrderEnum;
+export type FilterOrderType = typeof FilterOrderTypes[string];
 export type FilterAnimeResults = SearchAnimeResults
 
 export interface PartialAnimeData {

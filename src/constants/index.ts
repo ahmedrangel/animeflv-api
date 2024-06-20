@@ -9,6 +9,7 @@ export const AnimeGenres = [
 
 export const AnimeStatuses = ["En emision", "Finalizado", "Proximamente"] as const;
 export const AnimeTypes = ["OVA", "Anime", "Película", "Especial"] as const;
+export const FilterOrderTypes = ["default", "updated", "added", "title", "rating"] as const;
 
 export const FilterOrderEnum = {
   "Por Defecto": "default",

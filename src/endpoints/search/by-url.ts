@@ -1,38 +1,52 @@
-import { type OpenAPIRouteSchema, OpenAPIRoute, Query } from "@cloudflare/itty-router-openapi";
 import { ExampleSearch } from "constants/responseExamples";
 import JsonResponse from "responses/jsonResponse";
 import { searchAnimesBySpecificURL } from "functions/searchAnimesByUrl";
 import ErrorResponse from "responses/errorResponse";
+import type { OpenAPIRouteSchema } from "chanfana";
+import { Bool, Obj, OpenAPIRoute, Str } from "chanfana";
+import type { IRequest } from "itty-router";
 
 export class searchByUrl extends OpenAPIRoute {
-  static schema: OpenAPIRouteSchema = {
+  schema: OpenAPIRouteSchema = {
     tags: ["Search"],
     summary: "Busca usando una URL de consulta y devuelve un objeto con lo encontrado. El URL puede ser obtenido de las propiedades \"previousPage\" y \"nextPage\" de otros métodos",
-    parameters: {
-      url: Query(String, {
-        description: "URL de consultar.",
-      }),
+    request: {
+      query: Obj({
+        url: Str({
+          description: "La URL de consulta.",
+          example: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&type%5B%5D=tv&status%5B%5D=1&order=default",
+          required: true
+        })
+      })
     },
     responses: {
       "200": {
         description: "El objeto tiene varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
-        schema: {
-          success: Boolean,
-          search: ExampleSearch
-        },
+        content: {
+          "application/json": {
+            schema: Obj({
+              success: Bool().openapi({ example: true }),
+              search: ExampleSearch
+            })
+          }
+        }
       },
       "404": {
-        description: "No se han encontrado resultados en la búsqueda",
-        schema: {
-          success: Boolean,
-          error: String,
-        },
-      },
-    },
+        description: "No se han encontrado resultados en la búsqueda.",
+        content: {
+          "application/json": {
+            schema: Obj({
+              success: Bool().openapi({ example: false }),
+              error: "No se han encontrado resultados en la búsqueda"
+            })
+          }
+        }
+      }
+    }
   };
 
-  async handle(req: Request, env: any, ctx: any, data: Record<string, any>) {
-    const { url } = data.query as Record<string, string>;
+  async handle(req: IRequest) {
+    const { url } = req.query as Record<string, string>;
     const search = await searchAnimesBySpecificURL(url);
     if (!search || !search?.data?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({

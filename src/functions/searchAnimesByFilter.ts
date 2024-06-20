@@ -1,5 +1,5 @@
 import { $fetch } from "ofetch";
-import { AnimeflvUrls, FilterOrderEnum } from "../constants";
+import { AnimeflvUrls, FilterOrderTypes } from "../constants";
 import type { FilterOptions, FilterAnimeResults } from "../types";
 import { executeSearch } from "../utils";
 
@@ -32,7 +32,7 @@ function generateRequestUrl(options?: FilterOptions): string {
     }
   }
 
-  if (options.order && (options.order in FilterOrderEnum)) {
+  if (options.order && (options.order in FilterOrderTypes)) {
     FinalUrl.searchParams.append(orderPrefix, options.order);
   }
   else {

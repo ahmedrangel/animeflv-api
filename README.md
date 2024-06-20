@@ -9,7 +9,7 @@ https://animeflv.ahmedrangel.com/api
 
 `GET` [/anime/episode/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_episode)
 
-`GET` [/anime/{slug}/episode/:number](https://animeflv.ahmedrangel.com/#/Info/get_episodeByAnimeSlugAndEpisodNumber)
+`GET` [/anime/{slug}/episode/{number}](https://animeflv.ahmedrangel.com/#/Info/get_episodeByAnimeSlugAndEpisodNumber)
 
 
 ### Search

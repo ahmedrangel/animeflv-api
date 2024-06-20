@@ -24,7 +24,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
       .swagger-ui .opblock .opblock-section-header {
         background-color: ${options?.section_header_bg_color || "hsla(0, 0%, 100%, .8)"};
       }
-      input[type="text"], select {
+      input[type="text"], select, option {
         color: black!important;
       }
       .swagger-ui .opblock.opblock-get {
