@@ -25,7 +25,7 @@ export class episode extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              episode: ExampleEpisodeInfo
+              data: ExampleEpisodeInfo
             })
           }
         }
@@ -50,7 +50,7 @@ export class episode extends OpenAPIRoute {
     if (!episode) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el episodio" });
     return new JsonResponse({
       success: true,
-      episode
+      data: episode
     });
   }
 }
@@ -81,7 +81,7 @@ export class episodeByAnimeSlugAndEpisodNumber extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              episode: ExampleEpisodeInfo
+              data: ExampleEpisodeInfo
             })
           }
         }
@@ -106,7 +106,7 @@ export class episodeByAnimeSlugAndEpisodNumber extends OpenAPIRoute {
     if (!episode) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el episodio" });
     return new JsonResponse({
       success: true,
-      episode
+      data: episode
     });
   }
 }

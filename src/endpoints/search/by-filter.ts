@@ -63,7 +63,7 @@ export class searchByFilter extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              search: ExampleSearchByFilter
+              data: ExampleSearchByFilter
             })
           }
         }
@@ -119,7 +119,7 @@ export class searchByFilter extends OpenAPIRoute {
     const search = await searchAnimesByFilter({ ...body, order: order });
     return new JsonResponse({
       success: true,
-      search
+      data: search
     });
   }
 }

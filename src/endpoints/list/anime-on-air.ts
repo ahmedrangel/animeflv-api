@@ -15,7 +15,7 @@ export class onAir extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              onair: ExampleOnAir
+              data: ExampleOnAir
             })
           }
         }
@@ -39,7 +39,7 @@ export class onAir extends OpenAPIRoute {
     if (!onair) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
     return new JsonResponse({
       success: true,
-      onair
+      data: onair
     });
   }
 }

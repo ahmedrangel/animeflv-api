@@ -15,7 +15,7 @@ export class latest extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              latest: ExampleLatest
+              data: ExampleLatest
             })
           }
         }
@@ -39,7 +39,7 @@ export class latest extends OpenAPIRoute {
     if (!latest) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
     return new JsonResponse({
       success: true,
-      latest
+      data: latest
     });
   }
 }

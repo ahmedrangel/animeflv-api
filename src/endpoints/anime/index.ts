@@ -25,7 +25,7 @@ export class info extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              info: ExampleInfo
+              data: ExampleInfo
             })
           }
         }
@@ -50,7 +50,7 @@ export class info extends OpenAPIRoute {
     if (!info) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el anime" });
     return new JsonResponse({
       success: true,
-      info
+      data: info
     });
   }
 }

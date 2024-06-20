@@ -26,7 +26,7 @@ export class searchByUrl extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: true }),
-              search: ExampleSearch
+              data: ExampleSearch
             })
           }
         }
@@ -51,7 +51,7 @@ export class searchByUrl extends OpenAPIRoute {
     if (!search || !search?.data?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({
       success: true,
-      search
+      data: search
     });
   }
 }
