@@ -40,15 +40,15 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
             color: #252525!important;
           }
           .swagger-ui .opblock.opblock-get {
-            background-color: ${options?.get_color ? `${options?.get_color}26` : "#61affe26"};
+            background-color: ${options?.get_color ? `${options?.get_color}1a` : "#61affe1a"};
             border-color: ${options?.get_color || "#61affe"};
           }
           .swagger-ui .opblock.opblock-post {
-            background-color: ${options?.post_color ? `${options?.post_color}26` : "#49cc9026"};
+            background-color: ${options?.post_color ? `${options?.post_color}1a` : "#49cc901a"};
             border-color: ${options?.post_color || "#49cc90"};
           }
           .swagger-ui .opblock.opblock-delete {
-            background-color: ${options?.delete_color ? `${options?.delete_color}26` : "#f93e3e26"};
+            background-color: ${options?.delete_color ? `${options?.delete_color}1a` : "#f93e3e1a"};
             border-color: ${options?.delete_color || "#f93e3e"};
           }
           .swagger-ui .opblock-summary-method {
