@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v2.0.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.0...v2.0.1)
+
+### 🏡 Chore
+
+- Catch json bad requests ([643d8b2](https://github.com/ahmedrangel/animeflv-api/commit/643d8b2))
+- Remove console log ([0fc120c](https://github.com/ahmedrangel/animeflv-api/commit/0fc120c))
+- Improve custom swager ui ([264d165](https://github.com/ahmedrangel/animeflv-api/commit/264d165))
+- Remove unused external custom theme ([77fd291](https://github.com/ahmedrangel/animeflv-api/commit/77fd291))
+- Adjust custom swagger ui styles ([440eda1](https://github.com/ahmedrangel/animeflv-api/commit/440eda1))
+- Refine code ([2d051c8](https://github.com/ahmedrangel/animeflv-api/commit/2d051c8))
+- Adjust custom swagger ui style ([bd96961](https://github.com/ahmedrangel/animeflv-api/commit/bd96961))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.0.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.2.1...v2.0.0)
