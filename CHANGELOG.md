@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v2.0.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.2.1...v2.0.0)
+
+### 🏡 Chore
+
+- ⚠️  Standarize succesful api responses returning "data" property ([58acb0e](https://github.com/ahmedrangel/animeflv-api/commit/58acb0e))
+- ⚠️  Change search response property name from "data" to "media" ([9360f1d](https://github.com/ahmedrangel/animeflv-api/commit/9360f1d))
+
+### 🤖 CI
+
+- Deploy worker ([360dd94](https://github.com/ahmedrangel/animeflv-api/commit/360dd94))
+- Update ([e3f37d5](https://github.com/ahmedrangel/animeflv-api/commit/e3f37d5))
+- Update ([1a13933](https://github.com/ahmedrangel/animeflv-api/commit/1a13933))
+- Update ([cefebd7](https://github.com/ahmedrangel/animeflv-api/commit/cefebd7))
+- Update ([28043b3](https://github.com/ahmedrangel/animeflv-api/commit/28043b3))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Standarize succesful api responses returning "data" property ([58acb0e](https://github.com/ahmedrangel/animeflv-api/commit/58acb0e))
+- ⚠️  Change search response property name from "data" to "media" ([9360f1d](https://github.com/ahmedrangel/animeflv-api/commit/9360f1d))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v1.2.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v1.2.0...v1.2.1)
