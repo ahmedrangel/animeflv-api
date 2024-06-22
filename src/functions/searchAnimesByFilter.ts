@@ -4,7 +4,6 @@ import type { FilterOptions, FilterAnimeResults } from "../types";
 import { executeSearch } from "../utils";
 
 function generateRequestUrl(options?: FilterOptions): string {
-  console.log(options);
   if (!options) return AnimeflvUrls.host + "/browse?order=default";
 
   const FinalUrl = new URL(AnimeflvUrls.host + "/browse");
