@@ -1,5 +1,5 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool, Num } from "chanfana";
-import { error } from "itty-router";
+import { error, json } from "itty-router";
 import { ExampleEpisodeInfo } from "constants/responseExamples";
 import { getEpisodeLinks } from "functions/getEpisodeLinks";
 import type { IRequest } from "itty-router";
@@ -104,9 +104,9 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
     const { slug, number } = params as Record<string, any>;
     const episode = await getEpisodeLinks(slug, number);
     if (!episode) return error(404, { success: false, error: "No se ha encontrado el episodio" });
-    return {
+    return json({
       success: true,
       data: episode
-    };
+    });
   }
 }

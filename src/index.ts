@@ -1,16 +1,20 @@
 import { fromIttyRouter } from "chanfana";
-import { IttyRouter, type IRequest, cors } from "itty-router";
+import { AutoRouter, type IRequest, cors, error } from "itty-router";
 import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodeNumber } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
 import { html } from "responses/html";
 import { SITE } from "utils/site";
-import { corsOptions, customSwaggerUIOptions } from "utils";
+import { customSwaggerUIOptions } from "utils";
 
 const BASE = "/api";
-const itty = IttyRouter();
 
-const { corsify } = cors(corsOptions);
+const { preflight, corsify } = cors();
+const itty = AutoRouter({
+  before: [preflight],
+  catch: error,
+  finally: [corsify]
+});
 
 export const router = fromIttyRouter(itty, {
   redoc_url: "/redoc",
@@ -51,6 +55,6 @@ router.all("*", () =>
 
 export default {
   fetch: async (req, env, ctx) => {
-    return router.fetch(req, env, ctx).then(corsify);
+    return router.fetch(req, env, ctx);
   }
 } as ExportedHandler;
