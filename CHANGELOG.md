@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v2.0.2
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.1...v2.0.2)
+
+### 🏡 Chore
+
+- Use schema validator (except for body) ([60fd972](https://github.com/ahmedrangel/animeflv-api/commit/60fd972))
+- Remove console log ([636fc03](https://github.com/ahmedrangel/animeflv-api/commit/636fc03))
+- Addcorsify and use itty router responses ([ae6ff01](https://github.com/ahmedrangel/animeflv-api/commit/ae6ff01))
+- Remove non functional code + adjust router ([e293135](https://github.com/ahmedrangel/animeflv-api/commit/e293135))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.0.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.0...v2.0.1)
