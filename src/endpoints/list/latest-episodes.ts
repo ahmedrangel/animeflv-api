@@ -1,8 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool } from "chanfana";
 import { getLatest } from "functions/getLatest";
 import { ExampleLatest } from "constants/responseExamples";
-import JsonResponse from "responses/jsonResponse";
-import ErrorResponse from "responses/errorResponse";
+import { error } from "itty-router";
 
 export class latest extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -36,10 +35,10 @@ export class latest extends OpenAPIRoute {
 
   async handle() {
     const latest = await getLatest();
-    if (!latest) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
-    return new JsonResponse({
+    if (!latest) return error(404, { success: false, error: "No se han encontrado resultados" });
+    return {
       success: true,
       data: latest
-    });
+    };
   }
 }

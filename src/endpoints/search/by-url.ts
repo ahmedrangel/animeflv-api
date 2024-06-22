@@ -1,9 +1,8 @@
 import { ExampleSearch } from "constants/responseExamples";
-import JsonResponse from "responses/jsonResponse";
 import { searchAnimesBySpecificURL } from "functions/searchAnimesByUrl";
-import ErrorResponse from "responses/errorResponse";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Bool, Obj, OpenAPIRoute, Str } from "chanfana";
+import { error } from "itty-router";
 
 export class searchByUrl extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -48,10 +47,10 @@ export class searchByUrl extends OpenAPIRoute {
     const { query } = await this.getValidatedData<typeof this.schema>();
     const { url } = query;
     const search = await searchAnimesBySpecificURL(url);
-    if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
-    return new JsonResponse({
+    if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
+    return {
       success: true,
       data: search
-    });
+    };
   }
 }

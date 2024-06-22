@@ -1,15 +1,18 @@
 import { fromIttyRouter } from "chanfana";
-import { IttyRouter } from "itty-router";
+import { IttyRouter, type IRequest, cors } from "itty-router";
 import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodeNumber } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
-import HtmlResponse from "responses/htmlResponse";
+import { html } from "responses/html";
 import { SITE } from "utils/site";
-import { customSwaggerUIOptions } from "utils";
+import { corsOptions, customSwaggerUIOptions } from "utils";
 
 const BASE = "/api";
+const itty = IttyRouter();
 
-export const router = fromIttyRouter(IttyRouter(), {
+const { corsify } = cors(corsOptions);
+
+export const router = fromIttyRouter(itty, {
   redoc_url: "/redoc",
   schema: {
     info: {
@@ -20,12 +23,12 @@ export const router = fromIttyRouter(IttyRouter(), {
   },
 });
 
-router.original.get("/", () => {
-  const html = customSwaggerUI("/openapi.json", customSwaggerUIOptions);
-  return new HtmlResponse(html);
+itty.get("/", () => {
+  const ui = customSwaggerUI("/openapi.json", customSwaggerUIOptions);
+  return html(ui);
 });
 
-router.original.get("/api", (req: Request) => {
+itty.get("/api", (req: IRequest) => {
   const host = req.headers.get("host") || "";
   const protocol = req.url.split("://")[0];
   const redirectTo = `${protocol}://${host}`;
@@ -48,6 +51,6 @@ router.all("*", () =>
 
 export default {
   fetch: async (req, env, ctx) => {
-    return router.fetch(req, env, ctx);
+    return router.fetch(req, env, ctx).then(corsify);
   }
 } as ExportedHandler;

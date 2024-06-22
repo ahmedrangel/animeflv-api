@@ -1,8 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool } from "chanfana";
 import { getOnAir } from "functions/getOnAir";
 import { ExampleOnAir } from "constants/responseExamples";
-import JsonResponse from "responses/jsonResponse";
-import ErrorResponse from "responses/errorResponse";
+import { error } from "itty-router";
 
 export class onAir extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -36,10 +35,10 @@ export class onAir extends OpenAPIRoute {
 
   async handle() {
     const onair = await getOnAir();
-    if (!onair) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados" });
-    return new JsonResponse({
+    if (!onair) return error(404, { success: false, error: "No se han encontrado resultados" });
+    return {
       success: true,
       data: onair
-    });
+    };
   }
 }

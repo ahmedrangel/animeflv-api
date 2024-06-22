@@ -1,8 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool, Str } from "chanfana";
 import { getAnimeInfo } from "functions/getAnimeInfo";
 import { ExampleInfo } from "constants/responseExamples";
-import ErrorResponse from "responses/errorResponse";
-import JsonResponse from "responses/jsonResponse";
+import { error } from "itty-router";
 
 export class info extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -47,10 +46,10 @@ export class info extends OpenAPIRoute {
     const { params } = await this.getValidatedData<typeof this.schema>();
     const { slug } = params as Record<string, string>;
     const info = await getAnimeInfo(slug);
-    if (!info) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el anime" });
-    return new JsonResponse({
+    if (!info) return error(404, { success: false, error: "No se ha encontrado el anime" });
+    return {
       success: true,
       data: info
-    });
+    };
   }
 }

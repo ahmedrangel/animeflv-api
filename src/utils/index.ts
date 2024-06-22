@@ -1,11 +1,12 @@
 import type { customSwaggerUIOptionsTypes } from "types";
 import { SITE } from "./site";
+import type { CorsOptions } from "itty-router";
 
 export * from "./scrapAnimeData";
 export * from "./getPrevAndNextPages";
 export * from "./executeSearch";
 
-export const customSwaggerUIOptions = {
+export const customSwaggerUIOptions: customSwaggerUIOptionsTypes = {
   title: SITE.title,
   description: SITE.description,
   dark: true,
@@ -23,4 +24,9 @@ export const customSwaggerUIOptions = {
     twitterTitle: SITE.title,
     twitterDescription: SITE.description,
   }
-} as customSwaggerUIOptionsTypes;
+};
+
+export const corsOptions: CorsOptions = {
+  origin: "*",
+  allowMethods: ["GET", "POST"],
+};

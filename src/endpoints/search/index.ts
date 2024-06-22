@@ -1,8 +1,7 @@
 import { searchAnime } from "functions/searchAnime";
 import { ExampleSearch } from "constants/responseExamples";
-import JsonResponse from "responses/jsonResponse";
-import ErrorResponse from "responses/errorResponse";
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool } from "chanfana";
+import { error } from "itty-router";
 
 export class search extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -46,10 +45,10 @@ export class search extends OpenAPIRoute {
   async handle() {
     const { query } = await this.getValidatedData<typeof this.schema>();
     const search = await searchAnime(query.query);
-    if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
-    return new JsonResponse({
+    if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
+    return {
       success: true,
       data: search
-    });
+    };
   }
 }

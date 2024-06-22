@@ -1,11 +1,9 @@
 import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from "../../constants";
 import { searchAnimesByFilter } from "functions/searchAnimesByFilter";
 import { ExampleSearchByFilter } from "constants/responseExamples";
-import JsonResponse from "responses/jsonResponse";
-import ErrorResponse from "responses/errorResponse";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Arr, Bool, Enumeration, Obj, OpenAPIRoute, convertParams } from "chanfana";
-import type { IRequest } from "itty-router";
+import { error, type IRequest } from "itty-router";
 import { z } from "zod";
 
 const genres = Object.values(AnimeGenreEnum);
@@ -95,35 +93,35 @@ export class searchByFilter extends OpenAPIRoute {
 
   async handle(req: IRequest) {
     const body = await req.json().catch(() => null) as Record<string, any>;
-    if (!body) return new ErrorResponse(400, { success: false, error: "Bad Request" });
+    if (!body) return error(400, { success: false, error: "Bad Request" });
 
     const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
     const { order } = query as Record<string, string>;
 
     const invalid_order = !orders?.includes(order);
     if (order && invalid_order)
-      return new ErrorResponse(400, { success: false, error: `Orden no válido: ${order}`, hint: orders });
+      return error(400, { success: false, error: `Orden no válido: ${order}`, hint: orders });
 
     const invalid_types = body?.types?.filter((t: string) => !types?.includes(t));
     if (invalid_types?.length)
-      return new ErrorResponse(400, { success: false, error: `Tipos no válidos: ${invalid_types?.join(", ")}`, hint: types });
+      return error(400, { success: false, error: `Tipos no válidos: ${invalid_types?.join(", ")}`, hint: types });
 
     const invalid_genres = body?.genres?.filter((g: string) => !genres?.includes(g));
     if (invalid_genres?.length)
-      return new ErrorResponse(400, { success: false, error: `Géneros no válido: ${invalid_genres?.join(", ")}`, hint: genres });
+      return error(400, { success: false, error: `Géneros no válido: ${invalid_genres?.join(", ")}`, hint: genres });
 
     const invalid_statuses = body?.statuses?.filter((s: number) => !statuses?.includes(s));
     if (invalid_statuses?.length)
-      return new ErrorResponse(400, { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: AnimeStatusEnum });
+      return error(400, { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: AnimeStatusEnum });
 
     if (body?.genres?.length > 4)
-      return new ErrorResponse(400, { success: false, error: "Solo se permite máximo 4 géneros." });
+      return error(400, { success: false, error: "Solo se permite máximo 4 géneros." });
 
     const search = await searchAnimesByFilter({ ...body, order: order });
-    if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
-    return new JsonResponse({
+    if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
+    return {
       success: true,
       data: search
-    });
+    };
   }
 }
