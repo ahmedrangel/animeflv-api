@@ -97,7 +97,8 @@ export class searchByFilter extends OpenAPIRoute {
     const body = await req.json().catch(() => null) as Record<string, any>;
     if (!body) return new ErrorResponse(400, { success: false, error: "Bad Request" });
 
-    const { order } = req.query as Record<string, string>;
+    const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
+    const { order } = query as Record<string, string>;
 
     const invalid_order = !orders?.includes(order);
     if (order && invalid_order)

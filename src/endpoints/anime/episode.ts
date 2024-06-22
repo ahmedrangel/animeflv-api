@@ -100,8 +100,9 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
     },
   };
 
-  async handle(req: IRequest) {
-    const { slug, number } = req.params as Record<string, any>;
+  async handle() {
+    const { params } = await this.getValidatedData<typeof this.schema>();
+    const { slug, number } = params as Record<string, any>;
     const episode = await getEpisodeLinks(slug, number);
     if (!episode) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el episodio" });
     return new JsonResponse({

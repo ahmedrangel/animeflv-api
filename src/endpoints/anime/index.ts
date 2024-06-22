@@ -2,7 +2,6 @@ import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool, Str } from "chanfana"
 import { getAnimeInfo } from "functions/getAnimeInfo";
 import { ExampleInfo } from "constants/responseExamples";
 import ErrorResponse from "responses/errorResponse";
-import type { IRequest } from "itty-router";
 import JsonResponse from "responses/jsonResponse";
 
 export class info extends OpenAPIRoute {
@@ -44,8 +43,9 @@ export class info extends OpenAPIRoute {
     }
   };
 
-  async handle(req: IRequest) {
-    const { slug } = req.params as Record<string, string>;
+  async handle() {
+    const { params } = await this.getValidatedData<typeof this.schema>();
+    const { slug } = params as Record<string, string>;
     const info = await getAnimeInfo(slug);
     if (!info) return new ErrorResponse(404, { success: false, error: "No se ha encontrado el anime" });
     return new JsonResponse({

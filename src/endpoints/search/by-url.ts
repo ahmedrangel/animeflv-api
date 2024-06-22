@@ -4,7 +4,6 @@ import { searchAnimesBySpecificURL } from "functions/searchAnimesByUrl";
 import ErrorResponse from "responses/errorResponse";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Bool, Obj, OpenAPIRoute, Str } from "chanfana";
-import type { IRequest } from "itty-router";
 
 export class searchByUrl extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -45,8 +44,9 @@ export class searchByUrl extends OpenAPIRoute {
     }
   };
 
-  async handle(req: IRequest) {
-    const { url } = req.query as Record<string, string>;
+  async handle() {
+    const { query } = await this.getValidatedData<typeof this.schema>();
+    const { url } = query;
     const search = await searchAnimesBySpecificURL(url);
     if (!search || !search?.media?.length) return new ErrorResponse(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return new JsonResponse({
