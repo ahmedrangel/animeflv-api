@@ -72,7 +72,7 @@ export class searchByFilter extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: false }),
-              error: "No se han encontrado resultados en la búsqueda."
+              error: "No se han encontrado resultados en la búsqueda"
             })
           }
         }
@@ -83,7 +83,7 @@ export class searchByFilter extends OpenAPIRoute {
           "application/json": {
             schema: Obj({
               success: Bool().openapi({ example: false }),
-              error: "Bad Request."
+              error: "Bad Request"
             })
           }
         }
@@ -92,8 +92,17 @@ export class searchByFilter extends OpenAPIRoute {
   };
 
   async handle(req: IRequest) {
-    const body = await req.json().catch(() => null) as Record<string, any>;
-    if (!body) return error(400, { success: false, error: "Bad Request" });
+    const textBody = await req.text().catch(() => null) as string;
+
+    let body = null;
+    if (textBody !== "") {
+      try {
+        body = JSON.parse(textBody) as Record<string, any>;
+      }
+      catch {
+        return error(400, { success: false, error: "Bad Request" });
+      }
+    }
 
     const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
     const { order } = query as Record<string, string>;
@@ -115,7 +124,7 @@ export class searchByFilter extends OpenAPIRoute {
       return error(400, { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: AnimeStatusEnum });
 
     if (body?.genres?.length > 4)
-      return error(400, { success: false, error: "Solo se permite máximo 4 géneros." });
+      return error(400, { success: false, error: "Solo se permite un máximo 4 géneros" });
 
     const search = await searchAnimesByFilter({ ...body, order: order });
     if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
