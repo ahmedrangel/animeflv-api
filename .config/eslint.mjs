@@ -4,7 +4,8 @@ export default tseslint.config({
   files: ["**/*.js", "**/*.ts"],
   ignores: [
     "node_modules/**/*",
-    "dist/**/*"
+    "dist/**/*",
+    ".wrangler/**/*"
   ],
   extends: [
     {
