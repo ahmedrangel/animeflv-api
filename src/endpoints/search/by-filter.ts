@@ -96,12 +96,8 @@ export class searchByFilter extends OpenAPIRoute {
 
     let body = null;
     if (textBody !== "") {
-      try {
-        body = JSON.parse(textBody) as Record<string, any>;
-      }
-      catch {
-        return error(400, { success: false, error: "Bad Request" });
-      }
+      try { body = JSON.parse(textBody) as Record<string, any>; }
+      catch { return error(400, { success: false, error: "Bad Request" }); }
     }
 
     const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
