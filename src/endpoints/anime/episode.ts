@@ -2,7 +2,6 @@ import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool, Num } from "chan
 import { error, json } from "itty-router";
 import { ExampleEpisodeInfo } from "constants/responseExamples";
 import { getEpisodeLinks } from "functions/getEpisodeLinks";
-import type { IRequest } from "itty-router";
 
 export class episode extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -43,8 +42,9 @@ export class episode extends OpenAPIRoute {
     }
   };
 
-  async handle(req: IRequest) {
-    const { slug } = req.params as Record<string, string>;
+  async handle() {
+    const { params } = await this.getValidatedData<typeof this.schema>();
+    const { slug } = params as Record<string, string>;
     const episode = await getEpisodeLinks(slug);
     if (!episode) return error(404, { success: false, error: "No se ha encontrado el episodio" });
     return {
