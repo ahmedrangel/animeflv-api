@@ -44,7 +44,7 @@ export const getEpisodeLinks = async (slug: string, number?: number): Promise<an
       if (lookFor.includes(name)) {
         episodeLinks.servers.push({
           name: $(el).find("td").eq(0).text(),
-          download: $(el).find("td:last-child a").attr("href") as string,
+          download: $(el).find("td:last-child a").attr("href") as string
         });
       }
     }

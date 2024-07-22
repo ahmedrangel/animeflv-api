@@ -17,7 +17,7 @@ export class info extends OpenAPIRoute {
     },
     summary: "Devuelve un objeto con información detallada del anime especificado por el parámetro \"slug\".",
     responses: {
-      "200": {
+      200: {
         description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, episodios, y url.",
         content: {
           "application/json": {
@@ -28,7 +28,7 @@ export class info extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se ha encontrado el anime.",
         content: {
           "application/json": {
@@ -42,7 +42,7 @@ export class info extends OpenAPIRoute {
     }
   };
 
-  async handle() {
+  async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
     const { slug } = params as Record<string, string>;
     const info = await getAnimeInfo(slug);

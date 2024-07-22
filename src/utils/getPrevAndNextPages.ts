@@ -1,10 +1,10 @@
 import type { Cheerio, Element } from "cheerio";
 import { AnimeflvUrls } from "../constants";
 
-export function getNextAndPrevPages(selector: Cheerio<Element>): {
-    foundPages: number
-    previousPage: string | null
-    nextPage: string | null
+export function getNextAndPrevPages (selector: Cheerio<Element>): {
+  foundPages: number;
+  previousPage: string | null;
+  nextPage: string | null;
 } {
   const aTagValue = selector.last().prev().find("a").text();
   const aRef = selector.eq(0).children("a").attr("href");

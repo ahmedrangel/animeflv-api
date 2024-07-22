@@ -20,16 +20,16 @@ export const FilterOrderEnum = {
 };
 
 export const AnimeTypeEnum = {
-  "Anime": "tv",
-  "Película": "movie",
-  "Especial": "special",
-  "OVA": "ova"
+  Anime: "tv",
+  Película: "movie",
+  Especial: "special",
+  OVA: "ova"
 };
 
 export const AnimeStatusEnum = {
   "En emision": 1,
   "Finalizado": 2,
-  "Proximamente": 3,
+  "Proximamente": 3
 };
 
 export const AnimeGenreEnum = {

@@ -8,7 +8,7 @@ export class onAir extends OpenAPIRoute {
     tags: ["List"],
     summary: "Devuelve un arreglo con los animes que actualmente están siendo transmitidos.",
     responses: {
-      "200": {
+      200: {
         description: "Cada objeto en el arreglo contiene información como el título, el tipo, el slug, y la url del anime. Estos objetos están ordenados de acuerdo a su fecha de transmisión, los animes más recientes estarán en la parte inferior del arreglo.",
         content: {
           "application/json": {
@@ -19,7 +19,7 @@ export class onAir extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se han encontrado resultados.",
         content: {
           "application/json": {
@@ -29,11 +29,11 @@ export class onAir extends OpenAPIRoute {
             })
           }
         }
-      },
-    },
+      }
+    }
   };
 
-  async handle() {
+  async handle () {
     const onair = await getOnAir();
     if (!onair) return error(404, { success: false, error: "No se han encontrado resultados" });
     return {

@@ -17,7 +17,7 @@ export class search extends OpenAPIRoute {
       })
     },
     responses: {
-      "200": {
+      200: {
         description: "El objeto tiene varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
         content: {
           "application/json": {
@@ -28,7 +28,7 @@ export class search extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se han encontrado resultados en la búsqueda.",
         content: {
           "application/json": {
@@ -42,7 +42,7 @@ export class search extends OpenAPIRoute {
     }
   };
 
-  async handle() {
+  async handle () {
     const { query } = await this.getValidatedData<typeof this.schema>();
     const search = await searchAnime(query.query);
     if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });

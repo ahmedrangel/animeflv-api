@@ -21,6 +21,6 @@ export const customSwaggerUIOptions: customSwaggerUIOptionsTypes = {
     ogSiteName: SITE.title,
     ogUrl: SITE.host,
     twitterTitle: SITE.title,
-    twitterDescription: SITE.description,
+    twitterDescription: SITE.description
   }
 };

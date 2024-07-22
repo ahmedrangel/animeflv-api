@@ -12,12 +12,12 @@ export class episode extends OpenAPIRoute {
         slug: Str({
           description: "El slug del episodio.",
           example: "boruto-naruto-next-generations-tv-65",
-          required: true,
-        }),
+          required: true
+        })
       })
     },
     responses: {
-      "200": {
+      200: {
         description: "El objeto contiene información como el título, número y un arreglo de servers con nombres, url de descarga y url de embed.",
         content: {
           "application/json": {
@@ -28,7 +28,7 @@ export class episode extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se ha encontrado el episodio.",
         content: {
           "application/json": {
@@ -42,7 +42,7 @@ export class episode extends OpenAPIRoute {
     }
   };
 
-  async handle() {
+  async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
     const { slug } = params as Record<string, string>;
     const episode = await getEpisodeLinks(slug);
@@ -64,17 +64,17 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
         slug: Str({
           description: "El slug del anime.",
           example: "boruto-naruto-next-generations-tv",
-          required: true,
+          required: true
         }),
         number: Num({
           description: "Número de episodio.",
           example: 65,
-          required: true,
-        }),
+          required: true
+        })
       })
     },
     responses: {
-      "200": {
+      200: {
         description: "El objeto contiene información como el título, número y un arreglo de servers con nombres, url de descarga y url de embed.",
         content: {
           "application/json": {
@@ -85,7 +85,7 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se ha encontrado el episodio.",
         content: {
           "application/json": {
@@ -96,10 +96,10 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
           }
         }
       }
-    },
+    }
   };
 
-  async handle() {
+  async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
     const { slug, number } = params as Record<string, any>;
     const episode = await getEpisodeLinks(slug, number);

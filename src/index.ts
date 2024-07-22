@@ -24,7 +24,7 @@ export const router = fromIttyRouter(itty, {
       description: SITE.description,
       version
     }
-  },
+  }
 });
 
 itty.get("/", () => {
@@ -50,7 +50,7 @@ router.get(BASE + "/list/animes-on-air", onAir);
 
 // 404 for everything else
 router.all("*", () =>
-  Response.json({ success: false, error: "Route not found" },{ status: 404 })
+  Response.json({ success: false, error: "Route not found" }, { status: 404 })
 );
 
 export default {

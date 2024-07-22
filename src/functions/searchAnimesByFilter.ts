@@ -3,7 +3,7 @@ import { AnimeflvUrls, FilterOrderTypes } from "../constants";
 import type { FilterOptions, FilterAnimeResults } from "../types";
 import { executeSearch } from "../utils";
 
-function generateRequestUrl(options?: FilterOptions): string {
+function generateRequestUrl (options?: FilterOptions): string {
   if (!options) return AnimeflvUrls.host + "/browse?order=default";
 
   const FinalUrl = new URL(AnimeflvUrls.host + "/browse");
@@ -41,7 +41,7 @@ function generateRequestUrl(options?: FilterOptions): string {
   return FinalUrl.toString();
 }
 
-export async function searchAnimesByFilter(opts?: FilterOptions): Promise<FilterAnimeResults | null> {
+export async function searchAnimesByFilter (opts?: FilterOptions): Promise<FilterAnimeResults | null> {
   try {
     /** La url del request con los filtros ya puestos */
     const formatedUrl = generateRequestUrl(opts);

@@ -34,7 +34,7 @@ export class searchByFilter extends OpenAPIRoute {
               })).max(4), {
                 description: "Géneros de anime.",
                 example: genres.slice(0, 4),
-                required: false,
+                required: false
               }),
               statuses: convertParams(Arr(z.nativeEnum(AnimeStatusEnum)), {
                 description: "Estados de anime.",
@@ -55,7 +55,7 @@ export class searchByFilter extends OpenAPIRoute {
       })
     },
     responses: {
-      "200": {
+      200: {
         description: "El resultado objeto que contiene el atributo \"search\" que es un objeto que contiene varios atributos, incluyendo \"previousPage\" y \"nextPage\", que indican si hay más páginas de resultados disponibles antes o después de la página actual. El atributo \"foundPages\" indica cuántas páginas de resultados se encontraron en total. El atributo \"data\" es un arreglo que contiene objetos con información detallada sobre cada anime encontrado. Cada objeto contiene información como el título, la portada, el sinopsis, la calificación, el slug, el tipo y la url del anime.",
         content: {
           "application/json": {
@@ -66,7 +66,7 @@ export class searchByFilter extends OpenAPIRoute {
           }
         }
       },
-      "404": {
+      404: {
         description: "No se han encontrado resultados en la búsqueda.",
         content: {
           "application/json": {
@@ -77,7 +77,7 @@ export class searchByFilter extends OpenAPIRoute {
           }
         }
       },
-      "400": {
+      400: {
         description: "Bad Request.",
         content: {
           "application/json": {
@@ -91,7 +91,7 @@ export class searchByFilter extends OpenAPIRoute {
     }
   };
 
-  async handle(req: IRequest) {
+  async handle (req: IRequest) {
     const textBody = await req.text().catch(() => null) as string;
 
     let body = null;

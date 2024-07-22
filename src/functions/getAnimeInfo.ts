@@ -30,7 +30,7 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | nul
           url: AnimeflvUrls.host + "/ver/" + animeId + "-" + i
         });
       }
-    };
+    }
 
     $("body > div.Wrapper > div > div > div.Ficha.fchlt > div.Container > div:nth-child(3) > span").each((i, el) => {
       animeInfo.alternative_titles.push($(el).text());

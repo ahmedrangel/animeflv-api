@@ -2,7 +2,7 @@ import { type CheerioAPI } from "cheerio";
 import type { AnimeType, PartialAnimeData } from "../types";
 import { AnimeflvUrls } from "../constants";
 
-export function scrapSearchAnimeData($: CheerioAPI): PartialAnimeData[] {
+export function scrapSearchAnimeData ($: CheerioAPI): PartialAnimeData[] {
   const selectedElement = $("body > div.Wrapper > div > div > main > ul > li");
 
   if (selectedElement.length > 0) {
@@ -16,7 +16,7 @@ export function scrapSearchAnimeData($: CheerioAPI): PartialAnimeData[] {
         rating: $(el).find("article > div > p:nth-child(2) > span.Vts.fa-star").text(),
         slug: $(el).find("a").attr("href")!.replace("/anime/", ""),
         type: $(el).find("a > div > span.Type").text() as AnimeType,
-        url: AnimeflvUrls.host + ($(el).find("a").attr("href") as string),
+        url: AnimeflvUrls.host + ($(el).find("a").attr("href") as string)
       });
     });
 

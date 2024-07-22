@@ -3,7 +3,7 @@ import { load } from "cheerio";
 import { getNextAndPrevPages } from "./getPrevAndNextPages";
 import { scrapSearchAnimeData } from "./scrapAnimeData";
 
-export function executeSearch(searchData: string): SearchAnimeResults | null {
+export function executeSearch (searchData: string): SearchAnimeResults | null {
 
   const $ = load(searchData);
 
