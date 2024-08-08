@@ -24,7 +24,8 @@
 		"dev": "wrangler dev",
 		"worker:dev": "wrangler dev",
 		"lint": "eslint --fix --config .config/eslint.mjs",
-		"tail": "wrangler tail"
+		"tail": "wrangler tail",
+		"release": "changelogen --release"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20240806.0",
