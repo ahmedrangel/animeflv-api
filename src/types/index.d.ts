@@ -115,14 +115,14 @@ export interface customSwaggerUIOptionsTypes {
   title?: string;
   description?: string;
   dark?: boolean;
-  bg_color?: string;
-  txt_color?: string;
-  section_header_bg_color?: string;
-  get_color?: string;
-  post_color?: string;
-  delete_color?: string;
-  code_bg_color?: string;
-  show_servers?: boolean;
+  bgColor?: string;
+  txtColor?: string;
+  sectionHeaderBgColor?: string;
+  getColor?: string;
+  postColor?: string;
+  deleteColor?: string;
+  codeBgColor?: string;
+  showServers?: boolean;
   seo?: SeoOptions;
 }
 

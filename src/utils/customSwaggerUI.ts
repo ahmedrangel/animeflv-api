@@ -25,43 +25,43 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
         ` : ""}
         <style>
           body, .swagger-ui .scheme-container {
-            background-color: ${options?.bg_color || "#fff"};
+            background-color: ${options?.bgColor || "#fff"};
           }
           #swagger-ui * {
-            color: ${options?.txt_color ? options?.txt_color : options?.dark ? "#f0f0f0" : "#3b4151"};
+            color: ${options?.txtColor ? options?.txtColor : options?.dark ? "#f0f0f0" : "#3b4151"};
           }
           .swagger-ui .opblock-tag {
             border-bottom: ${options?.dark ? "1px solid rgb(200,200,200,.3)" : "1px solid rgba(59,65,81,.3)"};
           }
           .swagger-ui .opblock .opblock-section-header {
-            background-color: ${options?.section_header_bg_color || "hsla(0, 0%, 100%, .8)"};
+            background-color: ${options?.sectionHeaderBgColor || "hsla(0, 0%, 100%, .8)"};
           }
           input[type="text"], select, option {
             color: #252525!important;
           }
           .swagger-ui .opblock.opblock-get {
-            background-color: ${options?.get_color ? `${options?.get_color}1a` : "#61affe1a"};
-            border-color: ${options?.get_color || "#61affe"};
+            background-color: ${options?.getColor ? `${options?.getColor}1a` : "#61affe1a"};
+            border-color: ${options?.getColor || "#61affe"};
           }
           .swagger-ui .opblock.opblock-post {
-            background-color: ${options?.post_color ? `${options?.post_color}1a` : "#49cc901a"};
-            border-color: ${options?.post_color || "#49cc90"};
+            background-color: ${options?.postColor ? `${options?.postColor}1a` : "#49cc901a"};
+            border-color: ${options?.postColor || "#49cc90"};
           }
           .swagger-ui .opblock.opblock-delete {
-            background-color: ${options?.delete_color ? `${options?.delete_color}1a` : "#f93e3e1a"};
-            border-color: ${options?.delete_color || "#f93e3e"};
+            background-color: ${options?.deleteColor ? `${options?.deleteColor}1a` : "#f93e3e1a"};
+            border-color: ${options?.deleteColor || "#f93e3e"};
           }
           .swagger-ui .opblock-summary-method {
             color: ${options?.dark ? "#252525" : "#f0f0f0"}!important;
           }
           .swagger-ui .opblock.opblock-get .opblock-summary-method, .swagger-ui .opblock.opblock-get .tab-header .tab-item.active h4 span:after {
-            background-color: ${options?.get_color || "#61affe"};
+            background-color: ${options?.getColor || "#61affe"};
           }
           .swagger-ui .opblock.opblock-post .opblock-summary-method, .swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span:after {
-            background-color: ${options?.post_color || "#49cc90"};
+            background-color: ${options?.postColor || "#49cc90"};
           }
           .swagger-ui .opblock.opblock-delete .opblock-summary-method, .swagger-ui .opblock.opblock-delete .tab-header .tab-item.active h4 span:after {
-            background-color: ${options?.delete_color || "#ff8888"};
+            background-color: ${options?.deleteColor || "#ff8888"};
           }
           .swagger-ui .model-box-control:focus, .swagger-ui .models-control:focus, .swagger-ui .opblock-summary-control:focus {
             outline: none;
@@ -70,7 +70,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
             color: ${options?.dark ? "#ff7070" : "#ff000099"};
           }
           .swagger-ui .opblock-body pre.microlight, .swagger-ui textarea {
-            background-color: ${options?.code_bg_color || "#333333"}!important;
+            background-color: ${options?.codeBgColor || "#333333"}!important;
           }
           .swagger-ui .body-param textarea {
             color: #252525!important;
@@ -87,7 +87,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
             color: ${options?.dark ? "#f0f0f0" : "#3b4151"};
           }
           .swagger-ui .operation-servers {
-            display: ${options?.show_servers === false ? "none" : "block"};
+            display: ${options?.showServers === false ? "none" : "block"};
           }
         </style>
     </head>
