@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v2.0.3
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.2...v2.0.3)
+
+### 🏡 Chore
+
+- Endpoint missing validated data refactor ([08e6f20](https://github.com/ahmedrangel/animeflv-api/commit/08e6f20))
+- Allow empty payloads ([b9735e1](https://github.com/ahmedrangel/animeflv-api/commit/b9735e1))
+- Lint ([d45464f](https://github.com/ahmedrangel/animeflv-api/commit/d45464f))
+- Adjust ([ac3ef48](https://github.com/ahmedrangel/animeflv-api/commit/ac3ef48))
+- Use @stylistic/eslint-plugin with @typescript-eslint/parser ([21f121e](https://github.com/ahmedrangel/animeflv-api/commit/21f121e))
+- Update deps ([f4a4320](https://github.com/ahmedrangel/animeflv-api/commit/f4a4320))
+- Lint ([89e68ec](https://github.com/ahmedrangel/animeflv-api/commit/89e68ec))
+- Update deps ([ecfb499](https://github.com/ahmedrangel/animeflv-api/commit/ecfb499))
+- Replace unpkg using jsdelivr with SRI ([a2d2748](https://github.com/ahmedrangel/animeflv-api/commit/a2d2748))
+- Rename swagger ui options properties to camel cased names ([63365bf](https://github.com/ahmedrangel/animeflv-api/commit/63365bf))
+- **package:** Add release script ([75d733e](https://github.com/ahmedrangel/animeflv-api/commit/75d733e))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.0.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.1...v2.0.2)
