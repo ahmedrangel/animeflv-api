@@ -4,12 +4,12 @@
 https://animeflv.ahmedrangel.com/api
 
 ## Endpoints
-### Info
-`GET` [/anime/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_info)
+### Anime
+`GET` [/anime/{slug}](https://animeflv.ahmedrangel.com/#/Anime/get_info)
 
-`GET` [/anime/episode/{slug}](https://animeflv.ahmedrangel.com/#/Info/get_episode)
+`GET` [/anime/episode/{slug}](https://animeflv.ahmedrangel.com/#/Anime/get_episode)
 
-`GET` [/anime/{slug}/episode/{number}](https://animeflv.ahmedrangel.com/#/Info/get_episodeByAnimeSlugAndEpisodeNumber)
+`GET` [/anime/{slug}/episode/{number}](https://animeflv.ahmedrangel.com/#/Anime/get_episodeByAnimeSlugAndEpisodeNumber)
 
 
 ### Search

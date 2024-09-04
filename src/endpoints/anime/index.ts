@@ -5,7 +5,7 @@ import { error } from "itty-router";
 
 export class info extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
-    tags: ["Info"],
+    tags: ["Anime"],
     request: {
       params: Obj({
         slug: Str({
