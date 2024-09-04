@@ -6,7 +6,7 @@ import { error } from "itty-router";
 export class latest extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
     tags: ["List"],
-    summary: "Devuelve un arreglo con los últimos episodios subidos.",
+    summary: "Obtiene una lista de últimos episodios lanzados.",
     responses: {
       200: {
         description: "Cada objeto en el arreglo contiene información como el título, el capítulo, la portada, y la url del episodio. Estos objetos están ordenados de manera cronológica, los últimos episodios estarán en la parte superior del arreglo.",

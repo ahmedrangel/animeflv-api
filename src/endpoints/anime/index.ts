@@ -15,7 +15,7 @@ export class info extends OpenAPIRoute {
         })
       })
     },
-    summary: "Devuelve un objeto con información detallada del anime especificado por el parámetro \"slug\".",
+    summary: "Obtiene un anime especificado por \"slug\".",
     responses: {
       200: {
         description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, episodios, y url.",

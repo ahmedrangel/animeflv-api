@@ -6,7 +6,7 @@ import { getEpisodeLinks } from "functions/getEpisodeLinks";
 export class episode extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
     tags: ["Info"],
-    summary: "Devuelve un objeto con información detallada del episodio especificado por el parámetro \"slug\".",
+    summary: "Obtiene un episodio especificado por \"slug\".",
     request: {
       params: Obj({
         slug: Str({
@@ -58,7 +58,7 @@ export class episode extends OpenAPIRoute {
 export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
     tags: ["Info"],
-    summary: "Devuelve un objeto con información detallada del episodio especificado el anime por el parámetro \"slug\" y el episodio por el parámetro \"number\".",
+    summary: "Obtiene un episodio especificado por \"slug\" y \"number\".",
     request: {
       params: Obj({
         slug: Str({

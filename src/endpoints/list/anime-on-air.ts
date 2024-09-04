@@ -6,7 +6,7 @@ import { error } from "itty-router";
 export class onAir extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
     tags: ["List"],
-    summary: "Devuelve un arreglo con los animes que actualmente están siendo transmitidos.",
+    summary: "Obtiene una lista de animes en emisión.",
     responses: {
       200: {
         description: "Cada objeto en el arreglo contiene información como el título, el tipo, el slug, y la url del anime. Estos objetos están ordenados de acuerdo a su fecha de transmisión, los animes más recientes estarán en la parte inferior del arreglo.",
