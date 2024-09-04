@@ -89,6 +89,9 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
           .swagger-ui .operation-servers {
             display: ${options?.showServers === false ? "none" : "block"};
           }
+          .response-col_links {
+            display: none;
+          }
         </style>
     </head>
     <body>
