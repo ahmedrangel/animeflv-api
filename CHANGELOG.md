@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v2.0.4
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.3...v2.0.4)
+
+### 🩹 Fixes
+
+- Add meta description to custom swagger ui ([54ec8ab](https://github.com/ahmedrangel/animeflv-api/commit/54ec8ab))
+
+### 📖 Documentation
+
+- Fix readme md link ([80e8e15](https://github.com/ahmedrangel/animeflv-api/commit/80e8e15))
+
+### 🏡 Chore
+
+- Update deps ([bb1ae6e](https://github.com/ahmedrangel/animeflv-api/commit/bb1ae6e))
+- Update deps ([72f6a3b](https://github.com/ahmedrangel/animeflv-api/commit/72f6a3b))
+- Update deps ([cb83dc3](https://github.com/ahmedrangel/animeflv-api/commit/cb83dc3))
+- Update doc information ([b80dc89](https://github.com/ahmedrangel/animeflv-api/commit/b80dc89))
+- Remove links column from swagger ui docs ([b902794](https://github.com/ahmedrangel/animeflv-api/commit/b902794))
+- Rename tag from Info to Anime ([784cd27](https://github.com/ahmedrangel/animeflv-api/commit/784cd27))
+- Update deps ([0a34c4c](https://github.com/ahmedrangel/animeflv-api/commit/0a34c4c))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.0.3
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.2...v2.0.3)
