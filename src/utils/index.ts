@@ -24,3 +24,5 @@ export const customSwaggerUIOptions: customSwaggerUIOptionsTypes = {
     twitterDescription: SITE.description
   }
 };
+
+export const sendRedirect = (url: string, status: 301 | 302) => new Response(null, { status, headers: { Location: url } });

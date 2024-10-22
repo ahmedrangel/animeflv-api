@@ -5,7 +5,7 @@ import { customSwaggerUI } from "utils/customSwaggerUI";
 import { version } from "../package.json";
 import { html } from "responses/html";
 import { SITE } from "utils/site";
-import { customSwaggerUIOptions } from "utils";
+import { customSwaggerUIOptions, sendRedirect } from "utils";
 
 const BASE = "/api";
 
@@ -32,11 +32,11 @@ itty.get("/", () => {
   return html(ui);
 });
 
-itty.get("/api", (req: IRequest) => {
+itty.get(BASE, (req: IRequest) => {
   const host = req.headers.get("host") || "";
   const protocol = req.url.split("://")[0];
   const redirectTo = `${protocol}://${host}`;
-  return Response.redirect(redirectTo, 301);
+  return sendRedirect(redirectTo, 301);
 });
 
 router.get(BASE + "/anime/:slug", info);
