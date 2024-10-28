@@ -6,14 +6,16 @@ import { AnimeflvUrls } from "../../constants";
 export const searchAnime = async (opts: Record<string, string>): Promise<SearchAnimeResults | null> => {
   const { query } = opts;
   const fixedQuery = query.toLowerCase().replace(/\s+/g, "+");
-  const reqURL = new URL(`${AnimeflvUrls.host}/browse?q=${fixedQuery}`);
-  if (opts?.page) reqURL.searchParams.append("page", opts.page);
-
   try {
-    const searchData = await $fetch(reqURL).catch(() => null);
+    const searchData = await $fetch(`${AnimeflvUrls.host}/browse`, {
+      params: {
+        q: fixedQuery,
+        ...opts?.page ? { page: opts.page } : {}
+      }
+    }).catch(() => null);
     if (!searchData) return null;
 
-    return executeSearch(searchData, opts);
+    return executeSearch(searchData);
   }
   catch {
     return null;

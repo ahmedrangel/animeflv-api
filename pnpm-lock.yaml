@@ -41,6 +41,9 @@ importers:
       ofetch:
         specifier: ^1.4.1
         version: 1.4.1
+      ufo:
+        specifier: ^1.5.4
+        version: 1.5.4
       wrangler:
         specifier: ^3.83.0
         version: 3.83.0(@cloudflare/workers-types@4.20241022.0)
