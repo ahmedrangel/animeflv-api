@@ -11,7 +11,7 @@ export class search extends OpenAPIRoute {
       query: Obj({
         query: Str({
           description: "La consulta de búsqueda para encontrar animes.",
-          example: "boruto",
+          example: "isekai",
           required: true
         }),
         page: Int({
