@@ -1,6 +1,46 @@
 # Changelog
 
 
+## v2.1.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.4...v2.1.0)
+
+### 🚀 Enhancements
+
+- Add optional page query for search endpoints ([f1a64e3](https://github.com/ahmedrangel/animeflv-api/commit/f1a64e3))
+
+### 🩹 Fixes
+
+- Base redirect ([ac6f314](https://github.com/ahmedrangel/animeflv-api/commit/ac6f314))
+
+### 💅 Refactors
+
+- Responses and utils structure ([4efefe2](https://github.com/ahmedrangel/animeflv-api/commit/4efefe2))
+- Scrapers utils structure and code ([4e78975](https://github.com/ahmedrangel/animeflv-api/commit/4e78975))
+- Use ofetch params and ufo getQuery to improve url string handling and fix currentPage prop ([f4a51cc](https://github.com/ahmedrangel/animeflv-api/commit/f4a51cc))
+
+### 📖 Documentation
+
+- Update search query example ([f2c1d41](https://github.com/ahmedrangel/animeflv-api/commit/f2c1d41))
+
+### 🏡 Chore
+
+- Remove unused package-lock.json file ([5878d73](https://github.com/ahmedrangel/animeflv-api/commit/5878d73))
+- Update deps ([504d660](https://github.com/ahmedrangel/animeflv-api/commit/504d660))
+- Update deps ([c2a3d38](https://github.com/ahmedrangel/animeflv-api/commit/c2a3d38))
+- Remove unnecessary double-typed types ([a4638d9](https://github.com/ahmedrangel/animeflv-api/commit/a4638d9))
+- ⚠️  Improve types ([704b638](https://github.com/ahmedrangel/animeflv-api/commit/704b638))
+- Update searchByUrl example ([faa8e2d](https://github.com/ahmedrangel/animeflv-api/commit/faa8e2d))
+- Improve types ([e6bd689](https://github.com/ahmedrangel/animeflv-api/commit/e6bd689))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Improve types ([704b638](https://github.com/ahmedrangel/animeflv-api/commit/704b638))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.0.4
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.3...v2.0.4)
