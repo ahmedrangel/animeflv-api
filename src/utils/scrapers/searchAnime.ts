@@ -3,12 +3,17 @@ import type { SearchAnimeResults } from "../../types";
 import { executeSearch } from "../../utils/scrapers/helpers/executeSearch";
 import { AnimeflvUrls } from "../../constants";
 
-export const searchAnime = async (query: string): Promise<SearchAnimeResults | null> => {
+export const searchAnime = async (opts: Record<string, string>): Promise<SearchAnimeResults | null> => {
+  const { query } = opts;
+  const fixedQuery = query.toLowerCase().replace(/\s+/g, "+");
+  const reqURL = new URL(`${AnimeflvUrls.host}/browse?q=${fixedQuery}`);
+  if (opts?.page) reqURL.searchParams.append("page", opts.page);
+
   try {
-    const searchData = await $fetch(AnimeflvUrls.host + "/browse?q=" + query.toLowerCase().replace(/\s+/g, "+")).catch(() => null);
+    const searchData = await $fetch(reqURL).catch(() => null);
     if (!searchData) return null;
 
-    return executeSearch(searchData);
+    return executeSearch(searchData, opts);
   }
   catch {
     return null;

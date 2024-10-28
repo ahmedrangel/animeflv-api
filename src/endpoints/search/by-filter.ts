@@ -2,7 +2,7 @@ import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from 
 import { searchAnimesByFilter } from "utils/scrapers/searchAnimesByFilter";
 import { ExampleSearchByFilter } from "constants/responseExamples";
 import type { OpenAPIRouteSchema } from "chanfana";
-import { Arr, Bool, Enumeration, Obj, OpenAPIRoute, convertParams } from "chanfana";
+import { Arr, Bool, Enumeration, Int, Obj, OpenAPIRoute, convertParams } from "chanfana";
 import { error, type IRequest } from "itty-router";
 import { z } from "zod";
 
@@ -50,6 +50,10 @@ export class searchByFilter extends OpenAPIRoute {
           description: "Especificar el orden de los resultados.",
           values: orders,
           example: "default",
+          required: false
+        }),
+        page: Int({
+          description: "Especificar el número de página.",
           required: false
         })
       })
@@ -101,7 +105,7 @@ export class searchByFilter extends OpenAPIRoute {
     }
 
     const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
-    const { order } = query as Record<string, string>;
+    const { order, page } = query as Record<string, string>;
 
     const invalid_order = !orders?.includes(order);
     if (order && invalid_order)
@@ -122,7 +126,7 @@ export class searchByFilter extends OpenAPIRoute {
     if (body?.genres?.length > 4)
       return error(400, { success: false, error: "Solo se permite un máximo 4 géneros" });
 
-    const search = await searchAnimesByFilter({ ...body, order: order });
+    const search = await searchAnimesByFilter({ ...body, order, page });
     if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return {
       success: true,

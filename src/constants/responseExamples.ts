@@ -1,6 +1,8 @@
 import type { AnimeInfoData, AnimeOnAirData, ChapterData, SearchAnimeResults, EpisodeInfoData } from "types";
 
 export const ExampleSearch: SearchAnimeResults = {
+  currentPage: 1,
+  hasNextPage: false,
   previousPage: null,
   nextPage: null,
   foundPages: 1,
@@ -227,6 +229,8 @@ export const ExampleLatest: ChapterData[] = [
 ];
 
 export const ExampleSearchByFilter: SearchAnimeResults = {
+  currentPage: 1,
+  hasNextPage: true,
   previousPage: null,
   nextPage: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&status%5B%5D=2&type%5B%5D=tv&order=default&page=2",
   foundPages: 24,

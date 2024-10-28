@@ -23,10 +23,14 @@ export interface PartialAnimeData {
 }
 
 export interface SearchAnimeResults {
+  /** Página actual */
+  currentPage: number;
   /** URL a la página anterior, o null en caso de no haber*/
   previousPage: string | null;
   /** URL a la página siguiente, o null en caso de no haber*/
   nextPage: string | null;
+  /** Indica si hay una página siguiente o no */
+  hasNextPage: boolean;
   /** Número de páginas con resultados de la búsqueda realizada */
   foundPages: number;
   /** Los animés encontrados en la búsqueda */
@@ -95,6 +99,8 @@ export interface FilterOptions {
   statuses?: AnimeStatus[];
   /** El orden en el que se recibirán los animés */
   order?: FilterOrderType;
+  /** El número de página que se solicitará */
+  page?: number;
 }
 
 export interface SeoOptions {

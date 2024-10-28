@@ -1,6 +1,6 @@
 import { searchAnime } from "utils/scrapers/searchAnime";
 import { ExampleSearch } from "constants/responseExamples";
-import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool } from "chanfana";
+import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool, Int } from "chanfana";
 import { error } from "itty-router";
 
 export class search extends OpenAPIRoute {
@@ -13,6 +13,10 @@ export class search extends OpenAPIRoute {
           description: "La consulta de búsqueda para encontrar animes.",
           example: "boruto",
           required: true
+        }),
+        page: Int({
+          description: "Especificar el número de página.",
+          required: false
         })
       })
     },
@@ -43,8 +47,9 @@ export class search extends OpenAPIRoute {
   };
 
   async handle () {
-    const { query } = await this.getValidatedData<typeof this.schema>();
-    const search = await searchAnime(query.query);
+    const data = await this.getValidatedData<typeof this.schema>();
+    const { query, page } = data.query;
+    const search = await searchAnime({ query, page });
     if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return {
       success: true,
