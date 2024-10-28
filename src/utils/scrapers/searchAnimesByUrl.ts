@@ -1,9 +1,8 @@
 import { $fetch } from "ofetch";
-import { type SearchAnimeResults } from "../types";
-import { executeSearch } from "../utils";
+import { type SearchAnimeResults } from "../../types";
+import { executeSearch } from "../../utils/scrapers/helpers/executeSearch";
 
-export async function searchAnimesBySpecificURL (url: string): Promise<SearchAnimeResults | null> {
-
+export const searchAnimesBySpecificURL = async (url: string): Promise<SearchAnimeResults | null> => {
   if (!url || (typeof url) !== "string")
     throw new TypeError(`Parámetro url debe ser una string no vacía, pasaste: ${url}`, { cause: "url is not a valid url." });
 
@@ -14,4 +13,4 @@ export async function searchAnimesBySpecificURL (url: string): Promise<SearchAni
   catch {
     return null;
   }
-}
+};

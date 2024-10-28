@@ -1,7 +1,7 @@
 import { load } from "cheerio";
-import { AnimeflvUrls } from "../constants";
-import type { ChapterData } from "../types";
 import { $fetch } from "ofetch";
+import { AnimeflvUrls } from "../../constants";
+import type { ChapterData } from "../../types";
 
 export const getLatest = async (): Promise<ChapterData[]> => {
   try {

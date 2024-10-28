@@ -1,5 +1,5 @@
 import { ExampleSearch } from "constants/responseExamples";
-import { searchAnimesBySpecificURL } from "functions/searchAnimesByUrl";
+import { searchAnimesBySpecificURL } from "utils/scrapers/searchAnimesByUrl";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Bool, Obj, OpenAPIRoute, Str } from "chanfana";
 import { error } from "itty-router";

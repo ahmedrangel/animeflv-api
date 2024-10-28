@@ -1,5 +1,5 @@
 import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from "../../constants";
-import { searchAnimesByFilter } from "functions/searchAnimesByFilter";
+import { searchAnimesByFilter } from "utils/scrapers/searchAnimesByFilter";
 import { ExampleSearchByFilter } from "constants/responseExamples";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Arr, Bool, Enumeration, Obj, OpenAPIRoute, convertParams } from "chanfana";

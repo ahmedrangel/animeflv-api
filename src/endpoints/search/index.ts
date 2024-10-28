@@ -1,4 +1,4 @@
-import { searchAnime } from "functions/searchAnime";
+import { searchAnime } from "utils/scrapers/searchAnime";
 import { ExampleSearch } from "constants/responseExamples";
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool } from "chanfana";
 import { error } from "itty-router";

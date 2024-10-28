@@ -1,5 +1,5 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool } from "chanfana";
-import { getLatest } from "functions/getLatest";
+import { getLatest } from "utils/scrapers/getLatest";
 import { ExampleLatest } from "constants/responseExamples";
 import { error } from "itty-router";
 

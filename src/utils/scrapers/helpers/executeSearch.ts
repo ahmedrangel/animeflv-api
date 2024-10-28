@@ -1,10 +1,9 @@
-import { type SearchAnimeResults } from "../types";
 import { load } from "cheerio";
+import { type SearchAnimeResults } from "../../../types";
 import { getNextAndPrevPages } from "./getPrevAndNextPages";
 import { scrapSearchAnimeData } from "./scrapAnimeData";
 
-export function executeSearch (searchData: string): SearchAnimeResults | null {
-
+export const executeSearch = (searchData: string): SearchAnimeResults | null => {
   const $ = load(searchData);
 
   const search: SearchAnimeResults = {
@@ -23,4 +22,4 @@ export function executeSearch (searchData: string): SearchAnimeResults | null {
   search.previousPage = previousPage;
 
   return search;
-}
+};

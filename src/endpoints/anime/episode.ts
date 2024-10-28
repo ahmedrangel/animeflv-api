@@ -1,7 +1,7 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool, Num } from "chanfana";
 import { error, json } from "itty-router";
 import { ExampleEpisodeInfo } from "constants/responseExamples";
-import { getEpisodeLinks } from "functions/getEpisodeLinks";
+import { getEpisodeLinks } from "utils/scrapers/getEpisodeLinks";
 
 export class episode extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {

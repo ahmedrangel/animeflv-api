@@ -1,6 +1,6 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
-import { AnimeflvUrls } from "../constants";
+import { AnimeflvUrls } from "../../constants";
 import type { EpisodeInfoData, EpisodeServersData } from "types";
 
 export const getEpisodeLinks = async (slug: string, number?: number): Promise<any | null> => {

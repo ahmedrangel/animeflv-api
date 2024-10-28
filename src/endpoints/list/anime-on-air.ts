@@ -1,5 +1,5 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool } from "chanfana";
-import { getOnAir } from "functions/getOnAir";
+import { getOnAir } from "utils/scrapers/getOnAir";
 import { ExampleOnAir } from "constants/responseExamples";
 import { error } from "itty-router";
 

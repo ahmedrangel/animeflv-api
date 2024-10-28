@@ -1,5 +1,5 @@
 import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Bool, Str } from "chanfana";
-import { getAnimeInfo } from "functions/getAnimeInfo";
+import { getAnimeInfo } from "utils/scrapers/getAnimeInfo";
 import { ExampleInfo } from "constants/responseExamples";
 import { error } from "itty-router";
 
