@@ -60,7 +60,7 @@ export const ExampleInfo: AnimeInfoData = {
     "狼と香辛料 MERCHANT MEETS THE WISE WOLF",
     "Spice and Wolf: Merchant Meets the Wise Wolf"
   ],
-  status: "En emision",
+  status: "En emisión",
   rating: "4.6",
   type: "Anime",
   cover: "https://animeflv.net/uploads/animes/covers/3957.jpg",

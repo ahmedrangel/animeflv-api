@@ -3,8 +3,7 @@ import type { AnimeGenres, AnimeStatuses, AnimeTypes, FilterOrderTypes } from ".
 export type AnimeStatus = typeof AnimeStatuses[number];
 export type AnimeType = typeof AnimeTypes[number];
 export type AnimeGenre = typeof AnimeGenres[number];
-export type FilterOrderType = typeof FilterOrderTypes[string];
-export type FilterAnimeResults = SearchAnimeResults;
+export type FilterOrderType = typeof FilterOrderTypes[number];
 
 export interface PartialAnimeData {
   /** Título del animé */

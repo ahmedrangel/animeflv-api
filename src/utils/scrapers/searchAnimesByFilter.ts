@@ -1,6 +1,6 @@
 import { $fetch } from "ofetch";
-import { AnimeflvUrls, FilterOrderTypes } from "../../constants";
-import type { FilterOptions, FilterAnimeResults } from "../../types";
+import { AnimeflvUrls } from "../../constants";
+import type { FilterOptions, SearchAnimeResults } from "../../types";
 import { executeSearch } from "../../utils/scrapers/helpers/executeSearch";
 
 const generateRequestUrl = (options?: FilterOptions): string => {
@@ -31,7 +31,7 @@ const generateRequestUrl = (options?: FilterOptions): string => {
     }
   }
 
-  if (options.order && (options.order in FilterOrderTypes)) {
+  if (options.order) {
     FinalUrl.searchParams.append(orderPrefix, options.order);
   }
   else {
@@ -41,7 +41,7 @@ const generateRequestUrl = (options?: FilterOptions): string => {
   return FinalUrl.toString();
 };
 
-export const searchAnimesByFilter = async (opts?: FilterOptions): Promise<FilterAnimeResults | null> => {
+export const searchAnimesByFilter = async (opts?: FilterOptions): Promise<SearchAnimeResults | null> => {
   try {
     /** La url del request con los filtros ya puestos */
     const formatedUrl = generateRequestUrl(opts);
