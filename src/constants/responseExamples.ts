@@ -1,4 +1,4 @@
-import type { AnimeInfoData, AnimeGenre, AnimeOnAirData, AnimeStatus, AnimeType, ChapterData, PartialAnimeData, SearchAnimeResults, EpisodeInfoData, EpisodeServersData } from "types";
+import type { AnimeInfoData, AnimeOnAirData, ChapterData, SearchAnimeResults, EpisodeInfoData } from "types";
 
 export const ExampleSearch: SearchAnimeResults = {
   previousPage: null,
@@ -11,7 +11,7 @@ export const ExampleSearch: SearchAnimeResults = {
       synopsis: "Segunda temporada de Overlord.",
       rating: "4.7",
       slug: "overlord-ii",
-      type: "Anime" as AnimeType,
+      type: "Anime",
       url: "https://www3.animeflv.net/anime/overlord-ii"
     },
     {
@@ -20,7 +20,7 @@ export const ExampleSearch: SearchAnimeResults = {
       synopsis: "Cuarta temporada de Overlord",
       rating: "4.8",
       slug: "overlord-iv",
-      type: "Anime" as AnimeType,
+      type: "Anime",
       url: "https://www3.animeflv.net/anime/overlord-iv"
     },
     {
@@ -29,7 +29,7 @@ export const ExampleSearch: SearchAnimeResults = {
       synopsis: "La historia da comienzo cuando Yggdrasil, un popular juego online, es cerrado un día sin previo aviso. Sin embargo, el protagonista, Momonga, decide no salir del juego. Momonga así se transforma y se convierte en “el mago más poderoso”. El mundo sigue cambiando con él dentro, y los NPCs comienzan a sentir emo...",
       rating: "4.8",
       slug: "overlord",
-      type: "Anime" as AnimeType,
+      type: "Anime",
       url: "https://www3.animeflv.net/anime/overlord"
     },
     {
@@ -38,7 +38,7 @@ export const ExampleSearch: SearchAnimeResults = {
       synopsis: "Especiales",
       rating: "4.7",
       slug: "overlord-specials",
-      type: "OVA" as AnimeType,
+      type: "OVA",
       url: "https://www3.animeflv.net/anime/overlord-specials"
     },
     {
@@ -47,10 +47,10 @@ export const ExampleSearch: SearchAnimeResults = {
       synopsis: "Tercera temporada de Overlord.",
       rating: "4.7",
       slug: "overlord-iii",
-      type: "Anime" as AnimeType,
+      type: "Anime",
       url: "https://www3.animeflv.net/anime/overlord-iii"
     }
-  ] as PartialAnimeData[]
+  ]
 };
 
 export const ExampleInfo: AnimeInfoData = {
@@ -60,9 +60,9 @@ export const ExampleInfo: AnimeInfoData = {
     "狼と香辛料 MERCHANT MEETS THE WISE WOLF",
     "Spice and Wolf: Merchant Meets the Wise Wolf"
   ],
-  status: "En emision" as AnimeStatus,
+  status: "En emision",
   rating: "4.6",
-  type: "Anime" as AnimeType,
+  type: "Anime",
   cover: "https://animeflv.net/uploads/animes/covers/3957.jpg",
   synopsis: "Lawrence, un comerciante ambulante, encuentra a una chica desnuda con orejas y cola de lobo dormida en su carro. Ella es Holo, una diosa de la cosecha con una bestia indómita acechando en su interior. Armado con su astucia callejera y sus instintos animales, un simple vendedor ambulante y una deidad olvidada viajan por el campo mientras cosechan las riquezas de la felicidad y exponen la bancarrota que habita en el corazón humano.",
   genres: [
@@ -70,7 +70,7 @@ export const ExampleInfo: AnimeInfoData = {
     "Drama",
     "Fantasía",
     "Romance"
-  ] as AnimeGenre[],
+  ],
   episodes: [
     {
       number: 1,
@@ -139,43 +139,43 @@ export const ExampleInfo: AnimeInfoData = {
 export const ExampleOnAir: AnimeOnAirData[] = [
   {
     title: "One Piece Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "one-piece-tv",
     url: "https://www3.animeflv.net/anime/one-piece-tv"
   },
   {
     title: "Detective Conan Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "detective-conan",
     url: "https://www3.animeflv.net/anime/detective-conan"
   },
   {
     title: "Shadowverse Flame Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "shadowverse-flame",
     url: "https://www3.animeflv.net/anime/shadowverse-flame"
   },
   {
     title: "Urusei Yatsura (2022) Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "urusei-yatsura-2022",
     url: "https://www3.animeflv.net/anime/urusei-yatsura-2022"
   },
   {
     title: "Nijiyon Animation Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "nijiyon-animation",
     url: "https://www3.animeflv.net/anime/nijiyon-animation"
   },
   {
     title: "Maou Gakuin no Futekigousha II Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "maou-gakuin-no-futekigousha-ii",
     url: "https://www3.animeflv.net/anime/maou-gakuin-no-futekigousha-ii"
   },
   {
     title: "Mushoku Tensei II: Isekai Ittara Honki Dasu Anime",
-    type: "Anime" as AnimeType,
+    type: "Anime",
     slug: "mushoku-tensei-ii-isekai-ittara-honki-dasu",
     url: "https://www3.animeflv.net/anime/mushoku-tensei-ii-isekai-ittara-honki-dasu"
   }
@@ -335,5 +335,5 @@ export const ExampleEpisodeInfo: EpisodeInfoData = {
       name: "1Fichier",
       download: "https://1fichier.com/?kpjbiych72d8hbuq4f6r"
     }
-  ] as EpisodeServersData[]
+  ]
 };
