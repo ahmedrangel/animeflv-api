@@ -3,7 +3,7 @@ import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../../constants";
 import type { EpisodeInfoData, EpisodeServersData } from "types";
 
-export const getEpisodeLinks = async (slug: string, number?: number): Promise<any | null> => {
+export const getEpisodeLinks = async (slug: string, number?: number): Promise<EpisodeInfoData | null> => {
   try {
     const episodeData = async () => {
       if (slug && !number)

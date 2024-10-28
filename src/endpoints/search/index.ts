@@ -48,7 +48,7 @@ export class search extends OpenAPIRoute {
 
   async handle () {
     const data = await this.getValidatedData<typeof this.schema>();
-    const { query, page } = data.query;
+    const { query, page } = data.query as { query: string, page: number };
     const search = await searchAnime({ query, page });
     if (!search || !search?.media?.length) return error(404, { success: false, error: "No se han encontrado resultados en la búsqueda" });
     return {

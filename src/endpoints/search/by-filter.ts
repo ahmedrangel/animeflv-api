@@ -5,6 +5,7 @@ import type { OpenAPIRouteSchema } from "chanfana";
 import { Arr, Bool, Enumeration, Int, Obj, OpenAPIRoute, convertParams } from "chanfana";
 import { error, type IRequest } from "itty-router";
 import { z } from "zod";
+import { FilterOrderType } from "types";
 
 const genres = Object.values(AnimeGenreEnum);
 const statuses = Object.values(AnimeStatusEnum);
@@ -104,8 +105,8 @@ export class searchByFilter extends OpenAPIRoute {
       catch { return error(400, { success: false, error: "Bad Request" }); }
     }
 
-    const { query } = await this.getValidatedData<typeof this.schema>() as Record<string, any>;
-    const { order, page } = query as Record<string, string>;
+    const { query } = await this.getValidatedData<typeof this.schema>();
+    const { order, page } = query as { order: FilterOrderType, page: number };
 
     const invalid_order = !orders?.includes(order);
     if (order && invalid_order)

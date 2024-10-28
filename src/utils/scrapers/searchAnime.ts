@@ -3,7 +3,7 @@ import type { SearchAnimeResults } from "../../types";
 import { executeSearch } from "../../utils/scrapers/helpers/executeSearch";
 import { AnimeflvUrls } from "../../constants";
 
-export const searchAnime = async (opts: Record<string, string>): Promise<SearchAnimeResults | null> => {
+export const searchAnime = async (opts: { query: string, page?: number }): Promise<SearchAnimeResults | null> => {
   const { query } = opts;
   const fixedQuery = query.toLowerCase().replace(/\s+/g, "+");
   try {

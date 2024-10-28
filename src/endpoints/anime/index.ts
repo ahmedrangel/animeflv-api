@@ -44,7 +44,7 @@ export class info extends OpenAPIRoute {
 
   async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
-    const { slug } = params as Record<string, string>;
+    const { slug } = params as { slug: string };
     const info = await getAnimeInfo(slug);
     if (!info) return error(404, { success: false, error: "No se ha encontrado el anime" });
     return {

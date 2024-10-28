@@ -44,7 +44,7 @@ export class episode extends OpenAPIRoute {
 
   async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
-    const { slug } = params as Record<string, string>;
+    const { slug } = params as { slug: string };
     const episode = await getEpisodeLinks(slug);
     if (!episode) return error(404, { success: false, error: "No se ha encontrado el episodio" });
     return {
@@ -101,7 +101,7 @@ export class episodeByAnimeSlugAndEpisodeNumber extends OpenAPIRoute {
 
   async handle () {
     const { params } = await this.getValidatedData<typeof this.schema>();
-    const { slug, number } = params as Record<string, any>;
+    const { slug, number } = params as { slug: string, number: number };
     const episode = await getEpisodeLinks(slug, number);
     if (!episode) return error(404, { success: false, error: "No se ha encontrado el episodio" });
     return json({
