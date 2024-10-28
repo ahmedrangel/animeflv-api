@@ -12,7 +12,7 @@ export class searchByUrl extends OpenAPIRoute {
       query: Obj({
         url: Str({
           description: "La URL de consulta.",
-          example: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&type%5B%5D=tv&status%5B%5D=1&order=default",
+          example: "https://www3.animeflv.net/browse?genre%5B%5D=shounen&type%5B%5D=tv&order=default&page=2",
           required: true
         })
       })
