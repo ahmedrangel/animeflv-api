@@ -1,11 +1,10 @@
+import { version } from "../package.json";
 import { fromIttyRouter } from "chanfana";
 import { AutoRouter, type IRequest, cors, error } from "itty-router";
 import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodeNumber } from "./endpoints";
-import { customSwaggerUI } from "utils/customSwaggerUI";
-import { version } from "../package.json";
-import { html } from "responses/html";
+import { customSwaggerUI, customSwaggerUIOptions } from "utils/customSwaggerUI";
+import { html, sendRedirect } from "utils/responses";
 import { SITE } from "utils/site";
-import { customSwaggerUIOptions, sendRedirect } from "utils";
 
 const BASE = "/api";
 
@@ -54,7 +53,5 @@ router.all("*", () =>
 );
 
 export default {
-  fetch: async (req, env, ctx) => {
-    return router.fetch(req, env, ctx);
-  }
+  fetch: async (req, env, ctx) => router.fetch(req, env, ctx)
 } as ExportedHandler;
