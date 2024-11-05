@@ -1,4 +1,4 @@
-import { type OpenAPIRouteSchema, OpenAPIRoute, Obj, Str, Bool, Num } from "chanfana";
+import { Bool, Num, Obj, OpenAPIRoute, type OpenAPIRouteSchema, Str } from "chanfana";
 import { error, json } from "itty-router";
 import { ExampleEpisodeInfo } from "constants/responseExamples";
 import { getEpisodeLinks } from "utils/scrapers/getEpisodeLinks";

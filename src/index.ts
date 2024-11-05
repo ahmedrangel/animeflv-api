@@ -1,7 +1,7 @@
 import { version } from "../package.json";
 import { fromIttyRouter } from "chanfana";
 import { AutoRouter, type IRequest, cors, error } from "itty-router";
-import { info, search, latest, onAir, searchByFilter, searchByUrl, episode, episodeByAnimeSlugAndEpisodeNumber } from "./endpoints";
+import { episode, episodeByAnimeSlugAndEpisodeNumber, info, latest, onAir, search, searchByFilter, searchByUrl } from "./endpoints";
 import { customSwaggerUI, customSwaggerUIOptions } from "utils/customSwaggerUI";
 import { html, sendRedirect } from "utils/responses";
 import { SITE } from "utils/site";

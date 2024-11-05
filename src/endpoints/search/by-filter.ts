@@ -3,7 +3,7 @@ import { searchAnimesByFilter } from "utils/scrapers/searchAnimesByFilter";
 import { ExampleSearchByFilter } from "constants/responseExamples";
 import type { OpenAPIRouteSchema } from "chanfana";
 import { Arr, Bool, Enumeration, Int, Obj, OpenAPIRoute, convertParams } from "chanfana";
-import { error, type IRequest } from "itty-router";
+import { type IRequest, error } from "itty-router";
 import { z } from "zod";
 import { FilterOrderType } from "types";
 

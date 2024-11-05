@@ -1,4 +1,4 @@
-import type { AnimeInfoData, AnimeOnAirData, ChapterData, SearchAnimeResults, EpisodeInfoData } from "types";
+import type { AnimeInfoData, AnimeOnAirData, ChapterData, EpisodeInfoData, SearchAnimeResults } from "types";
 
 export const ExampleSearch: SearchAnimeResults = {
   currentPage: 1,
