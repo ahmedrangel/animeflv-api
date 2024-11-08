@@ -18,16 +18,15 @@ export const executeSearch = (searchData: string): SearchAnimeResults | null => 
 
   const pageSelector = $("body > div.Wrapper > div > div > main > div > ul > li");
   const { foundPages, nextPage, previousPage } = getNextAndPrevPages(pageSelector);
-  search.media = scrapSearchAnimeData($);
+  search.media.push(...scrapSearchAnimeData($));
   search.foundPages = foundPages;
   search.nextPage = nextPage;
   search.previousPage = previousPage;
-  const pageFromQuery = Number(getQuery(nextPage || previousPage)?.page);
+  const pageFromQuery = nextPage || previousPage ? Number(getQuery(nextPage || previousPage)?.page) : null;
   const isNextPage = nextPage && pageFromQuery;
   const isPreviousPage = previousPage && pageFromQuery;
   const inferredPage = isNextPage ? pageFromQuery - 1 : isPreviousPage ? pageFromQuery + 1 : null;
   search.currentPage = inferredPage || 1;
   search.hasNextPage = nextPage ? true : false;
-
   return search;
 };
