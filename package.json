@@ -28,7 +28,7 @@
 		"release": "changelogen --release"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20241022.0",
+		"@cloudflare/workers-types": "^4.20241106.0",
 		"@stylistic/eslint-plugin": "^2.10.1",
 		"@types/node": "^22.9.0",
 		"@types/service-worker-mock": "^2.0.4",
@@ -40,7 +40,7 @@
 		"itty-router": "^5.0.18",
 		"ofetch": "^1.4.1",
 		"ufo": "^1.5.4",
-		"wrangler": "^3.84.1",
+		"wrangler": "^3.85.0",
 		"zod": "^3.23.8"
 	},
 	"packageManager": "pnpm@9.12.3"
