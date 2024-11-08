@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v2.1.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.0...v2.1.1)
+
+### 🩹 Fixes
+
+- Search endpoint ([c0fcd2a](https://github.com/ahmedrangel/animeflv-api/commit/c0fcd2a))
+
+### 🏡 Chore
+
+- **release:** V2.1.0 ([3567ec0](https://github.com/ahmedrangel/animeflv-api/commit/3567ec0))
+- Update deps ([e3083f0](https://github.com/ahmedrangel/animeflv-api/commit/e3083f0))
+- **lint:** Sort imports ([9a9031b](https://github.com/ahmedrangel/animeflv-api/commit/9a9031b))
+- Lint ([9cc235d](https://github.com/ahmedrangel/animeflv-api/commit/9cc235d))
+- Update deps ([93c0bc6](https://github.com/ahmedrangel/animeflv-api/commit/93c0bc6))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.1.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.0.4...v2.1.0)
