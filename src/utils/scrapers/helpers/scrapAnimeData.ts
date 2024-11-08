@@ -19,7 +19,7 @@ export const scrapSearchAnimeData = ($: CheerioAPI): PartialAnimeData[] => {
         url: AnimeflvUrls.host + ($(el).find("a").attr("href") as string)
       });
     });
-  
+
     return media;
   }
   else {
