@@ -1,5 +1,5 @@
 import { load } from "cheerio";
-import type { FilterOptions, SearchAnimeResults } from "../../../types";
+import type { SearchAnimeResults } from "../../../types";
 import { getNextAndPrevPages } from "./getPrevAndNextPages";
 import { scrapSearchAnimeData } from "./scrapAnimeData";
 import { getQuery } from "ufo";
