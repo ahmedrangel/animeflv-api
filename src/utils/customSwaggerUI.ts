@@ -112,7 +112,7 @@ export const customSwaggerUI = (schemaUrl: string, options?: customSwaggerUIOpti
     </head>
     <body>
     <div id="swagger-ui"></div>
-    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.18.2/swagger-ui-bundle.js" integrity="sha256-xQuUu8TwI5Qyb7eu0fT7aTs2d/Sz0zRODWExgIy/KB8=" crossorigin="anonymous></script>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.18.2/swagger-ui-bundle.js" integrity="sha256-xQuUu8TwI5Qyb7eu0fT7aTs2d/Sz0zRODWExgIy/KB8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.18.2/swagger-ui-standalone-preset.js" integrity="sha256-bFozOOadhOewURe5unsUHSS9P8ECqesC6ATTsE3OxaE=" crossorigin="anonymous"></script>
     <script>
     window.ui = SwaggerUIBundle({
