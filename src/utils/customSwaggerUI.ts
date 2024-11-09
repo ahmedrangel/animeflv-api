@@ -154,7 +154,7 @@ export const customSwaggerUI = (schemaUrl: string, options: CustomSwaggerUIOptio
       background-color: #f0f0f0!important;
       color: ${tw.gray[950]}!important;
     }
-    code *:not([style*="color"]), code:not([style*="color"]) {
+    code *:not([style*="color"]), code:not([style*="color"]), .request-url .microlight, .response .microlight .headerline {
       color: ${tw.gray[100]}!important;
     }
     svg.arrow {
