@@ -2,7 +2,7 @@ import { version } from "../package.json";
 import { fromIttyRouter } from "chanfana";
 import { AutoRouter, type IRequest, cors, error } from "itty-router";
 import { episode, episodeByAnimeSlugAndEpisodeNumber, info, latest, onAir, search, searchByFilter, searchByUrl } from "./endpoints";
-import { customSwaggerUI, customSwaggerUIOptions } from "utils/customSwaggerUI";
+import { customSwaggerUI } from "utils/customSwaggerUI";
 import { html, sendRedirect } from "utils/responses";
 import { SITE } from "utils/site";
 
@@ -27,7 +27,21 @@ export const router = fromIttyRouter(itty, {
 });
 
 itty.get("/", () => {
-  const ui = customSwaggerUI("/openapi.json", customSwaggerUIOptions);
+  const ui = customSwaggerUI("/openapi.json", {
+    title: SITE.title,
+    description: SITE.description,
+    dark: true,
+    showServers: false,
+    seo: {
+      ogType: "website",
+      ogTitle: SITE.title,
+      ogDescription: SITE.description,
+      ogSiteName: SITE.title,
+      ogUrl: SITE.host,
+      twitterTitle: SITE.title,
+      twitterDescription: SITE.description
+    }
+  });
   return html(ui);
 });
 

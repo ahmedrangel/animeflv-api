@@ -121,8 +121,9 @@ export interface customSwaggerUIOptionsTypes {
   description?: string;
   dark?: boolean;
   bgColor?: string;
-  txtColor?: string;
+  textColor?: string;
   sectionHeaderBgColor?: string;
+  sectionHeaderTextColor?: string;
   getColor?: string;
   postColor?: string;
   deleteColor?: string;

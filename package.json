@@ -39,8 +39,9 @@
 		"eslint": "^9.14.0",
 		"itty-router": "^5.0.18",
 		"ofetch": "^1.4.1",
+		"tailwindcss": "^3.4.14",
 		"ufo": "^1.5.4",
-		"wrangler": "^3.85.0",
+		"wrangler": "^3.86.0",
 		"zod": "^3.23.8"
 	},
 	"packageManager": "pnpm@9.12.3"
