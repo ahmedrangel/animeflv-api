@@ -103,35 +103,6 @@ export interface FilterOptions {
   page?: number;
 }
 
-export interface SeoOptions {
-  ogTitle?: string;
-  ogDescription?: string;
-  ogImage?: string;
-  ogType?: string;
-  ogUrl?: string;
-  ogSiteName?: string;
-  twitterCard?: string;
-  twitterImage?: string;
-  twitterTitle?: string;
-  twitterDescription?: string;
-}
-
-export interface customSwaggerUIOptionsTypes {
-  title?: string;
-  description?: string;
-  dark?: boolean;
-  bgColor?: string;
-  textColor?: string;
-  sectionHeaderBgColor?: string;
-  sectionHeaderTextColor?: string;
-  getColor?: string;
-  postColor?: string;
-  deleteColor?: string;
-  codeBgColor?: string;
-  showServers?: boolean;
-  seo?: SeoOptions;
-}
-
 export interface EpisodeServersData {
   /** Nombre del servidor */
   name: string;
@@ -145,4 +116,40 @@ export interface EpisodeInfoData {
   title: string;
   number: number;
   servers: EpisodeServersData[];
+}
+
+interface SeoOptions {
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  ogUrl?: string;
+  ogSiteName?: string;
+  twitterCard?: string;
+  twitterImage?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+}
+
+interface ColorCustomizationOptions {
+  text?: string;
+  bg?: string;
+  sectionHeaderBg?: string;
+  sectionHeaderText?: string;
+  get?: string;
+  post?: string;
+  delete?: string;
+  codeBg?: string;
+}
+
+export interface CustomSwaggerUIOptionsTypes {
+  title?: string;
+  description?: string;
+  defaultColorMode?: "dark" | "light";
+  colors?: {
+    dark?: ColorCustomizationOptions;
+    light?: ColorCustomizationOptions;
+  };
+  showServers?: boolean;
+  seo?: SeoOptions;
 }

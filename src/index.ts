@@ -30,7 +30,7 @@ itty.get("/", () => {
   const ui = customSwaggerUI("/openapi.json", {
     title: SITE.title,
     description: SITE.description,
-    dark: true,
+    defaultColorMode: "dark",
     showServers: false,
     seo: {
       ogType: "website",
