@@ -101,6 +101,7 @@ export const customSwaggerUI = (schemaUrl: string, options: CustomSwaggerUIOptio
     }
     body, .swagger-ui .scheme-container {
       background-color: var(--bg);
+      transition: background-color .3s ease-in-out;
     }
     #swagger-ui * {
       color: var(--text);
