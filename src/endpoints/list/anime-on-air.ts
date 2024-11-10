@@ -1,6 +1,6 @@
+import { ExampleOnAir } from "constants/responseExamples";
 import { Bool, Obj, OpenAPIRoute, type OpenAPIRouteSchema } from "chanfana";
 import { getOnAir } from "utils/scrapers/getOnAir";
-import { ExampleOnAir } from "constants/responseExamples";
 import { error } from "itty-router";
 
 export class onAir extends OpenAPIRoute {

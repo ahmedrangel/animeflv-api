@@ -1,8 +1,8 @@
 import { load } from "cheerio";
+import { getQuery } from "ufo";
 import type { SearchAnimeResults } from "../../../types";
 import { getNextAndPrevPages } from "./getPrevAndNextPages";
 import { scrapSearchAnimeData } from "./scrapAnimeData";
-import { getQuery } from "ufo";
 
 export const executeSearch = (searchData: string): SearchAnimeResults | null => {
   const $ = load(searchData);

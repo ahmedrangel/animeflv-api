@@ -1,11 +1,10 @@
-import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from "../../constants";
-import { searchAnimesByFilter } from "utils/scrapers/searchAnimesByFilter";
 import { ExampleSearchByFilter } from "constants/responseExamples";
-import type { OpenAPIRouteSchema } from "chanfana";
-import { Arr, Bool, Enumeration, Int, Obj, OpenAPIRoute, convertParams } from "chanfana";
+import { searchAnimesByFilter } from "utils/scrapers/searchAnimesByFilter";
+import { Arr, Bool, Enumeration, Int, Obj, OpenAPIRoute, type OpenAPIRouteSchema, convertParams } from "chanfana";
 import { type IRequest, error } from "itty-router";
 import { z } from "zod";
-import { FilterOrderType } from "types";
+import type { FilterOrderType } from "types";
+import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, FilterOrderEnum } from "../../constants";
 
 const genres = Object.values(AnimeGenreEnum);
 const statuses = Object.values(AnimeStatusEnum);

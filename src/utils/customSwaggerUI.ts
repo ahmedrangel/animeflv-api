@@ -1,5 +1,5 @@
-import type { CustomSwaggerUIOptionsTypes } from "types";
 import tw from "tailwindcss/colors";
+import type { CustomSwaggerUIOptionsTypes } from "types";
 
 export const customSwaggerUI = (schemaUrl: string, options: CustomSwaggerUIOptionsTypes = {}): string => {
   const { title, description, defaultColorMode, showServers, seo, colors } = options;

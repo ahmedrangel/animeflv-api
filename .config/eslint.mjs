@@ -1,5 +1,7 @@
 import stylistic from "@stylistic/eslint-plugin";
 import parserTs from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import importPlugin from "eslint-plugin-import";
 
 export default [
   {
@@ -10,7 +12,9 @@ export default [
       ".wrangler/**/*"
     ],
     plugins: {
-      "@stylistic": stylistic
+      "@stylistic": stylistic,
+      "@typescript-eslint": tsPlugin,
+      "import": importPlugin
     },
     languageOptions: {
       parser: parserTs
@@ -45,7 +49,15 @@ export default [
       "@stylistic/space-in-parens": ["error", "never"],
       "@stylistic/template-curly-spacing": "error",
       "@stylistic/quote-props": ["error", "consistent-as-needed"],
-      "sort-imports": ["error", { ignoreDeclarationSort: true }]
+      "sort-imports": ["error", { ignoreDeclarationSort: true }],
+      "import/first": "error",
+      "import/no-duplicates": "error",
+      "import/no-mutable-exports": "error",
+      "import/no-named-default": "error",
+      "import/no-self-import": "error",
+      "import/order": "error",
+      "import/newline-after-import": ["error", { count: 1 }],
+      "@typescript-eslint/consistent-type-imports": "error"
     }
   }
 ];

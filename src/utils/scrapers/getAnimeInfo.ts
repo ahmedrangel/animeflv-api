@@ -1,7 +1,7 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
-import type { AnimeGenre, AnimeInfoData, AnimeStatus, AnimeType } from "../../types";
 import { AnimeflvUrls } from "../../constants";
+import type { AnimeGenre, AnimeInfoData, AnimeStatus, AnimeType } from "../../types";
 
 export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | null> => {
   try {

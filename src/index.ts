@@ -1,10 +1,10 @@
-import { version } from "../package.json";
 import { fromIttyRouter } from "chanfana";
 import { AutoRouter, type IRequest, cors, error, html } from "itty-router";
-import { episode, episodeByAnimeSlugAndEpisodeNumber, info, latest, onAir, search, searchByFilter, searchByUrl } from "./endpoints";
 import { customSwaggerUI } from "utils/customSwaggerUI";
 import { sendRedirect } from "utils/responses";
 import { SITE } from "utils/site";
+import { version } from "../package.json";
+import { episode, episodeByAnimeSlugAndEpisodeNumber, info, latest, onAir, search, searchByFilter, searchByUrl } from "./endpoints";
 
 const BASE = "/api";
 

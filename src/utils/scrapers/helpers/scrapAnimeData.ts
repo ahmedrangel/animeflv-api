@@ -1,6 +1,6 @@
 import { type CheerioAPI } from "cheerio";
-import type { AnimeType, PartialAnimeData } from "../../../types";
 import { AnimeflvUrls } from "../../../constants";
+import type { AnimeType, PartialAnimeData } from "../../../types";
 
 export const scrapSearchAnimeData = ($: CheerioAPI): PartialAnimeData[] => {
   const selectedElement = $("body > div.Wrapper > div > div > main > ul > li");

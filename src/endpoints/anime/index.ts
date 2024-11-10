@@ -1,6 +1,6 @@
+import { ExampleInfo } from "constants/responseExamples";
 import { Bool, Obj, OpenAPIRoute, type OpenAPIRouteSchema, Str } from "chanfana";
 import { getAnimeInfo } from "utils/scrapers/getAnimeInfo";
-import { ExampleInfo } from "constants/responseExamples";
 import { error } from "itty-router";
 
 export class info extends OpenAPIRoute {

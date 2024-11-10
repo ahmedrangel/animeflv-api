@@ -1,7 +1,7 @@
 import { $fetch } from "ofetch";
-import type { SearchAnimeResults } from "../../types";
 import { executeSearch } from "../../utils/scrapers/helpers/executeSearch";
 import { AnimeflvUrls } from "../../constants";
+import type { SearchAnimeResults } from "../../types";
 
 export const searchAnime = async (opts: { query: string, page?: number }): Promise<SearchAnimeResults | null> => {
   const { query } = opts;
