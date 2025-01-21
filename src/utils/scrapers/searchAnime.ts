@@ -8,7 +8,7 @@ export const searchAnime = async (opts: { query: string, page?: number }): Promi
   const fixedQuery = query.toLowerCase().replace(/\s+/g, "+");
   try {
     const searchData = await $fetch(`${AnimeflvUrls.host}/browse`, {
-      params: {
+      query: {
         q: fixedQuery,
         ...opts?.page ? { page: opts.page } : {}
       }

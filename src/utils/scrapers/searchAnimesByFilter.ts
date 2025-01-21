@@ -6,7 +6,7 @@ import type { FilterOptions, SearchAnimeResults } from "../../types";
 export const searchAnimesByFilter = async (opts?: FilterOptions): Promise<SearchAnimeResults | null> => {
   try {
     const filterData = await $fetch(`${AnimeflvUrls.host}/browse`, {
-      params: {
+      query: {
         ...opts.genres && Array.isArray(opts.genres) ? { "genre[]": opts.genres } : {},
         ...opts.statuses && Array.isArray(opts.statuses) ? { "status[]": opts.statuses } : {},
         ...opts.types && Array.isArray(opts.types) ? { "type[]": opts.types } : {},
