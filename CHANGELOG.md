@@ -1,6 +1,44 @@
 # Changelog
 
 
+## v2.1.2
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.1...v2.1.2)
+
+### 🚀 Enhancements
+
+- **docs:** Add color mode toggler and refactor colors customization ([c6bbd03](https://github.com/ahmedrangel/animeflv-api/commit/c6bbd03))
+
+### 🩹 Fixes
+
+- **docs:** Text colors ([f56de50](https://github.com/ahmedrangel/animeflv-api/commit/f56de50))
+- **docs:** Reverse toggle icons ([7084f8d](https://github.com/ahmedrangel/animeflv-api/commit/7084f8d))
+
+### 💅 Refactors
+
+- Use ofetch query instead of params ([bd9fbea](https://github.com/ahmedrangel/animeflv-api/commit/bd9fbea))
+
+### 📖 Documentation
+
+- Use tailwindcss default colors ([09238f8](https://github.com/ahmedrangel/animeflv-api/commit/09238f8))
+- Update swagger ui dist ([76d6edb](https://github.com/ahmedrangel/animeflv-api/commit/76d6edb))
+- Fix script ([80bcc5a](https://github.com/ahmedrangel/animeflv-api/commit/80bcc5a))
+- Improve swagger ui meta tags ([9faa6de](https://github.com/ahmedrangel/animeflv-api/commit/9faa6de))
+- Fix color ([0333bfc](https://github.com/ahmedrangel/animeflv-api/commit/0333bfc))
+
+### 🏡 Chore
+
+- **wrangler:** Update compatibility date ([77deb0e](https://github.com/ahmedrangel/animeflv-api/commit/77deb0e))
+- **docs:** Use built-in html response from itty-router ([619595a](https://github.com/ahmedrangel/animeflv-api/commit/619595a))
+- Remove unused import ([6354995](https://github.com/ahmedrangel/animeflv-api/commit/6354995))
+- **lint:** Add import and typescript plugin rules + lint ([ed53384](https://github.com/ahmedrangel/animeflv-api/commit/ed53384))
+- **docs:** Add background-color transition ([56c314d](https://github.com/ahmedrangel/animeflv-api/commit/56c314d))
+- Update deps ([0059bcd](https://github.com/ahmedrangel/animeflv-api/commit/0059bcd))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](http://github.com/ahmedrangel))
+
 ## v2.1.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.0...v2.1.1)
