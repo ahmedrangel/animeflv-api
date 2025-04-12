@@ -118,15 +118,15 @@ export const customSwaggerUI = (schemaUrl: string, options: CustomSwaggerUIOptio
     input[type="text"], select, option {
       color: ${tw.neutral[950]}!important;
     }
-    .swagger-ui .opblock.opblock-get {
+    .swagger-ui .opblock.opblock-get, .swagger-ui .opblock.opblock-get .opblock-summary {
       background-color: var(--get-bg-low);
       border-color: var(--get-bg);
     }
-    .swagger-ui .opblock.opblock-post {
+    .swagger-ui .opblock.opblock-post, .swagger-ui .opblock.opblock-post .opblock-summary {
       background-color: var(--post-bg-low);
       border-color: var(--post-bg);
     }
-    .swagger-ui .opblock.opblock-delete {
+    .swagger-ui .opblock.opblock-delete, .swagger-ui .opblock.opblock-delete .opblock-summary {
       background-color: var(--delete-bg-low);
       border-color: var(--delete-bg);
     }
