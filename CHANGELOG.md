@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v2.2.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.2...v2.2.0)
+
+### 🚀 Enhancements
+
+- **anime:** Fecha de próximo episodio ([#2](https://github.com/ahmedrangel/animeflv-api/pull/2))
+
+### 📖 Documentation
+
+- Fix block border color ([a7f09ab](https://github.com/ahmedrangel/animeflv-api/commit/a7f09ab))
+
+### 🏡 Chore
+
+- **release:** V2.1.2 ([6112fd6](https://github.com/ahmedrangel/animeflv-api/commit/6112fd6))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.1.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.1...v2.1.2)
