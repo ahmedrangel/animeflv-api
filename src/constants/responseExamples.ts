@@ -1,3 +1,4 @@
+import { Str } from "chanfana";
 import type { AnimeInfoData, AnimeOnAirData, ChapterData, EpisodeInfoData, SearchAnimeResults } from "types";
 
 export const ExampleSearch: SearchAnimeResults = {
@@ -73,6 +74,7 @@ export const ExampleInfo: AnimeInfoData = {
     "Fantasía",
     "Romance"
   ],
+  next_airing_episode: Str({ example: "2024-06-25" }).optional() as unknown as string,
   episodes: [
     {
       number: 1,
