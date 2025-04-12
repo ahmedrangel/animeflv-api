@@ -18,6 +18,7 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | nul
       cover: AnimeflvUrls.images + ($("body > div.Wrapper > div > div > div.Container > div > aside > div.AnimeCover > div > figure > img").attr("src") as string),
       synopsis: $("body > div.Wrapper > div > div > div.Container > div > main > section:nth-child(1) > div.Description > p").text(),
       genres: $("body > div.Wrapper > div > div > div.Container > div > main > section:nth-child(1) > nav > a").text().split(/(?=[A-Z])/) as AnimeGenre[],
+      next_airing_episode: JSON.parse($("script").eq(15).text().match(/anime_info = (\[.*\])/)?.[1])?.[3],
       episodes: [],
       url
     };

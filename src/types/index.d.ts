@@ -54,6 +54,8 @@ export interface AnimeInfoData {
   synopsis: string;
   /** Array con los géneros (etiquetas) del anime */
   genres: AnimeGenre[];
+  /** Fecha del próximo episodio en emisión (YYYY-MM-DD) */
+  next_airing_episode?: string;
   /** Número de episodios que tiene este animé */
   episodes: EpisodeData[] | number;
   /** La URL directa a la pagina del animé */

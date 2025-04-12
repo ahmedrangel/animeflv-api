@@ -18,7 +18,7 @@ export class info extends OpenAPIRoute {
     summary: "Obtiene un anime especificado por \"slug\".",
     responses: {
       200: {
-        description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, episodios, y url.",
+        description: "El objeto contiene información como el título, títulos alternativos, estado, rating, tipo, portada, sinopsis, géneros, fecha del siguiente episodio, episodios, y url.",
         content: {
           "application/json": {
             schema: Obj({
