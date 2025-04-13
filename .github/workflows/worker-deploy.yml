@@ -1,9 +1,8 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   deploy:
@@ -17,7 +16,7 @@ jobs:
       - name: 🐢 Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: lts/*
           registry-url: 'https://registry.npmjs.org/'
           cache: 'pnpm'
 
