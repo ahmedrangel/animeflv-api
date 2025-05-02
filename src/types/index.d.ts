@@ -58,7 +58,21 @@ export interface AnimeInfoData {
   next_airing_episode?: string;
   /** Número de episodios que tiene este animé */
   episodes: EpisodeData[] | number;
+  /** Lista de animés relacionados */
+  related?: AnimeRelated[];
   /** La URL directa a la pagina del animé */
+  url: string;
+}
+
+/** Relación de animés (precuela, secuela, etc.) */
+export interface AnimeRelated {
+  /** Título del animé relacionado */
+  title: string;
+  /** Tipo de relación (Precuela, Secuela, etc.) */
+  relation?: string;
+  /** El slug de este animé */
+  slug: string;
+  /** URL completa al anime relacionado */
   url: string;
 }
 
