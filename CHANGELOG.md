@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v2.3.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.2...v2.3.0)
+
+### 🚀 Enhancements
+
+- **anime:** Fecha de próximo episodio ([#2](https://github.com/ahmedrangel/animeflv-api/pull/2))
+- Animes relacionados + arregla separación incorrecta de géneros ([#3](https://github.com/ahmedrangel/animeflv-api/pull/3))
+
+### 📖 Documentation
+
+- Fix block border color ([a7f09ab](https://github.com/ahmedrangel/animeflv-api/commit/a7f09ab))
+
+### 🏡 Chore
+
+- **release:** V2.2.0 ([7f8a4e1](https://github.com/ahmedrangel/animeflv-api/commit/7f8a4e1))
+- Update deps ([b9fbf0e](https://github.com/ahmedrangel/animeflv-api/commit/b9fbf0e))
+- Lint ([bb04f45](https://github.com/ahmedrangel/animeflv-api/commit/bb04f45))
+- **docs:** Add related example schema ([65c4d27](https://github.com/ahmedrangel/animeflv-api/commit/65c4d27))
+
+### 🤖 CI
+
+- Deploy on release published ([0e2d8cf](https://github.com/ahmedrangel/animeflv-api/commit/0e2d8cf))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+- Galgaliel83 ([@Galgaliel83](https://github.com/Galgaliel83))
+
 ## v2.2.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.2...v2.2.0)
