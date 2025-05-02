@@ -48,11 +48,11 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | nul
       const href = link.attr("href");
       const title = link.text().trim();
       const relationMatch = $(el).text().match(/\(([^)]+)\)$/);
-    
+
       if (href && title) {
         const slugMatch = href.match(/\/anime\/([^\/]+)/);
         const slug = slugMatch ? slugMatch[1] : null;
-    
+
         relatedAnimes.push({
           title,
           relation: relationMatch?.[1],
