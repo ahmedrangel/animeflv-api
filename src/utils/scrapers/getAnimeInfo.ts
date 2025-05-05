@@ -62,18 +62,22 @@ export const getAnimeInfo = async (
     // Relacionados
     const relatedEls = $("ul.ListAnmRel > li");
     const relatedAnimes: AnimeRelated[] = [];
+
     relatedEls.each((_, el) => {
       const link = $(el).find("a");
       const href = link.attr("href");
       const title = link.text().trim();
-      const relation = $(el).text().match(/\(([^)]+)\)$/)?.[1];
+      const relationMatch = $(el).text().match(/\(([^)]+)\)$/);
+
       if (href && title) {
-        const slug = href.match(/\/anime\/([^\/]+)/)?.[1] || href;
+        const slugMatch = href.match(/\/anime\/([^\/]+)/);
+        const slug = slugMatch ? slugMatch[1] : href;
+
         relatedAnimes.push({
           title,
-          relation,
+          relation: relationMatch?.[1],
           slug,
-          url: `${AnimeflvUrls.host}${href}`,
+          url: `${AnimeflvUrls.host}${href}`
         });
       }
     });
