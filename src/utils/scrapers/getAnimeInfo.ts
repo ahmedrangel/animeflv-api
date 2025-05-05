@@ -1,13 +1,33 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../../constants";
+import { SITE } from "../../utils/site";
 import type { AnimeGenre, AnimeInfoData, AnimeRelated, AnimeStatus, AnimeType } from "../../types";
 
-export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | null> => {
+export const getAnimeInfo = async (
+  animeId: string
+): Promise<AnimeInfoData | null> => {
+  const apiUrl = `${SITE.host}/api/anime/${animeId}`;
+  const cacheKey = new Request(apiUrl);
+  const cache = caches.default;
+
+  // Obtenemos la información de la caché
+  const cachedResponse = await cache.match(cacheKey);
+  if (cachedResponse) {
+    const entry = await cachedResponse.json() as { value: AnimeInfoData | null; expiresAt: number };
+    if (entry && entry.expiresAt > Date.now()) {
+      return entry.value;
+    }
+    await cache.delete(cacheKey);
+  }
+
+  // Si no está en caché o expiró
   try {
-    const url = AnimeflvUrls.host + "/anime/" + animeId;
-    const animeData = await $fetch(url).catch(() => null);
-    const $ = load(animeData);
+    const url = `${AnimeflvUrls.host}/anime/${animeId}`;
+    const html = await $fetch<string>(url).catch(() => null);
+    if (!html) return null;
+
+    const $ = load(html);
 
     const animeInfo: AnimeInfoData = {
       title: $("body > div.Wrapper > div > div > div.Ficha.fchlt > div.Container > h1").text(),
@@ -42,22 +62,18 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | nul
     // Relacionados
     const relatedEls = $("ul.ListAnmRel > li");
     const relatedAnimes: AnimeRelated[] = [];
-
     relatedEls.each((_, el) => {
       const link = $(el).find("a");
       const href = link.attr("href");
       const title = link.text().trim();
-      const relationMatch = $(el).text().match(/\(([^)]+)\)$/);
-
+      const relation = $(el).text().match(/\(([^)]+)\)$/)?.[1];
       if (href && title) {
-        const slugMatch = href.match(/\/anime\/([^\/]+)/);
-        const slug = slugMatch ? slugMatch[1] : null;
-
+        const slug = href.match(/\/anime\/([^\/]+)/)?.[1] || href;
         relatedAnimes.push({
           title,
-          relation: relationMatch?.[1],
-          slug: slug || href,
-          url: `${AnimeflvUrls.host}${href}`
+          relation,
+          slug,
+          url: `${AnimeflvUrls.host}${href}`,
         });
       }
     });
@@ -67,9 +83,16 @@ export const getAnimeInfo = async (animeId: string): Promise<AnimeInfoData | nul
       animeInfo.related = relatedAnimes;
     }
 
+    // Almacena en caché por 24 horas
+    const ttlSeconds = 86400;
+    const response = new Response(JSON.stringify({ value: animeInfo, expiresAt: Date.now() + ttlSeconds * 1000 }));
+    response.headers.set('Cache-Control', `public, max-age=${ttlSeconds}`);
+    await cache.put(cacheKey, response);
+
     return animeInfo;
-  }
-  catch {
+
+  } catch (error) {
+    console.error("Error al obtener la información del anime:", error);
     return null;
   }
 };
