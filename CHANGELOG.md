@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v2.4.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.3.0...v2.4.0)
+
+### 🚀 Enhancements
+
+- Implementado almacenamiento en caché (24 horas) usando Cache API para evitar múltiples solicitudes al servidor ([#5](https://github.com/ahmedrangel/animeflv-api/pull/5))
+
+### 🏡 Chore
+
+- Lint ([1fdbddf](https://github.com/ahmedrangel/animeflv-api/commit/1fdbddf))
+- Update deps ([4ecb9cf](https://github.com/ahmedrangel/animeflv-api/commit/4ecb9cf))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+- Galgaliel83 ([@Galgaliel83](https://github.com/Galgaliel83))
+
 ## v2.3.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.1.2...v2.3.0)
