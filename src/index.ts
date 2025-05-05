@@ -15,7 +15,7 @@ const itty = AutoRouter({
   finally: [corsify]
 });
 
-export const router = fromIttyRouter(itty, {
+const router = fromIttyRouter(itty, {
   redoc_url: "/redoc",
   schema: {
     info: {

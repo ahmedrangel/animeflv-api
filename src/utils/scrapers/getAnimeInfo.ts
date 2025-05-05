@@ -14,7 +14,7 @@ export const getAnimeInfo = async (
   // Obtenemos la información de la caché
   const cachedResponse = await cache.match(cacheKey);
   if (cachedResponse) {
-    const entry = await cachedResponse.json() as { value: AnimeInfoData | null; expiresAt: number };
+    const entry = await cachedResponse.json() as { value: AnimeInfoData | null, expiresAt: number };
     if (entry && entry.expiresAt > Date.now()) {
       return entry.value;
     }
@@ -73,7 +73,7 @@ export const getAnimeInfo = async (
           title,
           relation,
           slug,
-          url: `${AnimeflvUrls.host}${href}`,
+          url: `${AnimeflvUrls.host}${href}`
         });
       }
     });
@@ -86,12 +86,13 @@ export const getAnimeInfo = async (
     // Almacena en caché por 24 horas
     const ttlSeconds = 86400;
     const response = new Response(JSON.stringify({ value: animeInfo, expiresAt: Date.now() + ttlSeconds * 1000 }));
-    response.headers.set('Cache-Control', `public, max-age=${ttlSeconds}`);
+    response.headers.set("Cache-Control", `public, max-age=${ttlSeconds}`);
     await cache.put(cacheKey, response);
 
     return animeInfo;
 
-  } catch (error) {
+  }
+  catch (error) {
     console.error("Error al obtener la información del anime:", error);
     return null;
   }

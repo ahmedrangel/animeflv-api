@@ -20,7 +20,7 @@ export default [
       parser: parserTs
     },
     rules: {
-      "no-console": ["error", { allow: ["info", "warn"] }],
+      "no-console": ["error", { allow: ["info", "warn", "error"] }],
       "@stylistic/indent": ["error", 2, { SwitchCase: 1 }],
       "@stylistic/linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"],
       "@stylistic/quotes": ["error", "double"],
