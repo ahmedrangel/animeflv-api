@@ -1,5 +1,6 @@
 import { Str } from "chanfana";
-import type { AnimeInfoData, AnimeOnAirData, ChapterData, EpisodeInfoData, SearchAnimeResults } from "types";
+import type { AnimeInfoData, AnimeOnAirData, AnimeRelated, ChapterData, EpisodeInfoData, SearchAnimeResults } from "types";
+import { z } from "zod";
 
 export const ExampleSearch: SearchAnimeResults = {
   currentPage: 1,
@@ -137,7 +138,8 @@ export const ExampleInfo: AnimeInfoData = {
       url: "https://www3.animeflv.net/ver/ookami-to-koushinryou-merchant-meets-the-wise-wolf-12"
     }
   ],
-  url: "https://www3.animeflv.net/anime/ookami-to-koushinryou-merchant-meets-the-wise-wolf"
+  url: "https://www3.animeflv.net/anime/ookami-to-koushinryou-merchant-meets-the-wise-wolf",
+  related: z.array(z.object({ title: z.string(), relation: z.string().optional(), slug: z.string(), url: z.string() })).optional() as unknown as AnimeRelated[]
 };
 
 export const ExampleOnAir: AnimeOnAirData[] = [
