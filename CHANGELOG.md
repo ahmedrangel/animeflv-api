@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.4.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.0...v2.4.1)
+
+### 💅 Refactors
+
+- Prefer to cache the actual response from server api endpoint ([15f593b](https://github.com/ahmedrangel/animeflv-api/commit/15f593b))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.4.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.3.0...v2.4.0)
