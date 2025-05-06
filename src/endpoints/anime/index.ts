@@ -1,7 +1,8 @@
 import { ExampleInfo } from "constants/responseExamples";
 import { Bool, Obj, OpenAPIRoute, type OpenAPIRouteSchema, Str } from "chanfana";
 import { getAnimeInfo } from "utils/scrapers/getAnimeInfo";
-import { error } from "itty-router";
+import { type IRequest } from "itty-router";
+import { handleCachedResponse } from "utils/scrapers/helpers/cachedResponse";
 
 export class info extends OpenAPIRoute {
   schema: OpenAPIRouteSchema = {
@@ -42,14 +43,17 @@ export class info extends OpenAPIRoute {
     }
   };
 
-  async handle () {
+  async handle (req: IRequest, env: unknown, ctx: ExecutionContext) {
     const { params } = await this.getValidatedData<typeof this.schema>();
     const { slug } = params as { slug: string };
-    const info = await getAnimeInfo(slug);
-    if (!info) return error(404, { success: false, error: "No se ha encontrado el anime" });
-    return {
-      success: true,
-      data: info
-    };
+
+    return handleCachedResponse({ req, ctx, ttl: 86400 }, async () => {
+      const info = await getAnimeInfo(slug);
+      if (!info) return { status: 404, success: false, error: "No se ha encontrado el anime" };
+      return {
+        success: true,
+        data: info
+      };
+    });
   }
 }

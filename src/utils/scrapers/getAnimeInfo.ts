@@ -1,27 +1,11 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
 import { AnimeflvUrls } from "../../constants";
-import { SITE } from "../../utils/site";
 import type { AnimeGenre, AnimeInfoData, AnimeRelated, AnimeStatus, AnimeType } from "../../types";
 
 export const getAnimeInfo = async (
   animeId: string
 ): Promise<AnimeInfoData | null> => {
-  const apiUrl = `${SITE.host}/api/anime/${animeId}`;
-  const cacheKey = new Request(apiUrl);
-  const cache = caches.default;
-
-  // Obtenemos la información de la caché
-  const cachedResponse = await cache.match(cacheKey);
-  if (cachedResponse) {
-    const entry = await cachedResponse.json() as { value: AnimeInfoData | null, expiresAt: number };
-    if (entry && entry.expiresAt > Date.now()) {
-      return entry.value;
-    }
-    await cache.delete(cacheKey);
-  }
-
-  // Si no está en caché o expiró
   try {
     const url = `${AnimeflvUrls.host}/anime/${animeId}`;
     const html = await $fetch<string>(url).catch(() => null);
@@ -82,12 +66,6 @@ export const getAnimeInfo = async (
     if (relatedAnimes.length > 0) {
       animeInfo.related = relatedAnimes;
     }
-
-    // Almacena en caché por 24 horas
-    const ttlSeconds = 86400;
-    const response = new Response(JSON.stringify({ value: animeInfo, expiresAt: Date.now() + ttlSeconds * 1000 }));
-    response.headers.set("Cache-Control", `public, max-age=${ttlSeconds}`);
-    await cache.put(cacheKey, response);
 
     return animeInfo;
 
