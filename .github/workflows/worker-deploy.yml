@@ -20,6 +20,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
           cache: 'pnpm'
 
+      - name: Install Wrangler
+        run: pnpm i -D wrangler@latest
+
       - name: ☁️ Setup Cloudflare & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
