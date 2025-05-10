@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "animeflv-api",
+  "main": "src/index.ts",
+  "compatibility_date": "202-05-10",
+  "placement": {
+    "mode": "smart"
+  }
+}

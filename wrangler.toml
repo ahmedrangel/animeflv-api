@@ -1,7 +1,0 @@
-#:schema node_modules/wrangler/config-schema.json
-name = "animeflv-api"
-main = "src/index.ts"
-compatibility_date = "2024-11-08"
-
-[placement]
-mode = "smart"
