@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.4.3
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.2...v2.4.3)
+
+### 🤖 CI
+
+- Add wrangler install ([2421aed](https://github.com/ahmedrangel/animeflv-api/commit/2421aed))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.4.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.1...v2.4.2)
