@@ -13,6 +13,10 @@ export const getAnimeInfo = async (
 
     const $ = load(html);
 
+    const scripts = $("script");
+    const nextAiringFind = scripts.map((_, el) => $(el).html()).get().find((script) => script?.includes("var anime_info ="));
+    const nextAiringInfo = nextAiringFind.match(/anime_info = (\[.*\])/)?.[1];
+
     const animeInfo: AnimeInfoData = {
       title: $("body > div.Wrapper > div > div > div.Ficha.fchlt > div.Container > h1").text(),
       alternative_titles: [],
@@ -24,18 +28,23 @@ export const getAnimeInfo = async (
       genres: $("body > div.Wrapper > div > div > div.Container > div > main > section:nth-child(1) > nav > a")
         .map((_, el) => $(el).text().trim())
         .get() as AnimeGenre[],
-      next_airing_episode: JSON.parse($("script").eq(15).text().match(/anime_info = (\[.*\])/)?.[1])?.[3],
+      next_airing_episode: nextAiringInfo ? JSON.parse(nextAiringInfo)?.[3] : undefined,
       episodes: [],
       url
     };
 
-    for (let i = 1; i <= JSON.parse($("script").eq(15).text().match(/episodes = (\[\[.*\].*])/)?.[1] as string).length; i++) {
-      if (animeInfo.episodes instanceof Array) {
-        animeInfo.episodes.push({
-          number: i,
-          slug: animeId + "-" + i,
-          url: AnimeflvUrls.host + "/ver/" + animeId + "-" + i
-        });
+    const episodesFind = scripts.map((_, el) => $(el).html()).get().find((script) => script?.includes("var episodes ="));
+    const episodesArray = episodesFind.match(/episodes = (\[\[.*\].*])/)?.[1];
+
+    if (episodesArray) {
+      for (let i = 1; i <= JSON.parse(episodesArray as string)?.length; i++) {
+        if (animeInfo.episodes instanceof Array) {
+          animeInfo.episodes.push({
+            number: i,
+            slug: animeId + "-" + i,
+            url: AnimeflvUrls.host + "/ver/" + animeId + "-" + i
+          });
+        }
       }
     }
 
