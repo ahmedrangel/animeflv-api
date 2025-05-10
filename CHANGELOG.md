@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v2.4.2
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.1...v2.4.2)
+
+### 🩹 Fixes
+
+- **/anime/{slug}:** Improve scraper script finder ([7c378a3](https://github.com/ahmedrangel/animeflv-api/commit/7c378a3))
+- **wrangler:** Compatibility date typo ([fa1eb48](https://github.com/ahmedrangel/animeflv-api/commit/fa1eb48))
+
+### 🏡 Chore
+
+- Update deps ([310062f](https://github.com/ahmedrangel/animeflv-api/commit/310062f))
+- Migrate wrangler toml to jsonc ([295a4e2](https://github.com/ahmedrangel/animeflv-api/commit/295a4e2))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.4.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.0...v2.4.1)
