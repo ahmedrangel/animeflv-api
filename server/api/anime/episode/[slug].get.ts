@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   if (!episode) {
     throw createError({
       statusCode: 404,
-      statusMessage: "No se ha encontrado el episodio",
+      message: "No se ha encontrado el episodio",
       data: { success: false, error: "No se ha encontrado el episodio" }
     });
   }
@@ -76,7 +76,7 @@ defineRouteMeta({
                 error: { type: "boolean", example: true },
                 url: { type: "string" },
                 statusCode: { type: "number", example: 404 },
-                statusMessage: { type: "string" },
+                message: { type: "string" },
                 data: {
                   type: "object",
                   properties: {
@@ -86,7 +86,7 @@ defineRouteMeta({
                   required: ["success", "error"]
                 }
               },
-              required: ["error", "url", "statusCode", "statusMessage", "data"]
+              required: ["error", "url", "statusCode", "message", "data"]
             }
           }
         }

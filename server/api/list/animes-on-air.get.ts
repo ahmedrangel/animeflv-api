@@ -3,7 +3,7 @@ export default defineEventHandler(async () => {
   if (!onair) {
     throw createError({
       statusCode: 404,
-      statusMessage: "No se han encontrado resultados",
+      message: "No se han encontrado resultados",
       data: { success: false, error: "No se han encontrado resultados" }
     });
   }
@@ -55,7 +55,7 @@ defineRouteMeta({
                 error: { type: "boolean", example: true },
                 url: { type: "string" },
                 statusCode: { type: "number", example: 404 },
-                statusMessage: { type: "string" },
+                message: { type: "string" },
                 data: {
                   type: "object",
                   properties: {
@@ -65,7 +65,7 @@ defineRouteMeta({
                   required: ["success", "error"]
                 }
               },
-              required: ["error", "url", "statusCode", "statusMessage", "data"]
+              required: ["error", "url", "statusCode", "message", "data"]
             }
           }
         }

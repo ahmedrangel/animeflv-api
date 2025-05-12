@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   if (order && invalid_order) {
     throw createError({
       statusCode: 400,
-      statusMessage: `Orden no válido: ${order}`,
+      message: `Orden no válido: ${order}`,
       data: { success: false, error: `Orden no válido: ${order}`, hint: orders }
     });
   }
@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
   if (invalid_types?.length) {
     throw createError({
       statusCode: 400,
-      statusMessage: `Tipos no válidos: ${invalid_types?.join(", ")}`,
+      message: `Tipos no válidos: ${invalid_types?.join(", ")}`,
       data: { success: false, error: `Tipos no válidos: ${invalid_types?.join(", ")}`, hint: types }
     });
   }
@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   if (invalid_genres?.length) {
     throw createError({
       statusCode: 400,
-      statusMessage: `Géneros no válidos: ${invalid_genres?.join(", ")}`,
+      message: `Géneros no válidos: ${invalid_genres?.join(", ")}`,
       data: { success: false, error: `Géneros no válidos: ${invalid_genres?.join(", ")}`, hint: genres }
     });
   }
@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
   if (invalid_statuses?.length) {
     throw createError({
       statusCode: 400,
-      statusMessage: `Estados no válidos: ${invalid_statuses?.join(", ")}`,
+      message: `Estados no válidos: ${invalid_statuses?.join(", ")}`,
       data: { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: AnimeStatusEnum }
     });
   }
@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
   if (body?.genres?.length > 4) {
     throw createError({
       statusCode: 400,
-      statusMessage: "Solo se permite un máximo de 4 géneros",
+      message: "Solo se permite un máximo de 4 géneros",
       data: { success: false, error: "Solo se permite un máximo de 4 géneros" }
     });
   }
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
   if (!search || !search?.media?.length) {
     throw createError({
       statusCode: 404,
-      statusMessage: "No se han encontrado resultados en la búsqueda",
+      message: "No se han encontrado resultados en la búsqueda",
       data: { success: false, error: "No se han encontrado resultados en la búsqueda" }
     });
   }
@@ -225,7 +225,7 @@ defineRouteMeta({
                 error: { type: "boolean", example: true },
                 url: { type: "string" },
                 statusCode: { type: "number", example: 404 },
-                statusMessage: { type: "string" },
+                message: { type: "string" },
                 data: {
                   type: "object",
                   properties: {
@@ -235,7 +235,7 @@ defineRouteMeta({
                   required: ["success", "error"]
                 }
               },
-              required: ["error", "url", "statusCode", "statusMessage", "data"]
+              required: ["error", "url", "statusCode", "message", "data"]
             }
           }
         }
@@ -250,7 +250,7 @@ defineRouteMeta({
                 error: { type: "boolean", example: true },
                 url: { type: "string" },
                 statusCode: { type: "number", example: 400 },
-                statusMessage: { type: "string" },
+                message: { type: "string" },
                 data: {
                   type: "object",
                   properties: {
@@ -260,7 +260,7 @@ defineRouteMeta({
                   required: ["success", "error"]
                 }
               },
-              required: ["error", "url", "statusCode", "statusMessage", "data"]
+              required: ["error", "url", "statusCode", "message", "data"]
             }
           }
         }

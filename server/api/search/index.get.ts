@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   if (!search || !search?.media?.length) {
     throw createError({
       statusCode: 404,
-      statusMessage: "No se han encontrado resultados en la búsqueda",
+      message: "No se han encontrado resultados en la búsqueda",
       data: { success: false, error: "No se han encontrado resultados en la búsqueda" }
     });
   }
@@ -100,7 +100,7 @@ defineRouteMeta({
                 error: { type: "boolean", example: true },
                 url: { type: "string" },
                 statusCode: { type: "number", example: 404 },
-                statusMessage: { type: "string" },
+                message: { type: "string" },
                 data: {
                   type: "object",
                   properties: {
@@ -110,7 +110,7 @@ defineRouteMeta({
                   required: ["success", "error"]
                 }
               },
-              required: ["error", "url", "statusCode", "statusMessage", "data"]
+              required: ["error", "url", "statusCode", "message", "data"]
             }
           }
         }
