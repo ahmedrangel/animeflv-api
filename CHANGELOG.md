@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.5.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.3...v2.5.0)
+
+### 🚀 Enhancements
+
+- **docs:** Migrate docs from chanfana/swagger to nuxt/scalar ([d17c6f4](https://github.com/ahmedrangel/animeflv-api/commit/d17c6f4))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.4.3
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.2...v2.4.3)
