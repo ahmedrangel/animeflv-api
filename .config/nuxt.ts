@@ -28,11 +28,8 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxthub/core",
-    "@nuxt/eslint"
-  ],
-  css: [
-    "~/assets/css/main.css",
-    "~/assets/css/scalar.css"
+    "@nuxt/eslint",
+    "@scalar/nuxt"
   ],
   runtimeConfig: {
     openapi: {

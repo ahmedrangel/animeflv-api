@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { ApiReference } from "@scalar/api-reference";
 import type { AnyApiReferenceConfiguration } from "@scalar/types/api-reference";
+import "~/assets/css/main.css";
+import "@scalar/api-reference/style.css";
+
+const { data: spec } = await useFetch("/_openapi");
 
 const configuration: AnyApiReferenceConfiguration = {
   theme: "saturn",
@@ -17,15 +20,12 @@ const configuration: AnyApiReferenceConfiguration = {
     targetKey: "js",
     clientKey: "fetch"
   },
-  pathRouting: {
-    basePath: "/"
-  },
-  url: "/_openapi"
+  content: spec.value
 };
 </script>
 
 <template>
   <main>
-    <ApiReference :configuration="configuration" />
+    <ScalarApiReference :configuration="configuration" />
   </main>
 </template>

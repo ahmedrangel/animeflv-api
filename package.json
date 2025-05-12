@@ -35,6 +35,7 @@
 		"@nuxthub/core": "^0.8.27",
 		"@nuxtjs/sitemap": "^7.2.10",
 		"@scalar/api-reference": "^1.28.32",
+		"@scalar/nuxt": "^0.3.32",
 		"@stylistic/eslint-plugin": "^4.2.0",
 		"@types/node": "^22.15.17",
 		"changelogen": "^0.6.1",
