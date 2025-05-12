@@ -26,6 +26,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  css: [
+    "~/assets/css/main.css"
+  ],
   modules: [
     "@nuxthub/core",
     "@nuxt/eslint",

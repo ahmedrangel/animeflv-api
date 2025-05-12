@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import type { AnyApiReferenceConfiguration } from "@scalar/types/api-reference";
-import "~/assets/css/main.css";
-import "@scalar/api-reference/style.css";
 
 const { data: spec } = await useFetch("/_openapi.json");
 
 const configuration: AnyApiReferenceConfiguration = {
-  theme: "saturn",
   darkMode: true,
   hideModels: false,
   metaData: {
