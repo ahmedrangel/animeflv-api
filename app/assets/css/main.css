@@ -1,9 +1,72 @@
+.light-mode {
+  --scalar-background-1: #f3f3ee!important;
+  --scalar-background-2: #e8e8e3!important;
+  --scalar-background-3: #e4e4df!important;
+  --scalar-border-color: rgba(215, 215, 206, 0.85)!important;
+
+  --scalar-color-1: #2a2f45!important;
+  --scalar-color-2: #757575!important;
+  --scalar-color-3: #8e8e8e!important;
+
+  --scalar-color-accent: rgb(73, 89, 235)!important;
+  --scalar-background-accent: #1f648e1f!important;
+}
+.dark-mode {
+  --scalar-background-1: #161616!important;
+  --scalar-background-2: #18181b!important;
+  --scalar-background-3: #2c2c30!important;
+  --scalar-border-color: rgba(255, 255, 255, 0.17)!important;
+
+  --scalar-color-1: #fafafa!important;
+  --scalar-color-2: rgb(161, 161, 170)!important;
+  --scalar-color-3: rgba(255, 255, 255, 0.533)!important;
+
+  --scalar-color-accent: rgb(86, 102, 247)!important;
+  --scalar-background-accent: #8ab4f81f!important;
+}
+/* Document Sidebar */
+.light-mode .t-doc__sidebar,
+.dark-mode .t-doc__sidebar {
+  --scalar-sidebar-background-1: var(--scalar-background-1)!important;
+  --scalar-sidebar-color-1: var(--scalar-color-1)!important;
+  --scalar-sidebar-color-2: var(--scalar-color-2)!important;
+  --scalar-sidebar-border-color: var(--scalar-border-color)!important;
+
+  --scalar-sidebar-item-hover-background: var(--scalar-background-2)!important;
+  --scalar-sidebar-item-hover-color: currentColor!important;
+
+  --scalar-sidebar-item-active-background: var(--scalar-background-3)!important;
+  --scalar-sidebar-color-active: var(--scalar-color-1)!important;
+
+  --scalar-sidebar-search-background: var(--scalar-background-1)!important;
+  --scalar-sidebar-search-border-color: var(--scalar-border-color)!important;
+  --scalar-sidebar-search-color: var(--scalar-color-3)!important;
+}
+
+/* advanced */
+.light-mode .dark-mode,
+.light-mode {
+  --scalar-color-green: #76af27!important;
+  --scalar-color-red: #e53935!important;
+  --scalar-color-yellow: #e2931d!important;
+  --scalar-color-blue: #366dc4!important;
+  --scalar-color-orange: #f76d47!important;
+  --scalar-color-purple: #9c3eda!important;
+}
+.dark-mode {
+  --scalar-color-green: #b6e76d!important;
+  --scalar-color-red: #f07178!important;
+  --scalar-color-yellow: #ffcb6b!important;
+  --scalar-color-blue: #6797ff!important;
+  --scalar-color-orange: #f78c6c!important;
+  --scalar-color-purple: #c792ea!important;
+}
 /* custom-theme */
 .section-container:nth-of-type(2)
   ~ .section-container
   .scalar-card
   .scalar-card-header {
-  --theme-background-2:   var(--theme-background-1) !important;
+  --scalar-background-2: var(--scalar-background-1) !important;
 }
 .section-flare {
   width: 100%;
@@ -40,10 +103,10 @@
 .section-flare-item:nth-of-type(2) {
   top: initial;
   right: initial;
-  background:rgba(68, 94, 239, 0.70);
+  background: var(--scalar-color-accent);
   width: 700px;
   height: 700px;
-  opacity: 0.3;
+  opacity: 0.2;
   animation: sectionflare 37s linear infinite;
 }
 .section-flare-item:nth-of-type(1) {
@@ -51,10 +114,10 @@
   right: initial;
   bottom: 0;
   left: -20px;
-  background:rgba(68, 94, 239, 0.70);
+  background:var(--scalar-color-accent);
   width: 500px;
   height: 500px;
-  opacity: 0.3;
+  opacity: 0.2;
   animation: sectionflare2 38s linear infinite;
 }
 @keyframes sectionflare {

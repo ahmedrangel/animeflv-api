@@ -26,13 +26,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+  css: [
+    "~/assets/css/main.css"
+  ],
   modules: [
     "@nuxthub/core",
-    "@nuxt/eslint"
-  ],
-  css: [
-    "~/assets/css/main.css",
-    "~/assets/css/scalar.css"
+    "@nuxt/eslint",
+    "@scalar/nuxt"
   ],
   runtimeConfig: {
     openapi: {
@@ -64,7 +64,8 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ["/", "/_openapi"]
+      routes: ["/", "/_openapi.json"],
+      crawlLinks: true
     },
     experimental: {
       openAPI: true
