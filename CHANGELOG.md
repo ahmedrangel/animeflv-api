@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.5.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.0...v2.5.1)
+
+### 💅 Refactors
+
+- **docs:** Use @scalar/nuxt for ssr implementation ([36c546c](https://github.com/ahmedrangel/animeflv-api/commit/36c546c))
+
+### 🤖 CI
+
+- Deploy to cf pages on release ([e53ff84](https://github.com/ahmedrangel/animeflv-api/commit/e53ff84))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.5.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.4.3...v2.5.0)
