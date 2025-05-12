@@ -171,3 +171,7 @@ dist
 .dev.vars
 
 .wrangler
+
+.data
+
+.output
