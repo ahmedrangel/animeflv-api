@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.5.3
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.2...v2.5.3)
+
+### 🏡 Chore
+
+- Prefer using `message` for longer error messages instead of `statusMessage` ([a7ee4ac](https://github.com/ahmedrangel/animeflv-api/commit/a7ee4ac))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.5.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.1...v2.5.2)
