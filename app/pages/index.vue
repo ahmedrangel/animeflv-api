@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { AnyApiReferenceConfiguration } from "@scalar/types/api-reference";
 
-const { data: spec } = await useFetch("/_openapi.json");
-
 const configuration: AnyApiReferenceConfiguration = {
   darkMode: true,
   hideModels: false,
@@ -17,7 +15,7 @@ const configuration: AnyApiReferenceConfiguration = {
     targetKey: "js",
     clientKey: "fetch"
   },
-  content: spec.value
+  url: "/_openapi.json"
 };
 </script>
 
