@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     typedPages: true
   },
   hub: {
-    workers: false,
+    workers: true,
     cache: true
   },
   routeRules: {
