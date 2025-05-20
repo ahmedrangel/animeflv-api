@@ -22,7 +22,7 @@ export const getEpisodeLinks = async (slug: string, number?: number): Promise<Ep
     };
 
     const scripts = $("script")
-    const videosFind = scripts.map((_, el) => $(el).html()).get().find(script => script?.includes("/var videos ="));
+    const videosFind = scripts.map((_, el) => $(el).html()).get().find(script => script?.includes("var videos ="));
     const videosArray = videosFind?.match(/var videos = (\{.*?\})/)?.[1];
     console.log(videosArray);
     if (videosArray) {
