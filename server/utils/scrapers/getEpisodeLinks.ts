@@ -49,7 +49,8 @@ export const getEpisodeLinks = async (slug: string, number?: number): Promise<Ep
     }
     return episodeLinks;
   }
-  catch {
+  catch (e) {
+    console.error(e);
     return null;
   }
 };
