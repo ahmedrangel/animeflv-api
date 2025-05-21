@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   const { slug, number } = getRouterParams(event) as { slug: string, number: string };
   const episode = await getEpisodeLinks(slug, Number(number));
   if (!episode) {
-    createError({
+    throw createError({
       statusCode: 404,
       message: "No se ha encontrado el episodio",
       data: { success: false, error: "No se ha encontrado el episodio" }
