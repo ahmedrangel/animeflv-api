@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v2.5.4
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.3...v2.5.4)
+
+### 🩹 Fixes
+
+- Missing throw ([49b9308](https://github.com/ahmedrangel/animeflv-api/commit/49b9308))
+- Corrección de obtención de servers y embeds ([9cac33a](https://github.com/ahmedrangel/animeflv-api/commit/9cac33a))
+
+### 🏡 Chore
+
+- Update deps + latest scalar/nuxt uses usefetch ([f02f412](https://github.com/ahmedrangel/animeflv-api/commit/f02f412))
+- Remove unnecessary package ([8a96a0d](https://github.com/ahmedrangel/animeflv-api/commit/8a96a0d))
+- **config:** Define route rules ([b316193](https://github.com/ahmedrangel/animeflv-api/commit/b316193))
+- Update deps ([1896c3d](https://github.com/ahmedrangel/animeflv-api/commit/1896c3d))
+- Migrate to workers ([0f35edc](https://github.com/ahmedrangel/animeflv-api/commit/0f35edc))
+- Migrate to workers" ([df25dc9](https://github.com/ahmedrangel/animeflv-api/commit/df25dc9))
+
+### 🤖 CI
+
+- Add dispatch deploy ([7016bcc](https://github.com/ahmedrangel/animeflv-api/commit/7016bcc))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.5.3
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.2...v2.5.3)

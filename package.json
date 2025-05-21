@@ -1,6 +1,6 @@
 {
 	"name": "animeflv-api",
-	"version": "2.5.3",
+	"version": "2.5.4",
 	"description": "Unofficial AnimeFLV REST API",
 	"private": true,
 	"type": "module",
