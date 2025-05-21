@@ -1,6 +1,5 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
-import type { EpisodeInfoData, EpisodeServersData } from "../../types";
 
 export const getEpisodeLinks = async (slug: string, number?: number): Promise<EpisodeInfoData | null> => {
   try {
@@ -22,10 +21,11 @@ export const getEpisodeLinks = async (slug: string, number?: number): Promise<Ep
       servers: [] as EpisodeServersData[]
     };
 
-    const script = $("script").eq(16).text();
-    const match = /var videos = (\{.*?\});/s.exec(script);
-    if (match && match[1]) {
-      const servers = JSON.parse(match[1]).SUB;
+    const scripts = $("script");
+    const serversFind = scripts.map((_, el) => $(el).html()).get().find(script => script?.includes("var videos ="));
+    const serversObj = serversFind?.match(/var videos = (\{.*\})/)?.[1];
+    if (serversObj) {
+      const servers = JSON.parse(serversObj).SUB;
       for (const s of servers) {
         episodeLinks.servers.push({
           name: s?.title,
@@ -49,7 +49,8 @@ export const getEpisodeLinks = async (slug: string, number?: number): Promise<Ep
     }
     return episodeLinks;
   }
-  catch {
+  catch (e) {
+    console.error(e);
     return null;
   }
 };
