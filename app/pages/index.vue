@@ -11,10 +11,6 @@ const configuration: AnyApiReferenceConfiguration = {
   },
   defaultOpenAllTags: true,
   hideDownloadButton: true,
-  defaultHttpClient: {
-    targetKey: "js",
-    clientKey: "fetch"
-  },
   url: "/_openapi.json"
 };
 </script>
