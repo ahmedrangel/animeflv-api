@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { AnyApiReferenceConfiguration } from "@scalar/types/api-reference";
 
+const { data: openapiContent } = useFetch("/_openapi.json");
+
 const configuration: AnyApiReferenceConfiguration = {
   darkMode: true,
   hideModels: false,
@@ -11,7 +13,7 @@ const configuration: AnyApiReferenceConfiguration = {
   },
   defaultOpenAllTags: true,
   hideDownloadButton: true,
-  url: "/_openapi.json"
+  content: openapiContent.value
 };
 </script>
 
