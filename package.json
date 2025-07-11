@@ -31,20 +31,20 @@
 		"release": "changelogen --release"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "^1.4.1",
+		"@nuxt/eslint": "^1.5.2",
 		"@nuxthub/core": "^0.9.0",
-		"@nuxtjs/sitemap": "^7.4.1",
-		"@scalar/nuxt": "^0.4.19",
-		"@stylistic/eslint-plugin": "^4.4.1",
-		"@types/node": "^24.0.3",
-		"changelogen": "^0.6.1",
+		"@nuxtjs/sitemap": "^7.4.3",
+		"@scalar/nuxt": "^0.4.30",
+		"@stylistic/eslint-plugin": "^5.1.0",
+		"@types/node": "^24.0.13",
+		"changelogen": "^0.6.2",
 		"cheerio": "^1.1.0",
-		"eslint": "^9.29.0",
-		"nuxt": "^3.17.5",
+		"eslint": "^9.31.0",
+		"nuxt": "^3.17.6",
 		"ofetch": "^1.4.1",
 		"ufo": "^1.6.1",
-		"wrangler": "^4.20.3",
-		"zod": "^3.25.67"
+		"wrangler": "^4.24.3",
+		"zod": "^4.0.5"
 	},
-	"packageManager": "pnpm@10.12.1"
+	"packageManager": "pnpm@10.13.1"
 }
