@@ -1,7 +1,6 @@
 import { SITE } from "../shared/utils/helpers";
 
 export default defineNuxtConfig({
-  future: { compatibilityVersion: 4 },
   compatibilityDate: "2025-05-10",
   app: {
     head: {
