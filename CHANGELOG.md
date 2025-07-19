@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v2.5.5
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.4...v2.5.5)
+
+### 🩹 Fixes
+
+- Adjust nuxt 4 tsconfig ([7d8f293](https://github.com/ahmedrangel/animeflv-api/commit/7d8f293))
+
+### 📖 Documentation
+
+- Remove default http client ([e9b7fb9](https://github.com/ahmedrangel/animeflv-api/commit/e9b7fb9))
+
+### 🏡 Chore
+
+- **release:** V2.5.4 ([b85fea2](https://github.com/ahmedrangel/animeflv-api/commit/b85fea2))
+- Update deps ([e405a67](https://github.com/ahmedrangel/animeflv-api/commit/e405a67))
+- Update deps ([9c71e91](https://github.com/ahmedrangel/animeflv-api/commit/9c71e91))
+- Update deps ([db73519](https://github.com/ahmedrangel/animeflv-api/commit/db73519))
+- **docs:** Get content with usefetch ([9fdc544](https://github.com/ahmedrangel/animeflv-api/commit/9fdc544))
+- Update deps ([fdf47bf](https://github.com/ahmedrangel/animeflv-api/commit/fdf47bf))
+- Update to nuxt 4 ([d950a23](https://github.com/ahmedrangel/animeflv-api/commit/d950a23))
+- **nuxt:** Future config not needed ([1a69ecb](https://github.com/ahmedrangel/animeflv-api/commit/1a69ecb))
+- Update deps ([2e95b0a](https://github.com/ahmedrangel/animeflv-api/commit/2e95b0a))
+- Move npmrc settings to pnpm-workspace.yaml ([16594ab](https://github.com/ahmedrangel/animeflv-api/commit/16594ab))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.5.4
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.3...v2.5.4)
