@@ -1,7 +1,7 @@
 import { SITE } from "../shared/utils/helpers";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-05-10",
+  compatibilityDate: "2025-07-18",
   app: {
     head: {
       charset: "utf-8",
