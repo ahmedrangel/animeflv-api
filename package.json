@@ -36,7 +36,7 @@
 		"@nuxtjs/sitemap": "^7.4.3",
 		"@scalar/nuxt": "^0.4.33",
 		"@stylistic/eslint-plugin": "^5.2.0",
-		"@types/node": "^24.0.14",
+		"@types/node": "^24.0.15",
 		"changelogen": "^0.6.2",
 		"cheerio": "^1.1.0",
 		"eslint": "^9.31.0",
