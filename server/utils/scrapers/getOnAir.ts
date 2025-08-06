@@ -1,6 +1,5 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
-import type { AnimeOnAirData, AnimeType } from "../../types";
 
 export const getOnAir = async (): Promise<AnimeOnAirData[]> => {
   try {

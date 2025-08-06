@@ -1,6 +1,5 @@
 import { load } from "cheerio";
 import { $fetch } from "ofetch";
-import type { ChapterData } from "../../types";
 
 export const getLatest = async (): Promise<ChapterData[]> => {
   try {
