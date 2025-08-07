@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v2.6.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.5...v2.6.0)
+
+### 🚀 Enhancements
+
+- Reemplazar código de scraper por la librería animeflv-scraper ([01807ed](https://github.com/ahmedrangel/animeflv-api/commit/01807ed))
+
+### 📖 Documentation
+
+- Aviso sobre animeflv-scraper ([7898af0](https://github.com/ahmedrangel/animeflv-api/commit/7898af0))
+
+### 🏡 Chore
+
+- Move types to shared dir ([9212a5f](https://github.com/ahmedrangel/animeflv-api/commit/9212a5f))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.5.5
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.4...v2.5.5)
