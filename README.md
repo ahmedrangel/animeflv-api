@@ -1,5 +1,8 @@
 # Unofficial AnimeFLV REST API
 
+> [!IMPORTANT]  
+> Si usas Node.js, antes de utilizar esta API, considera utilizar la librería de NPM [animeflv-scraper](https://npmjs.com/package/animeflv-scraper) como opción principal. Esta proyecto hace uso de ella internamente.
+
 ### Base URL
 https://animeflv.ahmedrangel.com/api
 
