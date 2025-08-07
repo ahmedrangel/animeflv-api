@@ -1,11 +1,13 @@
-const genres = Object.values(AnimeGenreEnum);
-const statuses = Object.values(AnimeStatusEnum);
-const types = Object.values(AnimeTypeEnum);
-const orders = Object.values(FilterOrderEnum);
+import { searchAnimesByFilter, GenreEnum, StatusEnum, TypeEnum, OrderEnum } from "animeflv-scraper";
+
+const genres = Object.values(GenreEnum);
+const statuses = Object.values(StatusEnum);
+const types = Object.values(TypeEnum);
+const orders = Object.values(OrderEnum);
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  const { order, page } = getQuery(event) as { order: FilterOrderType, page: number };
+  const { order, page } = getQuery(event) as { order: string, page: number };
 
   const invalid_order = !orders?.includes(order);
   if (order && invalid_order) {
@@ -39,7 +41,7 @@ export default defineEventHandler(async (event) => {
     throw createError({
       statusCode: 400,
       message: `Estados no válidos: ${invalid_statuses?.join(", ")}`,
-      data: { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: AnimeStatusEnum }
+      data: { success: false, error: `Estados no válidos: ${invalid_statuses?.join(", ")}`, hint: StatusEnum }
     });
   }
 
@@ -138,7 +140,7 @@ defineRouteMeta({
               },
               statuses: {
                 type: "array",
-                description: "Estados de anime.",
+                description: "Estados de anime. (1: En emisión, 2: Finalizado, 3: Próximamente)",
                 example: [1, 2, 3],
                 items: {
                   type: "number",

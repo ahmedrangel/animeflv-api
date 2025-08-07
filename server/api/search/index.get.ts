@@ -1,6 +1,8 @@
+import { searchAnime } from "animeflv-scraper";
+
 export default defineEventHandler(async (event) => {
   const { query, page } = getQuery(event) as { query: string, page: string };
-  const search = await searchAnime({ query, page: Number(page) });
+  const search = await searchAnime(query, Number(page) || 1);
   if (!search || !search?.media?.length) {
     throw createError({
       statusCode: 404,

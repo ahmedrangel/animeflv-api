@@ -1,3 +1,5 @@
+import { getLatest } from "animeflv-scraper";
+
 export default defineEventHandler(async () => {
   const latest = await getLatest();
   if (!latest) {
@@ -20,7 +22,7 @@ defineRouteMeta({
     description: "Obtiene una lista de últimos episodios lanzados.",
     responses: {
       200: {
-        description: "Retorna un arreglo de objetos que contienen información como el título, el capítulo, la portada, y la url del episodio. Estos objetos están ordenados de manera cronológica, los últimos episodios estarán en la parte superior del arreglo.",
+        description: "Retorna un arreglo de objetos que contienen información como el título, el capítulo, la portada, el slug y la url del episodio. Estos objetos están ordenados de manera cronológica, los últimos episodios estarán en la parte superior del arreglo.",
         content: {
           "application/json": {
             schema: {
@@ -35,9 +37,10 @@ defineRouteMeta({
                       title: { type: "string" },
                       number: { type: "number" },
                       cover: { type: "string" },
+                      slug: { type: "string" },
                       url: { type: "string" }
                     },
-                    required: ["title", "number", "cover", "url"]
+                    required: ["title", "number", "cover", "slug", "url"]
                   }
                 }
               },

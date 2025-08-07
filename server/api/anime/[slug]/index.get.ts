@@ -1,6 +1,8 @@
+import { getAnimeInfo } from "animeflv-scraper";
+
 export default defineCachedEventHandler(async (event) => {
   const { slug } = getRouterParams(event) as { slug: string };
-  const info = await getAnimeInfo(slug);
+  const info = await getAnimeInfo(slug).catch(() => null);
   if (!info) {
     throw createError({
       statusCode: 404,

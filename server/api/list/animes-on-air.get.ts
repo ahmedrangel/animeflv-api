@@ -1,3 +1,5 @@
+import { getOnAir } from "animeflv-scraper";
+
 export default defineEventHandler(async () => {
   const onair = await getOnAir();
   if (!onair) {

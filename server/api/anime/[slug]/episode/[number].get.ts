@@ -1,6 +1,8 @@
+import { getEpisode } from "animeflv-scraper";
+
 export default defineEventHandler(async (event) => {
   const { slug, number } = getRouterParams(event) as { slug: string, number: string };
-  const episode = await getEpisodeLinks(slug, Number(number));
+  const episode = await getEpisode(slug, Number(number));
   if (!episode) {
     throw createError({
       statusCode: 404,

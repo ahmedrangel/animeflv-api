@@ -38,13 +38,13 @@
 		"@stylistic/eslint-plugin": "^5.2.0",
 		"@types/node": "^24.0.15",
 		"changelogen": "^0.6.2",
-		"cheerio": "^1.1.0",
 		"eslint": "^9.31.0",
 		"nuxt": "^4.0.0",
-		"ofetch": "^1.4.1",
-		"ufo": "^1.6.1",
 		"wrangler": "^4.25.0",
 		"zod": "^4.0.5"
 	},
-	"packageManager": "pnpm@10.13.1"
+	"packageManager": "pnpm@10.13.1",
+	"dependencies": {
+		"animeflv-scraper": "^0.1.2"
+	}
 }
