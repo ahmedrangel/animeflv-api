@@ -1,50 +1,50 @@
 {
-	"name": "animeflv-api",
-	"version": "2.6.0",
-	"description": "Unofficial AnimeFLV REST API",
-	"private": true,
-	"type": "module",
-	"homepage": "https://github.com/ahmedrangel/animeflv-api",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ahmedrangel/animeflv-api"
-	},
-	"bugs": {
-		"url": "https://github.com/ahmedrangel/animeflv-api/issues"
-	},
-	"changelog": {
-		"repo": {
-			"repo": "ahmedrangel/animeflv-api",
-			"provider": "github",
-			"domain": "github.com"
-		}
-	},
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev --port=5173 --host",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare",
-		"lint": "pnpm run lint:eslint",
-		"lint:eslint": "eslint --fix --config .config/eslint.mjs",
-		"tail": "wrangler tail",
-		"release": "changelogen --release"
-	},
-	"devDependencies": {
-		"@nuxt/eslint": "^1.6.0",
-		"@nuxthub/core": "^0.9.0",
-		"@nuxtjs/sitemap": "^7.4.3",
-		"@scalar/nuxt": "^0.4.33",
-		"@stylistic/eslint-plugin": "^5.2.0",
-		"@types/node": "^24.0.15",
-		"changelogen": "^0.6.2",
-		"eslint": "^9.31.0",
-		"nuxt": "^4.0.0",
-		"wrangler": "^4.25.0",
-		"zod": "^4.0.5"
-	},
-	"packageManager": "pnpm@10.13.1",
-	"dependencies": {
-		"animeflv-scraper": "^0.1.2"
-	}
+  "name": "animeflv-api",
+  "version": "2.6.0",
+  "description": "Unofficial AnimeFLV REST API",
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/ahmedrangel/animeflv-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedrangel/animeflv-api"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedrangel/animeflv-api/issues"
+  },
+  "changelog": {
+    "repo": {
+      "repo": "ahmedrangel/animeflv-api",
+      "provider": "github",
+      "domain": "github.com"
+    }
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port=5173 --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "pnpm run lint:eslint",
+    "lint:eslint": "eslint --fix --config .config/eslint.mjs",
+    "tail": "wrangler tail",
+    "release": "changelogen --release"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.6.0",
+    "@nuxthub/core": "^0.9.0",
+    "@nuxtjs/sitemap": "^7.4.3",
+    "@scalar/nuxt": "^0.4.33",
+    "@stylistic/eslint-plugin": "^5.2.0",
+    "@types/node": "^24.0.15",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.31.0",
+    "nuxt": "^4.0.0",
+    "wrangler": "^4.25.0",
+    "zod": "^4.0.5"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "animeflv-scraper": "^0.1.3"
+  }
 }
