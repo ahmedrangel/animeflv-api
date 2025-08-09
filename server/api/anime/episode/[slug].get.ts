@@ -1,6 +1,6 @@
 import { getEpisode } from "animeflv-scraper";
 
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   const { slug } = getRouterParams(event) as { slug: string };
   const episode = await getEpisode(slug);
   if (!episode) {
@@ -14,6 +14,15 @@ export default defineEventHandler(async (event) => {
     success: true,
     data: episode
   };
+}, {
+  swr: false,
+  maxAge: 86400,
+  name: "episode",
+  group: "anime",
+  getKey: (event) => {
+    const { slug } = getRouterParams(event) as { slug: string };
+    return slug;
+  }
 });
 
 defineRouteMeta({
