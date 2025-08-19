@@ -31,19 +31,19 @@
     "release": "changelogen --release"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.6.0",
+    "@nuxt/eslint": "^1.9.0",
     "@nuxthub/core": "^0.9.0",
     "@nuxtjs/sitemap": "^7.4.3",
-    "@scalar/nuxt": "^0.4.33",
-    "@stylistic/eslint-plugin": "^5.2.0",
-    "@types/node": "^24.0.15",
+    "@scalar/nuxt": "0.4.33",
+    "@stylistic/eslint-plugin": "^5.2.3",
+    "@types/node": "^24.3.0",
     "changelogen": "^0.6.2",
-    "eslint": "^9.31.0",
-    "nuxt": "^4.0.0",
-    "wrangler": "^4.25.0",
-    "zod": "^4.0.5"
+    "eslint": "^9.33.0",
+    "nuxt": "^4.0.3",
+    "wrangler": "^4.31.0",
+    "zod": "^4.0.17"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "dependencies": {
     "animeflv-scraper": "^0.1.3"
   }
