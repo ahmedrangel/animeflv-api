@@ -72,5 +72,16 @@ export default defineNuxtConfig({
     experimental: {
       openAPI: true
     }
+  },
+  vite: {
+    optimizeDeps: {
+      include: [
+        "@scalar/openapi-parser",
+        "debug",
+        "extend",
+        "highlightjs-curl",
+        "highlight.js/lib/core"
+      ]
+    }
   }
 });
