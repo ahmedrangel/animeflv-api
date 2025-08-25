@@ -1,4 +1,4 @@
-name: Deploy
+name: Manual Deploy
 
 on: workflow_dispatch
 
@@ -24,10 +24,10 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-      - name: ☁️ Setup Cloudflare & Deploy Pages
+      - name: ☁️ Setup Cloudflare & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=animeflv-api --branch=main
+          command: npx wrangler deploy --project-name=animeflv --branch=main
           packageManager: pnpm
