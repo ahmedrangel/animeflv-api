@@ -76,11 +76,11 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: [
-        "@scalar/openapi-parser",
-        "debug",
-        "extend",
-        "highlightjs-curl",
-        "highlight.js/lib/core"
+        "@scalar/nuxt > @scalar/openapi-parser",
+        "@scalar/nuxt > debug",
+        "@scalar/nuxt > extend",
+        "@scalar/nuxt > highlightjs-curl",
+        "@scalar/nuxt > highlight.js/lib/core"
       ]
     }
   }
