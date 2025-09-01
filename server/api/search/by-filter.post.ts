@@ -53,7 +53,17 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const search = await searchAnimesByFilter({ ...body, order, page });
+  const orderKeyMap: Record<string, string> = {
+    default: "Por Defecto",
+    updated: "Recientemente Actualizados",
+    added: "Recientemente Agregados",
+    title: "Nombre A-Z",
+    rating: "Calificación"
+  };
+
+  const mappedOrder = orderKeyMap[order];
+
+  const search = await searchAnimesByFilter({ ...body, order: mappedOrder, page });
   if (!search || !search?.media?.length) {
     throw createError({
       statusCode: 404,
