@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v2.7.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.6.0...v2.7.0)
+
+### 🚀 Enhancements
+
+- Cache episode endpoints ([67efbc0](https://github.com/ahmedrangel/animeflv-api/commit/67efbc0))
+
+### 🩹 Fixes
+
+- Order filter is now working ([#7](https://github.com/ahmedrangel/animeflv-api/pull/7))
+
+### 🏡 Chore
+
+- Add license ([fb9ed57](https://github.com/ahmedrangel/animeflv-api/commit/fb9ed57))
+- Update animeflv-scraper ([d48df5a](https://github.com/ahmedrangel/animeflv-api/commit/d48df5a))
+- Update deps + lock scalar version ([978f4d3](https://github.com/ahmedrangel/animeflv-api/commit/978f4d3))
+- Migrate to workers ([37823da](https://github.com/ahmedrangel/animeflv-api/commit/37823da))
+- Update deps ([d3484c6](https://github.com/ahmedrangel/animeflv-api/commit/d3484c6))
+- Update deps ([3df7307](https://github.com/ahmedrangel/animeflv-api/commit/3df7307))
+- Update pnpm lock ([25d1383](https://github.com/ahmedrangel/animeflv-api/commit/25d1383))
+
+### 🤖 CI
+
+- Adjust deployments ([440bfd7](https://github.com/ahmedrangel/animeflv-api/commit/440bfd7))
+- Fix command ([6a901c9](https://github.com/ahmedrangel/animeflv-api/commit/6a901c9))
+- Fix command ([624e63f](https://github.com/ahmedrangel/animeflv-api/commit/624e63f))
+
+### ❤️ Contributors
+
+- DARIUS(ZEUS) ([@zeusgd19](https://github.com/zeusgd19))
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.6.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.5.5...v2.6.0)
