@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.8.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.7.0...v2.8.0)
+
+### 🚀 Enhancements
+
+- **api:** Expose filtered Nitro OpenAPI spec + update deps ([1fcbebf](https://github.com/ahmedrangel/animeflv-api/commit/1fcbebf))
+
+### 🏡 Chore
+
+- Update deps ([d9b9713](https://github.com/ahmedrangel/animeflv-api/commit/d9b9713))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.7.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.6.0...v2.7.0)
