@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@scalar/nuxt"
   ],
+  $production: {
+    nitro: {
+      preset: "cloudflare-module"
+    }
+  },
   app: {
     head: {
       charset: "utf-8",

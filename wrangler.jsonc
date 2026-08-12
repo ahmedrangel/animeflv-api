@@ -2,12 +2,12 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "animeflv",
   "compatibility_date": "2026-08-12",
-  "main": "dist/server/index.mjs",
+  "main": ".output/server/index.mjs",
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
   "assets": {
     "binding": "ASSETS",
-    "directory": "dist/public"
+    "directory": ".output/public"
   },
   "kv_namespaces": [
     {

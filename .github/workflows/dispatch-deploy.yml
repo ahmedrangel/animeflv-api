@@ -4,30 +4,32 @@ on: workflow_dispatch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
     steps:
       - name: 🛎️ Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - run: corepack enable
     
       - name: 🐢 Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: lts/*
-          registry-url: 'https://registry.npmjs.org/'
           cache: 'pnpm'
 
       - name: Install Wrangler
         run: pnpm i -D wrangler@latest
 
       - name: Build Project
-        run: pnpm build
+        run: node --run build
 
       - name: ☁️ Setup Cloudflare & Deploy Worker
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy dist/server/index.mjs --assets dist/public
           packageManager: pnpm
