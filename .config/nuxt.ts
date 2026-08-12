@@ -1,7 +1,12 @@
 import { SITE } from "../shared/utils/helpers";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-18",
+
+  modules: [
+    "@nuxthub/core",
+    "@nuxt/eslint",
+    "@scalar/nuxt"
+  ],
   app: {
     head: {
       charset: "utf-8",
@@ -28,11 +33,6 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/main.css"
   ],
-  modules: [
-    "@nuxthub/core",
-    "@nuxt/eslint",
-    "@scalar/nuxt"
-  ],
   runtimeConfig: {
     openapi: {
       info: {
@@ -42,22 +42,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  features: {
-    inlineStyles: false
-  },
-  eslint: {
-    config: {
-      autoInit: false,
-      stylistic: true
-    }
-  },
-  experimental: {
-    typedPages: true
-  },
-  hub: {
-    workers: true,
-    cache: true
-  },
   routeRules: {
     "/": { prerender: true },
     "/_openapi.json": { prerender: true },
@@ -65,12 +49,33 @@ export default defineNuxtConfig({
     "/api": { redirect: { to: "/", statusCode: 301 } },
     "/docs": { redirect: { to: "/", statusCode: 301 } }
   },
+  features: {
+    inlineStyles: false
+  },
+  experimental: {
+    typedPages: true
+  },
+  compatibilityDate: "2026-08-12",
   nitro: {
     prerender: {
       crawlLinks: true
     },
     experimental: {
       openAPI: true
+    }
+  },
+  hub: {
+    cache: true
+  },
+  eslint: {
+    config: {
+      autoInit: false,
+      stylistic: true
+    }
+  },
+  scalar: {
+    agent: {
+      disabled: true
     }
   }
 });

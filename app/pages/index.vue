@@ -11,7 +11,7 @@ const configuration: AnyApiReferenceConfiguration = {
   },
   defaultOpenAllTags: true,
   documentDownloadType: "none",
-  url: "/_openapi.json"
+  url: "/openapi.json"
 };
 </script>
 

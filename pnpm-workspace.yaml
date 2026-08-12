@@ -1,2 +1,11 @@
+minimumReleaseAge: 0
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  esbuild: false
+  unrs-resolver: false
+  vue-demi: false
+  workerd: false
 shamefullyHoist: true
 strictPeerDependencies: false
+overrides:
+  'stringify-object': 5.0.0
