@@ -10,6 +10,10 @@ const configuration: AnyApiReferenceConfiguration = {
     version: SITE.version
   },
   defaultOpenAllTags: true,
+  defaultHttpClient: {
+    targetKey: "js",
+    clientKey: "fetch"
+  },
   documentDownloadType: "none",
   url: "/openapi.json"
 };
