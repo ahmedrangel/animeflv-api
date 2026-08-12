@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { prerender: true },
-    "/_openapi.json": { prerender: true },
+    "/openapi.json": { prerender: true },
     "/api/*/**": { headers: { "Access-Control-Allow-Origin": "*" } },
     "/api": { redirect: { to: "/", statusCode: 301 } },
     "/docs": { redirect: { to: "/", statusCode: 301 } }
