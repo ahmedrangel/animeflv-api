@@ -16,6 +16,8 @@ export default defineEventHandler(async (event) => {
   }
   nitroOpenAPI.info = config.openapi.info;
   delete nitroOpenAPI.servers;
+  nitroOpenAPI.servers = [];
+  nitroOpenAPI.servers.push({ url: SITE.host });
   nitroOpenAPI.paths = filteredPaths;
   const sortedPaths = Object.entries(nitroOpenAPI.paths).sort((a, b) => {
     const aPath = a[0].split("/").slice(2).join("/");
