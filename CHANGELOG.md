@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.8.2
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.8.1...v2.8.2)
+
+### 🩹 Fixes
+
+- **openapi:** Set server url by env ([3822205](https://github.com/ahmedrangel/animeflv-api/commit/3822205))
+
+### 🏡 Chore
+
+- **api-ref:** Default to fetch client ([9281c06](https://github.com/ahmedrangel/animeflv-api/commit/9281c06))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.8.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.8.0...v2.8.1)
