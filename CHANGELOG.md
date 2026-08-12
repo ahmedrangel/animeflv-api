@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v2.8.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.8.0...v2.8.1)
+
+### 🩹 Fixes
+
+- **nuxt:** Prerender public OpenAPI path ([2d43ba5](https://github.com/ahmedrangel/animeflv-api/commit/2d43ba5))
+- **wrangler:** Deploy ([60e228a](https://github.com/ahmedrangel/animeflv-api/commit/60e228a))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v2.8.0
 
 [compare changes](https://github.com/ahmedrangel/animeflv-api/compare/v2.7.0...v2.8.0)
